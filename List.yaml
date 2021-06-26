@@ -1,0 +1,27 @@
+- task1: #签到#东东超市兑换奖品 #摇京豆 #京东汽车兑换
+          cronExpression: "0 0 0 * * * *"
+          argument: jd_bean_sign.js & jd_blueCoin.js & jd_club_lottery.js & jd_car_exchange.js
+- task2: #东东农场 #东东萌宠 #口袋书店 #京喜农场 #京东极速版签到 #京东家庭号 #金榜创造营 #明星小店
+          cronExpression: "0 5 6-18/6,8 * * * *"
+          argument: jd_fruit.js & jd_pet.js & jd_bookshop.js & jd_jxnc.js & jd_speed_sign.js & jd_family.js & jd_gold_creator.js & jd_star_shop.js
+- task3: #宠汪汪 #摇钱树 #京东种豆得豆 #京喜工厂 #东东工厂 #电竞经理
+          cronExpression: "0 3 */1 * * * *"
+          argument: jd_joy_new.js & jd_moneyTree.js & jd_plantBean.js & jd_dreamFactory.js & jd_jdfactory.js & jd_EsportsManager.js
+- task4: #宠汪汪积分兑换京豆 #签到领现金 #点点券 #东东小窝 #京喜财富岛 #京东直播 #每日抽奖 #5G超级盲盒
+          cronExpression: "0 0 0-16/8,20 * * * *"
+          argument: jd_joy_reward_new.js & jd_cash.js & jd_necklace_new.js & jd_small_home.js & jd_cfd.js & jd_live.js & jd_daily_lottery.js & jd_mohe.js
+- task5: #京东全民开红包 #进店领豆 #取关京东店铺商品 #京东汽车 #京东秒秒币
+          cronExpression: "0 10 0 * * * *"
+          argument: jd_redPacket.js & jd_shop.js & jd_unsubscribe.js & jd_car.js & jd_ms.js
+- task6: #天天提鹅 #京喜牧场
+          cronExpression: "0 8 */3 * * * *"
+          argument: jd_daily_egg.js & jd_jxmc.js
+- task7: #东东超市 #十元街 #翻翻乐
+          cronExpression: "0 15 */1 * * * *"
+          argument: jd_superMarket.js & jd_syj.js & jd_big_winner.js
+- task8: #京豆变动通知 #疯狂的joy #监控crazyJoy分红 #京东排行榜 #领京豆额外奖励 #京东保价 #闪购盲盒 #新潮品牌狂欢 #京喜领88元红包
+          cronExpression: "0 30 7 * * * *"
+          argument: jd_bean_change.js & jd_crazy_joy.js & jd_crazy_joy_bonus.js & jd_rankingList.js & jd_bean_home.js & jd_price.js & jd_sgmh.js & jd_mcxhd.js & jd_jxlhb.js
+- task9: #金融养猪 #京东快递 #京东赚赚 #京东极速版红包 #领金贴
+          cronExpression: "0 3 1 * * * *"
+          argument: jd_pigPet.js & jd_kd.js & jd_jdzz.js & jd_speed_redpocke.js & jd_jin_tie.js
