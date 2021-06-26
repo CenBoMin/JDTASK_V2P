@@ -44,20 +44,6 @@ $exec('node jd_rankingList.js', {
   }
 })
 
-$exec('node jd_crazy_joy_bonus.js', {
-  cwd: 'script/JSFile', timeout: 0,
-  cb(data, error){
-    error ? console.error(error) : console.log(data)
-  }
-})
-
-$exec('node jd_crazy_joy.js', {
-  cwd: 'script/JSFile', timeout: 0,
-  cb(data, error){
-    error ? console.error(error) : console.log(data)
-  }
-})
-
 $exec('node jd_bean_change.js', {
   cwd: 'script/JSFile', timeout: 0,
   cb(data, error){
