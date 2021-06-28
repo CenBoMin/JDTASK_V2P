@@ -5,6 +5,15 @@
   "date": "2021-06-28 23:11:16",
   "list": [
     {
+      "name": "JDCookie同步",
+      "type": "cron",
+      "time": "20 0 0-23/1 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDcookiev2pformat.js"
+      }
+    },
+    {
       "name": "JDTASK_1",
       "type": "cron",
       "time": "0 0 0 * * *",
