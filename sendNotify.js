@@ -1,5 +1,5 @@
 /*
- Last Modified time: 2021-06-19 00:00:00
+elecV2P专用sendNotify.js，在通知尾部显示查看log的url连接
  */
 /**
  * sendNotify 推送通知功能
