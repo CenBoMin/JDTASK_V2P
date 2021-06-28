@@ -1,5 +1,7 @@
 /*
-此文件为Node.js专用。其他用户请忽略，使用V2P函数$store处理进度cookie,并存储一个cookie值作为V2P执行的环境变量JD_COOKIE
+此文件为Node.js &elecV2P专用。其他用户请忽略
+使用V2P函数$store处理进度cookie,并存储一个cookie值作为V2P执行的环境变量JD_COOKIE
+定时更新执行任务的cookie值：CookiesJDV2P
  */
 //此处填写京东账号cookie。
 let CookiesJD = $store.get('CookiesJD', 'array')
