@@ -28,6 +28,7 @@ let BARK_SOUND = '';
 // =======================================telegram机器人通知设置区域===========================================
 //此处填你telegram bot 的Token，telegram机器人通知推送必填项.例如：1077xxx4424:AAFjv0FcqxxxxxxgEMGfi22B4yh15R5uw
 //(环境变量名 TG_BOT_TOKEN)
+<<<<<<< HEAD
 let TG_BOT_TOKEN = '';
 //此处填你接收通知消息的telegram用户的id，telegram机器人通知推送必填项.例如：129xxx206
 //(环境变量名 TG_USER_ID)
@@ -35,6 +36,15 @@ let TG_USER_ID = '';
 //tg推送HTTP代理设置(不懂可忽略,telegram机器人通知推送功能中非必填)
 let TG_PROXY_HOST = '';//例如:127.0.0.1(环境变量名:TG_PROXY_HOST)
 let TG_PROXY_PORT = '';//例如:1080(环境变量名:TG_PROXY_PORT)
+=======
+let TG_BOT_TOKEN = '1708207605:AAHQxVRuszeLHZqY7UllQe11DbQA0g_ylQc';
+//此处填你接收通知消息的telegram用户的id，telegram机器人通知推送必填项.例如：129xxx206
+//(环境变量名 TG_USER_ID)
+let TG_USER_ID = '1285467394';
+//tg推送HTTP代理设置(不懂可忽略,telegram机器人通知推送功能中非必填)
+let TG_PROXY_HOST = '127.0.0.1';//例如:127.0.0.1(环境变量名:TG_PROXY_HOST)
+let TG_PROXY_PORT = '7890';//例如:1080(环境变量名:TG_PROXY_PORT)
+>>>>>>> d040e30d07feef8a867579a60524b76ae9a18927
 let TG_PROXY_AUTH = '';//tg代理配置认证参数
 //Telegram api自建的反向代理地址(不懂可忽略,telegram机器人通知推送功能中非必填),默认tg官方api(环境变量名:TG_API_HOST)
 let TG_API_HOST = 'api.telegram.org'
