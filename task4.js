@@ -4,6 +4,7 @@ $exec('node jd_mohe.js', {
   cwd: 'script/JSFile', timeout: 0,
   env: {
     ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name}.log`,
     JD_COOKIE: $store.get('CookiesJDV2P', 'string')
   },
   cb(data, error){
@@ -16,6 +17,7 @@ $exec('node jd_live.js', {
   cwd: 'script/JSFile', timeout: 0,
   env: {
     ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name}.log`,
     JD_COOKIE: $store.get('CookiesJDV2P', 'string')
   },
   cb(data, error){
@@ -27,6 +29,7 @@ $exec('node jd_cfd.js', {
   cwd: 'script/JSFile', timeout: 0,
   env: {
     ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name}.log`,
     JD_COOKIE: $store.get('CookiesJDV2P', 'string')
   },
   cb(data, error){
@@ -38,6 +41,7 @@ $exec('node jd_small_home.js', {
   cwd: 'script/JSFile', timeout: 0,
   env: {
     ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name}.log`,
     JD_COOKIE: $store.get('CookiesJDV2P', 'string')
   },
   cb(data, error){
@@ -49,6 +53,7 @@ $exec('node jd_necklace_new.js', {
   cwd: 'script/JSFile', timeout: 0,
   env: {
     ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name}.log`,
     JD_COOKIE: $store.get('CookiesJDV2P', 'string')
   },
   cb(data, error){
@@ -60,6 +65,7 @@ $exec('node jd_cash.js', {
   cwd: 'script/JSFile', timeout: 0,
   env: {
     ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name}.log`,
     JD_COOKIE: $store.get('CookiesJDV2P', 'string')
   },
   cb(data, error){
@@ -71,6 +77,7 @@ $exec('node jd_joy_reward_new.js', {
   cwd: 'script/JSFile', timeout: 0,
   env: {
     ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name}.log`,
     JD_COOKIE: $store.get('CookiesJDV2P', 'string')
   },
   cb(data, error){
