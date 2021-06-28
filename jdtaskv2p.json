@@ -1,7 +1,7 @@
 {
   "name": "JDTASK_V2P",
   "author": "CenBomin",
-  "desc": "xx 导出的任务订阅。该订阅适用于 elecV2P，与其他软件并不兼容。相关说明参考：https://github.com/elecV2/elecV2P-dei/tree/master/docs/06-task.md",
+  "desc": "该订阅适用于elecV2P,在node环境跑京东任务,并与V2p交互使用",
   "date": "2021-06-28 23:11:16",
   "list": [
     {
