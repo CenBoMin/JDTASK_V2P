@@ -1,6 +1,7 @@
 ## 简介
 
 JDTASK_V2P - 搭建elecV2P用Nodejs执行JDTASK的环境
+脚本基础库来自JDHelloWorld：https://github.com/JDHelloWorld/jd_scripts
 
 ![](https://raw.githubusercontent.com/elecV2/elecV2P-dei/master/docs/res/overview.png)
 
@@ -75,6 +76,8 @@ https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/sendNotify.js
 获取内容后,黏贴覆盖 → 保存至服务器 ctrl+s
 即可在通知尾部可显示查看脚本执行的url连接,方便直接点击查看。
 
+## 任务
+Task任务与定时参照JDHelloWorld大佬相同,有时间就同步更新Task（拉取仓库更新JS-JDTaskV2P.gitPull.js每8小时同步一次,相关信息查看log）
 
 ## DOCUMENTS&EXAMPLES
 
