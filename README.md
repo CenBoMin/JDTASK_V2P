@@ -41,10 +41,10 @@ https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/jdtaskv2p.json
 **后期会在BOXJS添加是否添加JDCookie的开关,避免覆盖**
 
 ### 第一种方式:V2P上传BOXJS的Cookie脚本
-打开重写获取京东Cookie：
-1.微信访问含有会员机制的京东自营店会员页面
-2.访问京东APP内嵌了H5页面：后台杀京东APP后再进入或进首页的免费水果都可获取
-3.复制 https://bean.m.jd.com/bean/signIndex.action 或 https://home.m.jd.com/myJd/newhome.action 地址到浏览器打开，登录后可自动获取Cookie，没成功就登录后再次访问下之前复制的地址
+- 打开重写获取京东Cookie：
+- 1.微信访问含有会员机制的京东自营店会员页面
+- 2.访问京东APP内嵌了H5页面：后台杀京东APP后再进入或进首页的免费水果都可获取
+- 3.复制 https://bean.m.jd.com/bean/signIndex.action 或 https://home.m.jd.com/myJd/newhome.action 地址到浏览器打开，登录后可自动获取Cookie，没成功就登录后再次访问下之前复制的地址
 
 然后在添加定时脚本，建议每天一次cron或者手动执行...
    
