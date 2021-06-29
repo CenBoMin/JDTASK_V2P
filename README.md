@@ -14,9 +14,12 @@ JDTASK_V2P - 搭建elecV2P用Nodejs执行JDTASK的环境
 - TGBOT交互(开发中...)
 - 其他功能（到时候看看）
 
+
 ## 安装/INSTALL
 
 **程序开放权限极大，建议局域网使用。网络部署，风险自负**
+
+![](https://raw.githubusercontent.com/elecV2/elecV2P-dei/master/docs/res/overview.png)
 
 TASK → 添加订阅任务  
 → 添加订阅JDTASK_V2P:[https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/jdtaskv2p.json]
@@ -28,31 +31,40 @@ TASK → 添加订阅任务
 ## JDcookie
 以上环境以及搭建好了，需要添加JDcookie值（即CookieJD/CookieJD2/CookiesJD这三个),由于有许多种方式,只介绍自己目前使用的两种
 
-### 第一种方式:V2P上传BOXJS Cookie脚本
+**后期会在BOXJS添加是否添加JDCookie的开关,避免覆盖**
+
+### 第一种方式:V2P上传BOXJS的Cookie脚本
 打开重写获取京东Cookie：
 1.微信访问含有会员机制的京东自营店会员页面
 2.访问京东APP内嵌了H5页面：后台杀京东APP后再进入或进首页的免费水果都可获取
 3.复制 https://bean.m.jd.com/bean/signIndex.action 或 https://home.m.jd.com/myJd/newhome.action 地址到浏览器打开，登录后可自动获取Cookie，没成功就登录后再次访问下之前复制的地址
 
-然后在添加定时脚本，建议每天一次cron
+然后在添加定时脚本，建议每天一次cron或者手动执行...
    
 - ztxtop多账号重写订阅:[https://raw.githubusercontent.com/ztxtop/x/main/subscribe/rewrite-jd.plugin]
 - 脚本:[https://raw.githubusercontent.com/CenBoMin/GithubSync/main/ELECV2PJS/PushBoxjsCookie_elecV2p.js]
 
 ### 第二种方式:本地JD扫码服务
+![](https://raw.githubusercontent.com/elecV2/elecV2P-dei/master/docs/res/overview.png)
 
-定时
-### 第二种方式:本地JD扫码服务
+直接执行TASK任务的JDCookie扫码服务，扫码获取JDcookie，多试至少两次
 
-执行定时
-
+- 来自elecV2P大佬的自用本地版本[https://github.com/elecV2/elecV2P-dei/blob/master/examples/JSTEST/getJDCookie.elecV2P.js]
 
 ## 通知
+![](https://raw.githubusercontent.com/elecV2/elecV2P-dei/master/docs/res/overview.png)
+
+使用此sendNotify.js：[https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/sendNotify.js]
+填写TG通知的相关内容（需代理），复制内容之后...
+在JSMANAGE → 当前服务器 JS 文件 框内输入 → jd_scripts/sendNotify.js 获取内容后,黏贴覆盖 → 保存至服务器 ctrl+s
+即可在通知尾部可显示查看脚本执行的url连接,方便直接点击查看。
+
 
 ## DOCUMENTS&EXAMPLES
 
-elecV2P说明文档及一些例程: [https://github.com/elecV2/elecV2P-dei](https://github.com/elecV2/elecV2P-dei)
-
+关于一些使用问题：
+1.elecV2P说明文档及一些例程: [https://github.com/elecV2/elecV2P-dei](https://github.com/elecV2/elecV2P-dei)
+2.TG 交流群讨论: https://t.me/elecV2G
 
 ## 致谢
 
