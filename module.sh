@@ -1,6 +1,4 @@
 #!/bin/sh
-npm install npm@latest -g
-
 echo "🤖 开始安装[png-js]";
 npm install png-js
 echo "✅ [png-js]安装完成";
@@ -22,3 +20,4 @@ npm install download
 echo "✅ [download]安装完成";
 
 npm update
+npm audit fix --force
