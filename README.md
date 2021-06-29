@@ -37,9 +37,9 @@ https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/jdtaskv2p.json
 以上环境以及搭建好了，需要添加JDcookie值（即CookieJD/CookieJD2/CookiesJD这三个)
 由于有许多种方式,只介绍自己目前使用的两种...
 
-**后期会在BOXJS添加是否添加JDCookie的开关,避免覆盖**
+> 后期会在BOXJS添加**上传JDCookie的开关**,避免覆盖
 
-### 第一种方式:V2P上传BOXJS的Cookie脚本
+### 第一种方式:BOXJS.Cookie上传V2P服务脚本
 - 打开重写获取京东Cookie：
 - 1.微信访问含有会员机制的京东自营店会员页面
 - 2.访问京东APP内嵌了H5页面：后台杀京东APP后再进入或进首页的免费水果都可获取
