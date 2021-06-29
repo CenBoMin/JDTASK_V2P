@@ -1,3 +1,4 @@
+
 /**
 *
   Name:财富岛提现 (修改自https://raw.githubusercontent.com/pxylen/dog_jd/master/jx_cfdtx.js)
