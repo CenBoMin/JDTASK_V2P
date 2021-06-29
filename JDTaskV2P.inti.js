@@ -3,6 +3,15 @@
 //============================
 $message.loading("【 JDTASKV2P初始化 】", 13)
 //============================
+$message.loading("🤖 使用国内镜像下载Alpine Linux包管理工具apk", 3)
+
+$exec("sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories", {
+  cwd: 'script/JSFile',
+  cb(data, error) {
+    error ? console.error(error) : console.log(data)
+  }
+})
+
 //下载inti.sh到script/JSFile
 intiTask();
 function intiTask() {
@@ -10,12 +19,6 @@ function intiTask() {
     (function (i) {
       setTimeout(function () {
         if (i == 0) {
-          $exec('apk update', {
-            cwd: 'script/JSFile',
-            cb(data, error) {
-              error ? console.error(error) : console.log(data)
-            }
-          })
           $message.loading("⏳ 下载初始化文件:inti.sh", 2)
           $download('https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/inti.sh', {
             folder: './script/JSFile',
