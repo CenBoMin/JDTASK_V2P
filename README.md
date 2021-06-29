@@ -93,6 +93,9 @@ https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/sendNotify.js
 # 任务
 - Task任务与定时参照JDHelloWorld大佬相同,有时间就同步更新Task
 - 拉取仓库更新JS-JDTaskV2P.gitPull.js每8小时同步一次,相关信息查看log
+- 任务cron和执行脚本对照：
+https://github.com/CenBoMin/JDTASK_V2P/blob/main/JDtaskList.yaml
+
 
 # DOCUMENTS&EXAMPLES
 
