@@ -1,4 +1,8 @@
-//8小时拉一次库更新
+/*
+1.8小时拉一次库更新
+2.加入自定义通知...到机器人
+
+*/
 
 //CenBoMin/JDTASK_V2P
 $exec('git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/CenBoMin/JDTASK_V2P && git pull origin main && git log --pretty=format:"%h - %an, %ar : %s" --since=3.day', {

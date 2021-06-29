@@ -1,3 +1,5 @@
+//定时和任务参考https://github.com/JDHelloWorld/jd_scripts/blob/main/serverless.yml
+
 - task1: #签到 #东东超市兑换奖品 #摇京豆 #京东汽车兑换
           cronExpression: "0 0 0 * * *"
           argument: jd_bean_sign.js & jd_blueCoinFix.js & jd_club_lottery.js & jd_car_exchange.js
