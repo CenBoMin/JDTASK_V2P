@@ -7,13 +7,13 @@
 
 ### 基础功能
 
-- 一键配置安装
-- 后期定时拉库,更新脚本和任务
-- 后期定时更新脚本所需NodeJS依赖
-- 后期定时更新脚本所需NodeJS依赖
-- 使用原V2P内的JDCookie:CookieJD/CookieJD2/CookiesJD
-- TGBOT交互(开发中...)
-- 其他功能（到时候看看）
+- [x] 一键配置安装
+- [x]后期定时拉库,更新脚本和任务
+- [x]后期定时更新脚本所需NodeJS依赖
+- [x]后期定时更新脚本所需NodeJS依赖
+- [x]使用原V2P内的JDCookie:CookieJD/CookieJD2/CookiesJD
+- []TGBOT交互(开发中...)
+- []其他功能（到时候看看）
 
 
 ## 安装/INSTALL
@@ -86,6 +86,17 @@ https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/sendNotify.js
 - 1.elecV2P说明文档及一些例程: [https://github.com/elecV2/elecV2P-dei](https://github.com/elecV2/elecV2P-dei)
 - 2.TG 交流群讨论: https://t.me/elecV2G
 
+
+## 注意
+
+- 本程序仅供交流学习使用，请勿使用本程序进行商业行为
+- 使用本程序所产生的一切责任自负。
+> 欢迎任何人参与和完善：一个人可以走的很快，但是一群人却可以走的更远
+
+
 ## 致谢
+>  [@elecV2](https://github.com/elecV2) | [JDHelloWorld](https://github.com/JDHelloWorld) | [@ztxtop](https://github.com/ztxtop) | [@ztxtop]
+
+- 感谢以上开发者的支持和贡献。
 
 
