@@ -1,6 +1,7 @@
 #!/bin/sh
 echo "🤖 开始安装[png-js]";
 npm install png-js
+
 echo "🤖 [png-js]安装完成";
 
 echo "🤖 开始安装[got]";

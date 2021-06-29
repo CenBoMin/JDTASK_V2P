@@ -1,7 +1,7 @@
 // @grant require
 // @grant nodejs
 //============================
-$message.loading("JDTASKV2P初始化开始", 2)
+$message.loading("【 JDTASKV2P初始化 】", 13)
 //============================
 //下载inti.sh到script/JSFile
 intiTask();
@@ -14,7 +14,7 @@ function intiTask() {
           $download('https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/inti.sh', {
             folder: './script/JSFile',
             name: 'inti.sh'
-          }).then(d=> $message.success("✅ inti.sh已下载script/JSFile", 5)).catch(e=>console.error(e))
+          }).then(d=> $message.success("✅  inti.sh已下载script/JSFile", 5)).catch(e=>console.error(e))
         }else if (i == 1) {
           $message.loading("⏳ 初始化任务准备安装中...", 5)
           $exec('chmod +x ./inti.sh', {

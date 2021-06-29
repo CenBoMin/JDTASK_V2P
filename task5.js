@@ -1,7 +1,7 @@
 // @grant nodejs
 
 $exec('node jd_ms.js', {
-  cwd: 'script/JSFile', timeout: 0,
+  cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name}.log`,
@@ -13,7 +13,7 @@ $exec('node jd_ms.js', {
 })
 
 $exec('node jd_car.js', {
-  cwd: 'script/JSFile', timeout: 0,
+  cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name}.log`,
@@ -25,7 +25,7 @@ $exec('node jd_car.js', {
 })
 
 $exec('node jd_unsubscribe.js', {
-  cwd: 'script/JSFile', timeout: 0,
+  cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name}.log`,
@@ -37,7 +37,7 @@ $exec('node jd_unsubscribe.js', {
 })
 
 $exec('node jd_shop.js', {
-  cwd: 'script/JSFile', timeout: 0,
+  cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name}.log`,
@@ -49,7 +49,7 @@ $exec('node jd_shop.js', {
 })
 
 $exec('node jd_redPacket.js', {
-  cwd: 'script/JSFile', timeout: 0,
+  cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name}.log`,
