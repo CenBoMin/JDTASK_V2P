@@ -32,7 +32,7 @@ function intiTask() {
             }
           })
         }else if (i == 3) {
-          $message.success("恭喜！JDTASKV2P初始化完成 🎉", 3)
+          $message.success("恭喜！JDTASKV2P初始化完成 🎉")
         }
       },(i + 1) * 4000);
     })(i);
