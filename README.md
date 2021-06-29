@@ -21,8 +21,12 @@ JDTASK_V2P - 搭建elecV2P用Nodejs执行JDTASK的环境
 
 ![](https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/PNGFile/inti.png)
 
-TASK → 添加订阅任务  
-→ 添加订阅JDTASK_V2P:[https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/jdtaskv2p.json]
+TASK 
+→ 添加订阅任务  
+→ 添加订阅JDTASK_V2P:
+```
+https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/jdtaskv2p.json
+```
 → 获取内容 
 → 全部添加 (会自动执行JDTASK_V2P初始化和JDTASKV2P模块的安装）
 → 保存当前任务列表
@@ -43,8 +47,14 @@ TASK → 添加订阅任务
 
 然后在添加定时脚本，建议每天一次cron或者手动执行...
    
-- ztxtop多账号重写订阅:[https://raw.githubusercontent.com/ztxtop/x/main/subscribe/rewrite-jd.plugin]
-- 脚本:[https://raw.githubusercontent.com/CenBoMin/GithubSync/main/ELECV2PJS/PushBoxjsCookie_elecV2p.js]
+- ztxtop多账号重写订阅:
+```
+https://raw.githubusercontent.com/ztxtop/x/main/subscribe/rewrite-jd.plugin
+```
+- 脚本:
+```
+https://raw.githubusercontent.com/CenBoMin/GithubSync/main/ELECV2PJS/PushBoxjsCookie_elecV2p.js
+```
 
 ### 第二种方式:本地JD扫码服务
 ![](https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/PNGFile/cookie.png)
@@ -56,7 +66,10 @@ TASK → 添加订阅任务
 ## 通知
 ![](https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/PNGFile/notify.jpg)
 
-使用此sendNotify.js：[https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/sendNotify.js]
+使用此sendNotify.js：
+```
+https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/sendNotify.js
+```
 填写TG通知的相关内容（需代理），复制内容之后...
 在JSMANAGE → 当前服务器 JS 文件 框内输入 → jd_scripts/sendNotify.js 
 获取内容后,黏贴覆盖 → 保存至服务器 ctrl+s
