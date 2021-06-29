@@ -2,7 +2,7 @@
 apk update
 echo "🤖 开始安装[git]";
 apk add git
-echo "🤖 [git]安装完成";
+echo "✅ [git]安装完成";
 
 echo "🤖 [gitclone]:JDHelloWorld/jd_scripts";
 git clone https://ghproxy.com/https://github.com/JDHelloWorld/jd_scripts
