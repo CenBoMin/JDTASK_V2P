@@ -23,14 +23,14 @@
 ![](https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/PNGFile/inti.png)
 
 - TASK 
-→ 添加订阅任务  
-→ 添加订阅JDTASK_V2P:
+- → 添加订阅任务  
+- → 添加订阅JDTASK_V2P:
 ```
 https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/jdtaskv2p.json
 ```
-→ 获取内容 
-→ 全部添加 (会自动执行JDTASK_V2P初始化和JDTASKV2P模块的安装）
-→ 保存当前任务列表
+- → 获取内容 
+- → 全部添加 (会自动执行JDTASK_V2P初始化和JDTASKV2P模块的安装）
+- → 保存当前任务列表
 
 根据提示操作,然后等待10min...或者JDTASKV2P模块的安装完成,刷新页面即可享用。
 
@@ -77,7 +77,8 @@ https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/sendNotify.js
 - 即可在通知尾部可显示查看脚本执行的url连接,方便直接点击查看。
 
 ## 任务
-Task任务与定时参照JDHelloWorld大佬相同,有时间就同步更新Task（拉取仓库更新JS-JDTaskV2P.gitPull.js每8小时同步一次,相关信息查看log）
+- Task任务与定时参照JDHelloWorld大佬相同,有时间就同步更新Task
+- 拉取仓库更新JS-JDTaskV2P.gitPull.js每8小时同步一次,相关信息查看log
 
 ## DOCUMENTS&EXAMPLES
 
