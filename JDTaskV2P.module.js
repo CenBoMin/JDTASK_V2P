@@ -32,7 +32,7 @@ function moduleTask() {
             }
           })
         }else if (i == 2) {
-          $message.loading("⏳ 开始安装...请稍等片刻", 15)
+          $message.loading("⏳ 开始安装...请稍等片刻(大约5分钟)", 180)
           $exec('./module.sh', {
             cwd: 'script/JSFile',timeout: 0,
             cb(data, error) {
@@ -40,7 +40,7 @@ function moduleTask() {
             }
           })
         }else if (i == 6) {
-          $message.success("恭喜！JDTASKV2P模块安装完成 🎉", 0)
+          $message.success("❗️❗️请观察log:JDTASKV2P模块安装完成", 0)
         }
       },(i + 1) * 4000);
     })(i);
