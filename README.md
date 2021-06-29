@@ -6,7 +6,10 @@
 
 ![](https://raw.githubusercontent.com/elecV2/elecV2P-dei/master/docs/res/overview.png)
 
-### 基础功能
+
+
+
+# 基础功能
 
 - [x] 一键配置安装
 - [x] 后期定时拉库,更新脚本和任务
@@ -15,7 +18,10 @@
 - [ ] TGBOT交互(开发中...)
 - [ ] 其他功能（到时候看看）
 
-## 安装/INSTALL
+
+
+
+# 安装/INSTALL
 
 **程序开放权限极大，建议局域网使用。网络部署，风险自负**
 
@@ -33,9 +39,12 @@ https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/jdtaskv2p.json
 
 根据提示操作,然后等待10min...或者JDTASKV2P模块的安装完成,刷新页面即可享用。
 
-## JDcookie
-以上环境以及搭建好了，需要添加JDcookie值（即CookieJD/CookieJD2/CookiesJD这三个)
-由于有许多种方式,只介绍自己目前使用的两种...
+
+
+
+# JDcookie
+- 以上环境以及搭建好了，需要添加JDcookie值（即CookieJD/CookieJD2/CookiesJD这三个)
+- 由于有许多种方式,只介绍自己目前使用的两种...
 
 > 后期会在BOXJS添加**上传JDCookie的开关**,避免覆盖
 
@@ -63,7 +72,10 @@ https://raw.githubusercontent.com/CenBoMin/GithubSync/main/ELECV2PJS/PushBoxjsCo
 
 - 来自elecV2P大佬的自用本地版本[https://github.com/elecV2/elecV2P-dei/blob/master/examples/JSTEST/getJDCookie.elecV2P.js]
 
-## 通知
+
+
+
+# 通知
 ![](https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/PNGFile/notify.jpg)
 
 使用此sendNotify.js：
@@ -75,25 +87,28 @@ https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/sendNotify.js
 - 获取内容后,黏贴覆盖 → 保存至服务器 ctrl+s
 - 即可在通知尾部可显示查看脚本执行的url连接,方便直接点击查看。
 
-## 任务
+
+
+
+# 任务
 - Task任务与定时参照JDHelloWorld大佬相同,有时间就同步更新Task
 - 拉取仓库更新JS-JDTaskV2P.gitPull.js每8小时同步一次,相关信息查看log
 
-## DOCUMENTS&EXAMPLES
+# DOCUMENTS&EXAMPLES
 
 关于一些使用问题的查询：
 - 1.elecV2P说明文档及一些例程: [https://github.com/elecV2/elecV2P-dei](https://github.com/elecV2/elecV2P-dei)
 - 2.TG 交流群讨论: https://t.me/elecV2G
 
 
-## 注意
+# 注意
 
 - 本程序仅供交流学习使用，请勿使用本程序进行商业行为
 - 使用本程序所产生的一切责任自负。
 > 欢迎任何人参与和完善：一个人可以走的很快，但是一群人却可以走的更远
 
 
-## 致谢
+# 致谢
 >  [@elecV2](https://github.com/elecV2) | [JDHelloWorld](https://github.com/JDHelloWorld) | [@ztxtop](https://github.com/ztxtop) | [@whyour](https://github.com/whyour)
 
 - 感谢以上开发者的支持和贡献。
