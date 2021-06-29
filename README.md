@@ -19,17 +19,19 @@ JDTASK_V2P - 搭建elecV2P用Nodejs执行JDTASK的环境
 
 **程序开放权限极大，建议局域网使用。网络部署，风险自负**
 
-![](https://raw.githubusercontent.com/elecV2/elecV2P-dei/master/docs/res/overview.png)
+![](https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/PNGFile/inti.png)
 
 TASK → 添加订阅任务  
 → 添加订阅JDTASK_V2P:[https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/jdtaskv2p.json]
-→ 获取内容 → 全部添加 (会自动执行JDTASK_V2P初始化和JDTASKV2P模块的安装）
+→ 获取内容 
+→ 全部添加 (会自动执行JDTASK_V2P初始化和JDTASKV2P模块的安装）
 → 保存当前任务列表
 
 根据提示操作,然后等待10min...或者JDTASKV2P模块的安装完成,刷新页面即可享用。
 
 ## JDcookie
-以上环境以及搭建好了，需要添加JDcookie值（即CookieJD/CookieJD2/CookiesJD这三个),由于有许多种方式,只介绍自己目前使用的两种
+以上环境以及搭建好了，需要添加JDcookie值（即CookieJD/CookieJD2/CookiesJD这三个)
+由于有许多种方式,只介绍自己目前使用的两种...
 
 **后期会在BOXJS添加是否添加JDCookie的开关,避免覆盖**
 
@@ -45,18 +47,19 @@ TASK → 添加订阅任务
 - 脚本:[https://raw.githubusercontent.com/CenBoMin/GithubSync/main/ELECV2PJS/PushBoxjsCookie_elecV2p.js]
 
 ### 第二种方式:本地JD扫码服务
-![](https://raw.githubusercontent.com/elecV2/elecV2P-dei/master/docs/res/overview.png)
+![](https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/PNGFile/cookie.png)
 
 直接执行TASK任务的JDCookie扫码服务，扫码获取JDcookie，多试至少两次
 
 - 来自elecV2P大佬的自用本地版本[https://github.com/elecV2/elecV2P-dei/blob/master/examples/JSTEST/getJDCookie.elecV2P.js]
 
 ## 通知
-![](https://raw.githubusercontent.com/elecV2/elecV2P-dei/master/docs/res/overview.png)
+![](https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/PNGFile/notify.jpg)
 
 使用此sendNotify.js：[https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/sendNotify.js]
 填写TG通知的相关内容（需代理），复制内容之后...
-在JSMANAGE → 当前服务器 JS 文件 框内输入 → jd_scripts/sendNotify.js 获取内容后,黏贴覆盖 → 保存至服务器 ctrl+s
+在JSMANAGE → 当前服务器 JS 文件 框内输入 → jd_scripts/sendNotify.js 
+获取内容后,黏贴覆盖 → 保存至服务器 ctrl+s
 即可在通知尾部可显示查看脚本执行的url连接,方便直接点击查看。
 
 
