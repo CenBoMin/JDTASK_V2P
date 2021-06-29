@@ -24,6 +24,4 @@ npm install tough-cookie
 echo "✅ [tough-cookie]安装完成";
 
 npm update
-npm audit fix --force
-
 echo "✅ 恭喜！JDTASKV2P模块安装完成 🎉 ";
