@@ -1,7 +1,7 @@
 // @grant require
 // @grant nodejs
 //============================
-$message.loading("【 JDTASKV2P初始化 】", 13)
+$message.loading("【 JDTASKV2P初始化 】", 25)
 //============================
 $message.loading("🤖 使用国内镜像下载Alpine Linux包管理工具apk", 3)
 
@@ -15,7 +15,7 @@ $exec("sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositor
 //下载inti.sh到script/JSFile
 intiTask();
 function intiTask() {
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 8; i++) {
     (function (i) {
       setTimeout(function () {
         if (i == 0) {
@@ -40,7 +40,7 @@ function intiTask() {
               error ? console.error(error) : console.log(data)
             }
           })
-        }else if (i == 3) {
+        }else if (i == 7) {
           $message.success("恭喜！JDTASKV2P初始化完成 🎉", 0)
         }
       },(i + 1) * 4000);

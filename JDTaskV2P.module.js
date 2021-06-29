@@ -3,7 +3,15 @@
 //============================
 $message.loading("【 JDTASKV2P模块安装 】", 21)
 //============================
-//下载inti.sh到script/JSFile
+$message.loading("🤖 使用国内镜像下载npm", 3)
+$exec("npm config set /usr/local/app/script/JSFile/npm https://mirrors.huaweicloud.com/repository/npm", {
+  cwd: 'script/JSFile',
+  cb(data, error) {
+    error ? console.error(error) : console.log(data)
+  }
+})
+
+//下载module.sh到script/JSFile
 moduleTask();
 function moduleTask() {
   for (let i = 0; i < 8; i++) {
