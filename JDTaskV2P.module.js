@@ -4,7 +4,7 @@
 $message.loading("【 JDTASKV2P模块安装 】", 21)
 //============================
 $message.loading("🤖 使用国内镜像下载npm", 3)
-$exec("npm config set /usr/local/app/script/JSFile/npm https://mirrors.huaweicloud.com/repository/npm", {
+$exec("npm config set /usr/local/app/script/JSFile/npm http://registry.npm.taobao.org", {
   cwd: 'script/JSFile',
   cb(data, error) {
     error ? console.error(error) : console.log(data)
