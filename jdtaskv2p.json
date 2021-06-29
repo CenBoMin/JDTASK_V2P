@@ -2,32 +2,15 @@
   "name": "JDTASK_V2P",
   "author": "CenBomin",
   "desc": "该订阅适用于elecV2P,在node环境跑京东任务,并与V2p交互使用",
-  "date": "2021-06-28 23:11:16",
+  "date": "2021-06-29 23:11:16",
   "list": [
     {
-      "name": "JDTASK_V2P初始化",
-      "type": "schedule",
-      "time": "0",
-      "job": {
-        "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.inti.js"
-      }
-    },{
       "name": "JDCookie同步",
       "type": "cron",
       "time": "20 0 0-23/1 * * *",
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.cookie.js"
-      }
-    },
-    {
-      "name": "拉取仓库更新JS",
-      "type": "cron",
-      "time": "0 0 0-23/8 * * *",
-      "job": {
-        "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.gitPull.js"
       }
     },
     {
@@ -110,6 +93,42 @@
         "type": "runjs",
         "target": "JDTASK_V2P/task9.js"
       }
-    }
+    },
+    {
+      "name": "拉取仓库更新JS",
+      "type": "cron",
+      "time": "0 0 0-23/8 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.gitPull.js"
+      }
+    },
+    {
+      "name": "JDCookie扫码服务",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/getJDCookie.elecV2P.js"
+      }
+    },
+    {
+      "name": "JDTASKV2P模块",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.module.js"
+      }
+    },
+    {
+      "name": "JDTASK_V2P初始化",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.inti.js"
+      }
+    },
   ]
 }
