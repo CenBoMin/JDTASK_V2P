@@ -32,7 +32,7 @@ function moduleTask() {
             }
           })
         }else if (i == 2) {
-          $message.loading("⏳ 开始安装...请稍等片刻(大约10分钟)", 180)
+          $message.loading("⏳ 开始安装...请稍等片刻(第一次大约10分钟)", 180)
           $exec('./module.sh', {
             cwd: 'script/JSFile',timeout: 0,
             cb(data, error) {
