@@ -2,6 +2,7 @@
 
 - JDTASK_V2P - 搭建elecV2P用Nodejs执行JDTASK的环境
 - 脚本基础库来自JDHelloWorld：https://github.com/JDHelloWorld/jd_scripts
+- 写程序的思路来自v4和青龙qinglong:https://github.com/whyour/qinglong
 
 ![](https://raw.githubusercontent.com/elecV2/elecV2P-dei/master/docs/res/overview.png)
 
@@ -95,7 +96,7 @@ https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/sendNotify.js
 
 
 ## 致谢
->  [@elecV2](https://github.com/elecV2) | [JDHelloWorld](https://github.com/JDHelloWorld) | [@ztxtop](https://github.com/ztxtop) | [@ztxtop]
+>  [@elecV2](https://github.com/elecV2) | [JDHelloWorld](https://github.com/JDHelloWorld) | [@ztxtop](https://github.com/ztxtop) | [@whyour](https://github.com/whyour)
 
 - 感谢以上开发者的支持和贡献。
 
