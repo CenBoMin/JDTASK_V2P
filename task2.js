@@ -50,8 +50,11 @@ $exec('node jd_speed_sign.js', {
 
 $exec('node jd_fruit.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
-  V2P_NOTIFY: `${__home}/logs/${__name}.log`,
-  JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+  env: {
+    ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name}.log`,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+  },
   cb(data, error){
     error ? console.error(error) : console.log(data)
   }
