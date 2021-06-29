@@ -32,7 +32,7 @@ function moduleTask() {
             }
           })
         }else if (i == 6) {
-          $message.success("恭喜！JDTASKV2P模块安装完成 🎉")
+          $message.success("恭喜！JDTASKV2P模块安装完成 🎉", 0)
         }
       },(i + 1) * 4000);
     })(i);
