@@ -9,12 +9,12 @@
 ### 基础功能
 
 - [x] 一键配置安装
-- [x]后期定时拉库,更新脚本和任务
-- [x]后期定时更新脚本所需NodeJS依赖
-- [x]后期定时更新脚本所需NodeJS依赖
-- [x]使用原V2P内的JDCookie:CookieJD/CookieJD2/CookiesJD
-- []TGBOT交互(开发中...)
-- []其他功能（到时候看看）
+- [x] 后期定时拉库,更新脚本和任务
+- [x] 后期定时更新脚本所需NodeJS依赖
+- [x] 后期定时更新脚本所需NodeJS依赖
+- [x] 使用原V2P内的JDCookie:CookieJD/CookieJD2/CookiesJD
+- [] TGBOT交互(开发中...)
+- [] 其他功能（到时候看看）
 
 
 ## 安装/INSTALL
