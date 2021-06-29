@@ -1,0 +1,44 @@
+{
+  "name": "JDScriptsBak",
+  "author": "CenBomin",
+  "desc": "个人自用测试,运行者可能会黑号和cookie泄露",
+  "date": "2021-06-29 23:11:16",
+  "list": [
+    {
+      "name": "jd_blueCoinFixed",
+      "type": "cron",
+      "time": "20 0 0-23/1 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.cookie.js"
+      }
+    },
+    {
+      "name": "jd_blueCoinFixed",
+      "type": "cron",
+      "time": "20 0 0-23/1 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.cookie.js"
+      }
+    },
+    {
+      "name": "jd_cfd_SlotMachine",
+      "type": "cron",
+      "time": "20 0 0-23/1 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.cookie.js"
+      }
+    },
+    {
+      "name": "jx_cfdtx",
+      "type": "cron",
+      "time": "20 0 0-23/1 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.cookie.js"
+      }
+    }
+  ]
+}
