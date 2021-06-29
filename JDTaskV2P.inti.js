@@ -41,7 +41,7 @@ function intiTask() {
             }
           })
         }else if (i == 7) {
-          $message.success("❗️请观察任务运行日志:JDTASKV2P初始化完成\n👉 点击消息可打开程序运行日志",{ secd: 0, url: `${__home}/logs/${__name}.log` })
+          $message.success("JDTASKV2P初始化完成 🎉 \n👉 点击消息可打开程序运行日志",{ secd: 0, url: `${__home}/logs/${__name}.log` })
         }
       },(i + 1) * 4000);
     })(i);
