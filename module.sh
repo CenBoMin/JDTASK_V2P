@@ -19,6 +19,10 @@ echo "🤖 开始安装[download]";
 npm install download
 echo "✅ [download]安装完成";
 
+echo "🤖 开始安装[tough-cookie]";
+npm install tough-cookie
+echo "✅ [tough-cookie]安装完成";
+
 npm update
 npm audit fix --force
 

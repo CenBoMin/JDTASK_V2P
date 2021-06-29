@@ -9,3 +9,5 @@ git clone https://ghproxy.com/https://github.com/JDHelloWorld/jd_scripts
 
 echo "🤖 [gitclone]:CenBoMin/JDTASK_V2P";
 git clone https://ghproxy.com/https://github.com/CenBoMin/JDTASK_V2P
+
+echo "✅ 恭喜！JDTASKV2P初始化完成 🎉 ";
