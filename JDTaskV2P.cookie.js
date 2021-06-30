@@ -13,10 +13,20 @@ let CookiesJD = $store.get('CookiesJD', 'array')
 let CookieJD = $store.get('CookieJD', 'string')
 let CookieJD2 = $store.get('CookieJD2', 'string')
 
-const CookiesJDList = CookiesJD.map(item => item.cookie)
-CookiesJDList.unshift(CookieJD2);
-CookiesJDList.unshift(CookieJD);
-let CookieJDs = CookiesJDList.join("&");
-
-//保存数据
-$store.put(CookieJDs,'CookiesJDV2P','string')
+if (CookiesJD) {
+  const CookiesJDList = CookiesJD.map(item => item.cookie)
+  CookiesJDList.unshift(CookieJD2);
+  CookiesJDList.unshift(CookieJD);
+  const cookieV2P1 = CookiesJDList.join("&");
+  $store.put(cookieV2P1, 'CookiesJDV2P', 'string') ? console.log("CookiesJDV2P转换成功！🎉") : console.log("CookiesJDV2P转换失败！❌");
+} else {
+  if (CookieJD2) {
+    const CookiesJDList = new Array();
+    CookiesJDList.unshift(CookieJD2);
+    CookiesJDList.unshift(CookieJD);
+    const cookieV2P2 = CookiesJDList.join("&");
+    $store.put(cookieV2P2, 'CookiesJDV2P', 'string') ? console.log("CookiesJDV2P转换成功！🎉") : console.log("CookiesJDV2P转换失败！❌");
+  } else {
+    $store.put(CookieJD, 'CookiesJDV2P', 'string') ? console.log("CookiesJDV2P转换成功！🎉") : console.log("CookiesJDV2P转换失败！❌");
+  }
+}
