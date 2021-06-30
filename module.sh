@@ -26,4 +26,5 @@ echo "✅ [tough-cookie]安装完成";
 npm update
 npm upgrade
 echo "✅ 恭喜！JDTASKV2P模块安装完成 🎉 ";
-reboot
+echo "🤖 pm2 restart elecV2P...";
+pm2 restart elecV2P
