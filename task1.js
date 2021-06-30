@@ -1,7 +1,7 @@
 // @grant nodejs
 
 
-$exec('node jd_blueCoin.js', {
+$exec('node jd_blueCoinFix.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
     ...process.env,
