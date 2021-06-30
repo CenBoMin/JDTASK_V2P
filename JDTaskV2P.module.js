@@ -40,7 +40,7 @@ function moduleTask() {
             }
           })
         }else if (i == 6) {
-          $message.success("❗️请观察任务运行日志:JDTASKV2P模块安装完成\n👉 点击消息可打开程序运行日志(请刷新)",{ secd: 0, url: `${__home}/logs/${__name}.log` })
+          $message.success("❗️请观察任务运行日志:JDTASKV2P模块安装完成\n👉 点击消息可打开程序运行日志(请刷新)",{ secd: 0, url: `${__home}/logs/${__name.replace(/\//,"-")}.log` })
           $message.loading("[Tip]模块安装完成请刷新,测试扫码！\n如果有问题请尝试到setting=>初始化相关设置=>重启elecV2P", 0)
         }
       },(i + 1) * 4000);
