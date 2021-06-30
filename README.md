@@ -31,7 +31,7 @@
 - → 添加订阅任务  
 - → 添加订阅JDTASK_V2P:
 ```
-https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/jdtaskv2p.json
+https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/jdtaskv2p.json
 ```
 - → 获取内容 
 - → 全部添加 (会自动执行JDTASK_V2P初始化和JDTASKV2P模块的安装）
