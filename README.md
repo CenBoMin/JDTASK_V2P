@@ -1,6 +1,6 @@
 ## 简介
 
-- JDTASK_V2P - 搭建elecV2P用Nodejs执行JDTASK的环境
+- JDTASK_V2P - **Docker环境**下,搭建用elecV2P执行JDTASK的方案
 - 脚本基础库来自JDHelloWorld：https://github.com/JDHelloWorld/jd_scripts
 - 写程序的思路来自v4和青龙qinglong:https://github.com/whyour/qinglong
 
