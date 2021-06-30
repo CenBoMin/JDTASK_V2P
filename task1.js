@@ -1,6 +1,7 @@
 // @grant nodejs
+// cron:0 0 0 * * *
 
-
+//#东东超市兑换奖品
 $exec('node jd_blueCoinFix.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
@@ -12,8 +13,8 @@ $exec('node jd_blueCoinFix.js', {
     error ? console.error(error) : console.log(data)
   }
 })
-
-$exec('node jd_bean_sign.js', {
+// #京东汽车兑换
+$exec('node jd_car_exchange.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
     ...process.env,
@@ -24,8 +25,7 @@ $exec('node jd_bean_sign.js', {
     error ? console.error(error) : console.log(data)
   }
 })
-
-
+//#摇京豆
 $exec('node jd_club_lottery.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
@@ -37,8 +37,8 @@ $exec('node jd_club_lottery.js', {
     error ? console.error(error) : console.log(data)
   }
 })
-
-$exec('node jd_car_exchange.js', {
+// #签到
+$exec('node jd_bean_sign.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
     ...process.env,

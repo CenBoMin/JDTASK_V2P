@@ -1,6 +1,7 @@
 // @grant nodejs
-
-$exec('node jd_EsportsManager.js', {
+//cronExpression: "0 3 */1 * * *"
+// #宠汪汪
+$exec('node jd_joy_new.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
     ...process.env,
@@ -11,7 +12,7 @@ $exec('node jd_EsportsManager.js', {
     error ? console.error(error) : console.log(data)
   }
 })
-
+// #东东工厂
 $exec('node jd_jdfactory.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
@@ -23,7 +24,7 @@ $exec('node jd_jdfactory.js', {
     error ? console.error(error) : console.log(data)
   }
 })
-
+// #京喜工厂
 $exec('node jd_dreamFactory.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
@@ -35,7 +36,7 @@ $exec('node jd_dreamFactory.js', {
     error ? console.error(error) : console.log(data)
   }
 })
-
+//#京东种豆得豆
 $exec('node jd_plantBean.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
@@ -47,7 +48,7 @@ $exec('node jd_plantBean.js', {
     error ? console.error(error) : console.log(data)
   }
 })
-
+// #摇钱树
 $exec('node jd_moneyTree.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
@@ -59,8 +60,8 @@ $exec('node jd_moneyTree.js', {
     error ? console.error(error) : console.log(data)
   }
 })
-
-$exec('node jd_joy_new.js', {
+// #电竞经理
+$exec('node jd_EsportsManager.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
     ...process.env,
