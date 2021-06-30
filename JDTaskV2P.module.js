@@ -19,7 +19,7 @@ function moduleTask() {
       setTimeout(function () {
         if (i == 0) {
           $message.loading("⏳ 下载模块文件:module.sh", 2)
-          $download('https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/module.sh', {
+          $download('https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/module.sh', {
             folder: './script/JSFile',
             name: 'module.sh'
           }).then(d=> $message.success("✅  module.sh已下载script/JSFile", 5)).catch(e=>console.error(e))
