@@ -4,7 +4,10 @@
 定时更新执行任务的cookie值：CookiesJDV2P
 
 ！！！！！！！1加一个方便手填的网页UI？
- */
+*/
+// @grant require;
+// @grant nodejs;
+
 //此处填写京东账号cookie。
 let CookiesJD = $store.get('CookiesJD', 'array')
 let CookieJD = $store.get('CookieJD', 'string')
@@ -16,4 +19,4 @@ CookiesJDList.unshift(CookieJD);
 let CookieJDs = CookiesJDList.join("&");
 
 //保存数据
-$store.put(CookieJDs,CookiesJDV2P,'string')
+$store.put(CookieJDs,'CookiesJDV2P','string')
