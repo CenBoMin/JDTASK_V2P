@@ -1,17 +1,17 @@
 // @grant require
 // @grant nodejs
 //============================
-$message.loading("【 JDTASKV2P测试 】", 2)
+$message.loading("【 JDTASKV2P安装检查 】", 0)
 //============================
-const $ = new Env("JDTASKV2P测试");
+const $ = new Env("JDTASKV2P安装检查");
 let s_token, cookies, guid, lsid, lstoken, okl_token, token
 let evuid = 'jdcookie'
 !(async () => {
   await intiCheck();
   await moduleCheck(['got', 'tough-cookie', 'qrcode-npm', 'png-js', 'qrcode-npm', 'tunnel', 'crypto-js', 'download', 'tough-cookie', 'request', 'ws', 'qrcode-terminal','http-server'])
-  // await loginEntrance()
-  // await generateQrcode()
-  // await getCookie()
+  await loginEntrance()
+  await generateQrcode()
+  await getCookie()
 
 })()
   .catch((e) => {
@@ -382,7 +382,7 @@ async function moduleCheck(name, install = true) {
   }
   return false
 }
-function intiCheck() {
+async function intiCheck() {
   // 在 Docker 下安装 git
   checkCmd('git --version').then(data=>console.log('-[ok] git已安装')).catch(e=>{
     $message.loading("🤖 检测有尚未初始化-开始执行[初始化程序]", 21)
@@ -460,7 +460,7 @@ function moduleTask() {
             }
           })
         }else if (i == 6) {
-          $message.success("【 Modue安装运行日志 】\n👉点击打开",{ secd: 0, url: `${__home}/logs/${__name.replace(/\//,"-")}.log` })
+          $message.success("👉 点击打开安装运行日志 ",{ secd: 0, url: `${__home}/logs/${__name.replace(/\//,"-")}.log` })
         }
       },(i + 1) * 4000);
     })(i);
@@ -493,7 +493,7 @@ function intiTask() {
             }
           })
         }else if (i == 7) {
-          $message.success("JDTASKV2P初始化完成 🎉 \n👉 点击消息可打开程序运行日志",{ secd: 0, url: `${__home}/logs/${__name.replace(/\//,"-")}.log` })
+          $message.success("JDTASKV2P初始化完成 🎉 ",0)
         }
       },(i + 1) * 4000);
     })(i);
