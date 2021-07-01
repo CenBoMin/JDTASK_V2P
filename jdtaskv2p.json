@@ -5,7 +5,25 @@
   "date": "2021-06-29 23:11:16",
   "list": [
     {
-      "name": "JDCookie同步",
+      "name": "JDTask自动更新",
+      "type": "cron",
+      "time": "0 0 0-23/8 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.gitPull.js"
+      }
+    },
+    {
+      "name": "JDModule自动更新",
+      "type": "cron",
+      "time": "30 0 0-23/8 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.module.js"
+      }
+    },
+    {
+      "name": "JDCookie自动转换",
       "type": "cron",
       "time": "20 0 0-23/1 * * *",
       "job": {
@@ -95,15 +113,6 @@
       }
     },
     {
-      "name": "拉取仓库更新JS",
-      "type": "cron",
-      "time": "0 0 0-23/8 * * *",
-      "job": {
-        "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.gitPull.js"
-      }
-    },
-    {
       "name": "JDCookie扫码服务",
       "type": "schedule",
       "time": "0",
@@ -113,21 +122,12 @@
       }
     },
     {
-      "name": "JDTASKV2P模块",
+      "name": "JDTASKV2P安装与检查",
       "type": "schedule",
       "time": "0",
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.module.js"
-      }
-    },
-    {
-      "name": "JDTASK_V2P初始化",
-      "type": "schedule",
-      "time": "0",
-      "job": {
-        "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.inti.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.test.js"
       }
     },
   ]

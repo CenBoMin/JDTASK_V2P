@@ -1,24 +1,12 @@
 // @grant require
 // @grant nodejs
-//============================
-$message.loading("【 JDTASKV2P模块安装 】", 21)
-//============================
-$message.loading("🤖 使用国内镜像下载npm", 3)
-$exec("npm config set /usr/local/app/script/JSFile/npm http://registry.npm.taobao.org", {
-  cwd: 'script/JSFile',
-  cb(data, error) {
-    error ? console.error(error) : console.log(data)
-  }
-})
-
-//下载module.sh到script/JSFile
 moduleTask();
 function moduleTask() {
   for (let i = 0; i < 8; i++) {
     (function (i) {
       setTimeout(function () {
         if (i == 0) {
-          $message.loading("⏳ 下载模块文件:module.sh", 2)
+          console.log("⏳ 下载最新的模块文件:module.sh");
           $download('https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/module.sh', {
             folder: './script/JSFile',
             name: 'module.sh'
