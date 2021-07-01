@@ -8,9 +8,10 @@ let s_token, cookies, guid, lsid, lstoken, okl_token, token
 let evuid = 'jdcookie'
 !(async () => {
   await moduleCheck(['got', 'tough-cookie', 'qrcode-npm', 'png-js', 'qrcode-npm', 'tunnel', 'crypto-js', 'download', 'tough-cookie', 'request', 'ws', 'qrcode-terminal','http-server'])
-  // await loginEntrance()
-  // await generateQrcode()
-  // await getCookie()
+  await loginEntrance()
+  await generateQrcode()
+  await getCookie()
+
 })()
   .catch((e) => {
     $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
@@ -19,6 +20,19 @@ let evuid = 'jdcookie'
     $.done();
   })
 
+function testTask() {
+  $exec('node jd_bean_change.js', {
+    cwd: 'script/JSFile/jd_scripts', timeout: 0,
+    env: {
+      ...process.env,
+      V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
+      JD_COOKIE: $store.get('CookiesJDTest', 'string')
+    },
+    cb(data, error){
+      error ? console.error(error) : console.log(data)
+    }
+  })
+}
 function ckJDPush(cookies, key) {
   if (!cookies) {
     console.log('请先输入 cookie')
@@ -32,22 +46,22 @@ function ckJDPush(cookies, key) {
   }
 
   if (!key) {
-    key = 'CookieJD'
+    key = 'CookiesJDTest'
   }
   if (key === 'CookieJD2' || key === 'CookieJD') {
     let sn = cName(cookies)
     if (sn) {
-      $store.put(cookies, key)
-      let msg = '成功保存账号 ' + sn + ' 的 cookie 到 ' + key
+      $store.put(cookies,'CookiesJDTest')
+      let msg = '成功保存账号 ' + sn + ' 的 cookie 到 ' + 'CookiesJDTest'
       console.log(msg)
       return msg
     }
     return '无法识别的 cookie'
   }
-  if (key !== 'CookiesJD') {
-    console.log('key 不要乱输')
-    return 'key 不要乱输'
-  }
+  // if (key !== 'CookiesJD') {
+  //   console.log('key 不要乱输')
+  //   return 'key 不要乱输'
+  // }
 
   let csjd = $store.get('CookiesJD'),
       oldc = {},
@@ -105,7 +119,7 @@ function ckJDPush(cookies, key) {
     fck.push({ cookie: oldc[cval].cookie })
   }
 
-  $store.put(JSON.stringify(fck, null, 2), 'CookiesJD')
+  $store.put(JSON.stringify(fck, null, 2), 'CookiesJDTest')
   return fmsg
 }
 const qrcode = {
@@ -234,6 +248,10 @@ function getCookie() {
       $.log(`扫描登录成功\n`)
       clearInterval($.timer);
       await formatCookie($.checkLoginHeaders);
+      $message.loading("⏳ 扫描登录成功,请点击保存测试Cookie\n请稍等30秒后,执行[京东变动通知]测试任务", 10)
+      await $.wait(30000)
+      await testTask()
+
       $.done();
     } else if (checkRes['errcode'] === 21) {
       $.log(`二维码已失效，请重新获取二维码重新扫描\n`);
@@ -248,9 +266,10 @@ function getCookie() {
     }
     if (time < 0) {
       clearInterval($.timer);
-      console.log('扫码超时')
-      $ws.send({ type: 'evui', data: { id: evuid, data: '扫码超时，如有需要请重新运行脚本' }})
-      $message.error('扫码超时，如有需要请重新运行脚本', 10)
+      console.log('🤖 扫码超时,直接执行[京东变动通知]测试任务')
+      $ws.send({ type: 'evui', data: { id: evuid, data: '🤖 扫码超时,直接执行[京东变动通知]测试任务' }})
+      $message.error('🤖 扫码超时,直接执行[京东变动通知]测试任务', 10)
+      await testTask()
       $.done()
     } else {
       time--
@@ -395,7 +414,7 @@ function moduleTask() {
             }
           })
         }else if (i == 2) {
-          $message.loading("⏳ 开始安装...请稍等片刻", 120)
+          $message.loading("⏳ 开始安装...请稍等片刻后...\n执行QRCode扫码任务", 60)
           $exec('./module.sh', {
             cwd: 'script/JSFile',timeout: 0,
             cb(data, error) {
@@ -403,7 +422,7 @@ function moduleTask() {
             }
           })
         }else if (i == 6) {
-          $message.success("【 Modue安装运行日志 】\n👉 点击消息可打开",{ secd: 0, url: `${__home}/logs/${__name.replace(/\//,"-")}.log` })
+          $message.success("【 Modue安装运行日志 】\n👉点击打开",{ secd: 0, url: `${__home}/logs/${__name.replace(/\//,"-")}.log` })
         }
       },(i + 1) * 4000);
     })(i);

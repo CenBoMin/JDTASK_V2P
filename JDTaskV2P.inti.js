@@ -3,16 +3,18 @@
 //============================
 $message.loading("【 JDTASKV2P初始化 】", 25)
 //============================
-$message.loading("🤖 使用国内镜像下载Alpine Linux包管理工具apk", 3)
-
-$exec("sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories", {
-  cwd: 'script/JSFile',
-  cb(data, error) {
-    error ? console.error(error) : console.log(data)
-  }
+// 在 Docker 下安装 git
+checkCmd('git --version').then(data=>console.log(data, "✅ [git]安装完成")).catc(e=>{
+  $message.loading("🤖 使用国内镜像下载Alpine Linux包管理工具apk", 3)
+  $exec("sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories", {
+    cwd: 'script/JSFile',
+    cb(data, error) {
+      error ? console.error(error) : console.log(data)
+    }
+  })
+  intiTask();
 })
-//下载inti.sh到script/JSFile
-intiTask();
+
 function intiTask() {
   for (let i = 0; i < 8; i++) {
     (function (i) {
@@ -47,8 +49,7 @@ function intiTask() {
   }
 }
 
-// 在 Docker 下安装 python 执行环境
-// 远程地址: https://raw.githubusercontent.com/elecV2/elecV2P/master/script/JSFile/python-install.js
+// 在 Docker 下安装 python
 checkCmd('python3 -V').then(data=>console.log(data, "✅ [python3]安装完成")).catc(e=>{
   // 开始安装 python
   console.log("🤖 开始安装[python3]");
