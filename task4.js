@@ -1,4 +1,5 @@
 // @grant nodejs
+// cron:0 0 0-16/8,20 * * *
 
 $exec('node jd_joy_reward_new.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
