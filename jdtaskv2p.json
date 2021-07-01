@@ -113,7 +113,7 @@
       }
     },
     {
-      "name": "JDCookie扫码服务",
+      "name": "一键JDCookie扫码服务",
       "type": "schedule",
       "time": "0",
       "job": {
@@ -122,7 +122,7 @@
       }
     },
     {
-      "name": "JDTASKV2P安装与检查",
+      "name": "一键JDTASKV2P安装与测试",
       "type": "schedule",
       "time": "0",
       "job": {
