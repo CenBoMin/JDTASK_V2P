@@ -11,7 +11,6 @@ $exec("sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositor
     error ? console.error(error) : console.log(data)
   }
 })
-
 //下载inti.sh到script/JSFile
 intiTask();
 function intiTask() {
@@ -50,7 +49,6 @@ function intiTask() {
 
 // 在 Docker 下安装 python 执行环境
 // 远程地址: https://raw.githubusercontent.com/elecV2/elecV2P/master/script/JSFile/python-install.js
-
 checkCmd('python3 -V').then(data=>console.log(data, "✅ [python3]安装完成")).catc(e=>{
   // 开始安装 python
   console.log("🤖 开始安装[python3]");
@@ -76,7 +74,6 @@ checkCmd('python3 -V').then(data=>console.log(data, "✅ [python3]安装完成")
     }
   })
 })
-
 function checkCmd(cmd) {
   return new Promise((resolve, reject)=>{
     $exec(cmd, {
@@ -93,9 +90,3 @@ function checkCmd(cmd) {
     })
   })
 }
-
-
-//============================
-//下载需要的环境变量文件：sendNotify.js && jdCookie.js && JS_USER_AGENTS.js &&
-//https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/JS_USER_AGENTS.js
-//============================

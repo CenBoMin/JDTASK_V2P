@@ -4,17 +4,13 @@
 $message.loading("【 JDTASKV2P测试 】", 2)
 //============================
 const $ = new Env("JDTASKV2P测试");
+let s_token, cookies, guid, lsid, lstoken, okl_token, token
+let evuid = 'jdcookie'
 !(async () => {
-  $message.loading("【 模块测试 】", 2)
-  testModule('png-js');
-  testModule('got');
-  testModule('tunnel');
-  testModule('crypto-js');
-  testModule('download');
-  testModule('tough-cookie');
-  testModule('testModule-js');
-  testTask();
-
+  await moduleCheck(['got', 'tough-cookie', 'qrcode-npm', 'png-js', 'qrcode-npm', 'tunnel', 'crypto-js', 'download', 'tough-cookie', 'request', 'ws', 'qrcode-terminal','http-server'])
+  // await loginEntrance()
+  // await generateQrcode()
+  // await getCookie()
 })()
   .catch((e) => {
     $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
@@ -22,75 +18,398 @@ const $ = new Env("JDTASKV2P测试");
   .finally(() => {
     $.done();
   })
-//============================
-function testModule(module) {
-  return new Promise((resolve, reject) => {
-    try {
-      require(module)
-    } catch (e) {
-      if (typeof e === "object") {
-        return $message.success(`❎  ${module}模块未安装\n请到[TASK]执行-JDTASKV2P模块\n或者尝试SSH服务器npm install ${module}`, 0)
-      }
-    } finally {
-      return $.log(`✅ -[${module}]模块已安装`)
+
+function ckJDPush(cookies, key) {
+  if (!cookies) {
+    console.log('请先输入 cookie')
+  }
+  const cName = (ck)=>{
+    let cname = ck.match(/pt_pin=(\S+);/)
+    if (cname && cname[1]) {
+      return cname[1]
     }
-  });
+    return false
+  }
+
+  if (!key) {
+    key = 'CookieJD'
+  }
+  if (key === 'CookieJD2' || key === 'CookieJD') {
+    let sn = cName(cookies)
+    if (sn) {
+      $store.put(cookies, key)
+      let msg = '成功保存账号 ' + sn + ' 的 cookie 到 ' + key
+      console.log(msg)
+      return msg
+    }
+    return '无法识别的 cookie'
+  }
+  if (key !== 'CookiesJD') {
+    console.log('key 不要乱输')
+    return 'key 不要乱输'
+  }
+
+  let csjd = $store.get('CookiesJD'),
+      oldc = {},
+      fmsg = ''
+  if (csjd) {
+    try {
+      let jcs = JSON.parse(csjd)
+      if (jcs.length){
+        jcs.forEach((ck, index)=>{
+          if (ck && ck.cookie) {
+            let cname = cName(ck.cookie)
+            if (cname) {
+              oldc[cname] = { cookie: ck.cookie, index }
+            }
+          }
+        })
+      }
+    } catch (e) {
+      console.log('原 CookiesJD 数据如下:', csjd, '不符合格式，将被自动清除')
+    }
+  } else {
+    console.log('没有检测 CookiesJD 相关数据，将自动进行创建')
+  }
+
+  if (typeof(cookies) === 'string') {
+    cookies = [cookies]
+  } else if (typeof(cookies) === 'object' && cookies.length) {
+    console.log('即将添加', cookies.length, '个账号')
+  } else {
+    fmsg = '未知类型 cookies'
+    console.log(fmsg, cookies)
+    return fmsg
+  }
+
+  cookies.forEach(ck=>{
+    let cn = cName(ck)
+    if (cn) {
+      let msg
+      if (oldc[cn]) {
+        oldc[cn].cookie = ck
+        msg = '替换京东账号 ' + cn
+      } else {
+        oldc[cn] = { cookie: ck }
+        msg = '新增京东账号 ' + cn
+      }
+      console.log(msg)
+      fmsg += '\n' + msg
+    } else {
+      console.log('无效的 cookie', ck)
+    }
+  })
+
+  let fck = []
+  for (let cval in oldc) {
+    fck.push({ cookie: oldc[cval].cookie })
+  }
+
+  $store.put(JSON.stringify(fck, null, 2), 'CookiesJD')
+  return fmsg
 }
-function testTask() {
+const qrcode = {
+  img(text){
+    let qc = require('qrcode-npm')
+    let qr = qc.qrcode(6, 'L')
+    qr.addData(text)
+    qr.make()
+
+    return qr.createImgTag(6)
+  },
+  generate(url){
+    console.log('将', url, '转换为二维码进行显示')
+    $evui({
+      id: evuid,
+      title: '打开京东 APP 扫码获取 cookie',
+      width: 800,
+      height: 600,
+      content: `<style>.bigf {font-size: 32px;margin: 16px;color: var(--back-bk);opacity: 0.3;}</style><div class='center'><div class='eflex'><span class="bigf">Powered<br>BY elecV2P</span>${this.img(url)}<span class="bigf">测试使用<br>请勿用于<br>实际生产环境中</span></div><p>扫码成功后，下面输入框第一行表示获取到的 cookie 值<br>第二行为该 cookie 保存的关键字 KEY，默认为 CookieJD<br>可修改为 CookieJD2 (表示添加或替换第二个京东 cookie)<br>或者 CookiesJD (表示在 CookiesJD 中新增一个 cookie)</p><div>`,
+      style: {
+        cbdata: "height: 132px;",
+      },
+      cbable: true,
+      cbhint: '扫码成功后，第一行表示 cookie 值\n第二行表示对应保存的 KEY',
+      cblabel: '确定保存'
+    }, data=>{
+      let fck = data.split(/\r|\n/)
+      console.log('data from client:', fck)
+      if (fck && fck.length) {
+        let res = ckJDPush(fck[0], fck[1])
+        $message.success(res)
+      } else {
+        console.log('没有收到任何数据')
+        $message.error('后台没有收到任何数据')
+      }
+    })
+  }
+}
+function loginEntrance() {
+  return new Promise((resolve) => {
+    $.get(taskUrl(), async (err, resp, data) => {
+      try {
+        if (err) {
+          console.log(`${JSON.stringify(err)}`)
+          console.log(`${$.name} API请求失败，请检查网路重试`);
+        } else {
+          $.headers = resp.headers;
+          $.data = JSON.parse(data);
+          await formatSetCookies($.headers, $.data);
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve();
+      }
+    })
+  })
+}
+
+function generateQrcode() {
+  return new Promise((resolve) => {
+    $.post(taskPostUrl(), (err, resp, data) => {
+      try {
+        if (err) {
+          console.log(`${JSON.stringify(err)}`)
+          console.log(`${$.name} API请求失败，请检查网路重试`);
+        } else {
+          $.stepsHeaders = resp.headers;
+          data = JSON.parse(data);
+          token = data['token'];
+          const setCookie = resp.headers['set-cookie'][0];
+          okl_token = setCookie.substring(setCookie.indexOf("=") + 1, setCookie.indexOf(";"))
+          const url = 'https://plogin.m.jd.com/cgi-bin/m/tmauth?appid=300&client_type=m&token=' + token;
+          console.debug('token', token, 'okl_token', okl_token, '二维码url', url)
+          qrcode.generate(url); // 输出二维码
+          console.log("请打开 京东APP 扫码登录(二维码有效期为1分钟)");
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve();
+      }
+    })
+  })
+}
+
+function checkLogin() {
+  return new Promise((resolve) => {
+    const options = {
+      url: `https://plogin.m.jd.com/cgi-bin/m/tmauthchecktoken?&token=${token}&ou_state=0&okl_token=${okl_token}`,
+      body: `lang=chs&appid=300&source=wq_passport&returnurl=https://wqlogin2.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=//home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action`,
+      headers: {
+        'Referer': `https://plogin.m.jd.com/login/login?appid=300&returnurl=https://wqlogin2.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=//home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport`,
+        'Cookie': cookies,
+        'Connection': 'Keep-Alive',
+        'Content-Type': 'application/x-www-form-urlencoded; Charset=UTF-8',
+        'Accept': 'application/json, text/plain, */*',
+        'User-Agent': 'jdapp;android;10.0.5;11;0393465333165363-5333430323261366;network/wifi;model/M2102K1C;osVer/30;appBuild/88681;partner/lc001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; M2102K1C Build/RKQ1.201112.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045534 Mobile Safari/537.36',
+      }
+    }
+    $.post(options, (err, resp, data) => {
+      try {
+        if (err) {
+          console.log(`${JSON.stringify(err)}`)
+          console.log(`${$.name} API请求失败，请检查网路重试`);
+        } else {
+          data = JSON.parse(data);
+          $.checkLoginHeaders = resp.headers;
+          // $.log(`errcode:${data['errcode']}`)
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve(data || {});
+      }
+    })
+  })
+}
+
+function getCookie() {
+  let time = 60
+  $.timer = setInterval(async () => {
+    const checkRes = await checkLogin();
+    if (checkRes['errcode'] === 0) {
+      //扫描登录成功
+      $.log(`扫描登录成功\n`)
+      clearInterval($.timer);
+      await formatCookie($.checkLoginHeaders);
+      $.done();
+    } else if (checkRes['errcode'] === 21) {
+      $.log(`二维码已失效，请重新获取二维码重新扫描\n`);
+      clearInterval($.timer);
+      $.done();
+    } else if (checkRes['errcode'] === 176) {
+      //未扫描登录
+    } else {
+      $.log(`其他异常：${JSON.stringify(checkRes)}\n`);
+      clearInterval($.timer);
+      $.done();
+    }
+    if (time < 0) {
+      clearInterval($.timer);
+      console.log('扫码超时')
+      $ws.send({ type: 'evui', data: { id: evuid, data: '扫码超时，如有需要请重新运行脚本' }})
+      $message.error('扫码超时，如有需要请重新运行脚本', 10)
+      $.done()
+    } else {
+      time--
+    }
+  }, 1000)
+}
+
+function formatCookie(headers) {
+  new Promise(resolve => {
+    let pt_key = headers['set-cookie'][1]
+    pt_key = pt_key.substring(pt_key.indexOf("=") + 1, pt_key.indexOf(";"))
+    let pt_pin = headers['set-cookie'][2]
+    pt_pin = pt_pin.substring(pt_pin.indexOf("=") + 1, pt_pin.indexOf(";"))
+    const cookie1 = "pt_key=" + pt_key + ";pt_pin=" + pt_pin + ";";
+
+    $.UserName = decodeURIComponent(cookie1.match(/pt_pin=(.+?);/) && cookie1.match(/pt_pin=(.+?);/)[1])
+    $.log(`京东用户名：${$.UserName} 登录成功，此cookie(有效期为90天)如下：`);
+    $.log(`\n${cookie1}\n`);
+    // 发送给前端
+    $ws.send({ type: 'evui', data: { id: evuid, data: cookie1 + '\n' + 'CookieJD' }})
+    resolve()
+  })
+}
+
+function formatSetCookies(headers, body) {
+  new Promise(resolve => {
+    s_token = body['s_token']
+    guid = headers['set-cookie'][0]
+    guid = guid.substring(guid.indexOf("=") + 1, guid.indexOf(";"))
+    lsid = headers['set-cookie'][2]
+    lsid = lsid.substring(lsid.indexOf("=") + 1, lsid.indexOf(";"))
+    lstoken = headers['set-cookie'][3]
+    lstoken = lstoken.substring(lstoken.indexOf("=") + 1, lstoken.indexOf(";"))
+    cookies = "guid=" + guid + "; lang=chs; lsid=" + lsid + "; lstoken=" + lstoken + "; "
+    resolve()
+  })
+}
+
+function taskUrl() {
+  return {
+    url: `https://plogin.m.jd.com/cgi-bin/mm/new_login_entrance?lang=chs&appid=300&returnurl=https://wq.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport`,
+    headers: {
+      'Connection': 'Keep-Alive',
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Accept': 'application/json, text/plain, */*',
+      'Accept-Language': 'zh-cn',
+      'Referer': `https://plogin.m.jd.com/login/login?appid=300&returnurl=https://wq.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport`,
+      'User-Agent': 'jdapp;android;10.0.5;11;0393465333165363-5333430323261366;network/wifi;model/M2102K1C;osVer/30;appBuild/88681;partner/lc001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; M2102K1C Build/RKQ1.201112.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045534 Mobile Safari/537.36',
+      'Host': 'plogin.m.jd.com'
+    }
+  }
+}
+
+function taskPostUrl() {
+  return {
+    url: `https://plogin.m.jd.com/cgi-bin/m/tmauthreflogurl?s_token=${s_token}&v=${Date.now()}&remember=true`,
+    body: `lang=chs&appid=300&source=wq_passport&returnurl=https://wqlogin2.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=//home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action`,
+    headers: {
+      'Connection': 'Keep-Alive',
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Accept': 'application/json, text/plain, */*',
+      'Accept-Language': 'zh-cn',
+      'Referer': `https://plogin.m.jd.com/login/login?appid=300&returnurl=https://wq.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport`,
+      'User-Agent': 'jdapp;android;10.0.5;11;0393465333165363-5333430323261366;network/wifi;model/M2102K1C;osVer/30;appBuild/88681;partner/lc001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; M2102K1C Build/RKQ1.201112.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045534 Mobile Safari/537.36',
+      'Host': 'plogin.m.jd.com'
+    }
+  }
+}
+
+async function moduleCheck(name, install = true) {
+  const fs = require('fs')
+  const path = require('path')
+
+  if (Array.isArray(name)) {
+    name = name.filter(n=>{
+      let mfolder = path.join('node_modules', n)
+      if (fs.existsSync(mfolder)) {
+        console.log(`-[ok] module- ${n}已安装`)
+        return false
+      }
+      return true
+    })
+  } else if (typeof(name) === 'string') {
+    let mfolder = path.join('node_modules', name)
+    if (fs.existsSync(mfolder)) {
+      console.log(`-[ok] module ~${name} 已安装`)
+      name = []
+    } else {
+      name = [name]
+    }
+  } else {
+    console.log('-[XX] 未知的module类型:', name)
+    return false
+  }
+  if (name.length === 0) {
+    console.log('恭喜,所有module已安装 🎉')
+    return true
+  }
+  name = name.join(' ')
+  console.log(`-[XX] module ~${name} 未安装`)
+  if (install) {
+    try {
+      await installModule();
+      return true
+    } catch(e) {
+      console.error(e)
+      return false
+    }
+  }
+  return false
+}
+
+function installModule() {
+  //============================
+  $message.loading("🤖 检测有Module未安装-开始执行[模块安装程序]", 21)
+  //============================
+  $message.loading("🤖 使用国内镜像下载npm", 3)
+  $exec("npm config set /usr/local/app/script/JSFile/npm http://registry.npm.taobao.org", {
+    cwd: 'script/JSFile',
+    cb(data, error) {
+      error ? console.error(error) : console.log(data)
+    }
+  })
+  moduleTask();
+}
+function moduleTask() {
   for (let i = 0; i < 8; i++) {
     (function (i) {
       setTimeout(function () {
         if (i == 0) {
-          $message.loading("【 运行脚本测试 】", 2)
-          $message.loading("⏳ 下载测试文件:jd_v2p_test.js", 3)
-          $download('https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/jd_v2p_test.js', {
+          $message.loading("⏳ 下载模块文件:module.sh", 2)
+          $download('https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/module.sh', {
             folder: './script/JSFile',
-            name: 'jd_v2p_test.js'
-          }).then(d=> $message.success("✅  jd_v2p_test.js已下载script/JSFile", 5)).catch(e=>console.error(e))
+            name: 'module.sh'
+          }).then(d=> $message.success("✅  module.sh已下载script/JSFile", 5)).catch(e=>console.error(e))
         }else if (i == 1) {
           $message.loading("⏳ 任务准备安装中...", 5)
-          $exec('chmod +x ./test.sh', {
+          $exec('chmod +x ./module.sh', {
             cwd: 'script/JSFile',
             cb(data, error) {
               error ? console.error(error) : console.log(data)
             }
           })
         }else if (i == 2) {
-          
-          //1
-          $message.loading("⏳ 下载模块文件:test.sh", 2)
-          $download('https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/test.sh', {
-            folder: './script/JSFile',
-            name: 'module.sh'
-          }).then(d=> $message.success("✅  test.sh已下载script/JSFile", 5)).catch(e=>console.error(e))
-          //2
-          $message.loading("⏳ 任务准备安装中...", 5)
-          $exec('chmod +x ./test.sh', {
-            cwd: 'script/JSFile',
-            cb(data, error) {
-              error ? console.error(error) : console.log(data)
-            }
-          })
-          //3
-          $message.loading("⏳ 开始安装...请稍等片刻(第一次大约10分钟)", 5)
-          $exec('./test.sh', {
+          $message.loading("⏳ 开始安装...请稍等片刻", 120)
+          $exec('./module.sh', {
             cwd: 'script/JSFile',timeout: 0,
             cb(data, error) {
               error ? console.error(error) : console.log(data)
             }
           })
-
         }else if (i == 6) {
-
-          // $message.success("❗️请观察任务运行日志:JDTASKV2P模块安装完成\n👉 点击消息可打开程序运行日志(请刷新)",{ secd: 0, url: `${__home}/logs/${__name.replace(/\//,"-")}.log` })
-          //
-          // $message.loading("[Tip]模块安装完成请刷新,测试扫码！\n如果有问题请尝试到setting=>初始化相关设置=>重启elecV2P", 0)
-
+          $message.success("【 Modue安装运行日志 】\n👉 点击消息可打开",{ secd: 0, url: `${__home}/logs/${__name.replace(/\//,"-")}.log` })
         }
       },(i + 1) * 4000);
     })(i);
   }
 }
+// prettier-ignore
 function Env(name, opts) {
   class Http {
     constructor(env) {
@@ -136,23 +455,23 @@ function Env(name, opts) {
     }
 
     isNode() {
+      return true
       return 'undefined' !== typeof module && !!module.exports
     }
 
     isQuanX() {
+      return false
       return 'undefined' !== typeof $task
     }
 
     isSurge() {
+      return false
       return 'undefined' !== typeof $httpClient && 'undefined' === typeof $loon
     }
 
     isLoon() {
+      return false
       return 'undefined' !== typeof $loon
-    }
-
-    isShadowrocket() {
-      return 'undefined' !== typeof $rocket
     }
 
     toObj(str, defaultValue = null) {
@@ -413,7 +732,6 @@ function Env(name, opts) {
     }
 
     post(opts, callback = () => {}) {
-      const method = opts.method ? opts.method.toLocaleLowerCase() : 'post'
       // 如果指定了请求体, 但没指定`Content-Type`, 则自动生成
       if (opts.body && opts.headers && !opts.headers['Content-Type']) {
         opts.headers['Content-Type'] = 'application/x-www-form-urlencoded'
@@ -424,7 +742,7 @@ function Env(name, opts) {
           opts.headers = opts.headers || {}
           Object.assign(opts.headers, { 'X-Surge-Skip-Scripting': false })
         }
-        $httpClient[method](opts, (err, resp, body) => {
+        $httpClient.post(opts, (err, resp, body) => {
           if (!err && resp) {
             resp.body = body
             resp.statusCode = resp.status
@@ -432,7 +750,7 @@ function Env(name, opts) {
           callback(err, resp, body)
         })
       } else if (this.isQuanX()) {
-        opts.method = method
+        opts.method = 'POST'
         if (this.isNeedRewrite) {
           opts.opts = opts.opts || {}
           Object.assign(opts.opts, { hints: false })
@@ -447,7 +765,7 @@ function Env(name, opts) {
       } else if (this.isNode()) {
         this.initGotEnv(opts)
         const { url, ..._opts } = opts
-        this.got[method](url, _opts).then(
+        this.got.post(url, _opts).then(
           (resp) => {
             const { statusCode: status, statusCode, headers, body } = resp
             callback(null, { status, statusCode, headers, body }, body)
@@ -465,22 +783,20 @@ function Env(name, opts) {
      *    :$.time('yyyyMMddHHmmssS')
      *    y:年 M:月 d:日 q:季 H:时 m:分 s:秒 S:毫秒
      *    其中y可选0-4位占位符、S可选0-1位占位符，其余可选0-2位占位符
-     * @param {string} fmt 格式化参数
-     * @param {number} 可选: 根据指定时间戳返回格式化日期
+     * @param {*} fmt 格式化参数
      *
      */
-    time(fmt, ts = null) {
-      const date = ts ? new Date(ts) : new Date()
+    time(fmt) {
       let o = {
-        'M+': date.getMonth() + 1,
-        'd+': date.getDate(),
-        'H+': date.getHours(),
-        'm+': date.getMinutes(),
-        's+': date.getSeconds(),
-        'q+': Math.floor((date.getMonth() + 3) / 3),
-        'S': date.getMilliseconds()
+        'M+': new Date().getMonth() + 1,
+        'd+': new Date().getDate(),
+        'H+': new Date().getHours(),
+        'm+': new Date().getMinutes(),
+        's+': new Date().getSeconds(),
+        'q+': Math.floor((new Date().getMonth() + 3) / 3),
+        'S': new Date().getMilliseconds()
       }
-      if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length))
+      if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (new Date().getFullYear() + '').substr(4 - RegExp.$1.length))
       for (let k in o)
         if (new RegExp('(' + k + ')').test(fmt))
           fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substr(('' + o[k]).length))
