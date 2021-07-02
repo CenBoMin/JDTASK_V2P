@@ -8,7 +8,7 @@ $exec('node jd_blueCoin.js', {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
     JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
-    MARKET_COIN_TO_BEANS:1000,
+    MARKET_COIN_TO_BEANS:'超值京豆包',
     MARKET_REWARD_NOTIFY:true
   },
   cb(data, error){
