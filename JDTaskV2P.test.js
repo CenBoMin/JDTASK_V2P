@@ -7,6 +7,7 @@ const $ = new Env("JDTASKV2P安装检查");
 let s_token, cookies, guid, lsid, lstoken, okl_token, token
 let evuid = 'jdcookie'
 !(async () => {
+  await delTestLog();
   await intiCheck();
   await moduleCheck(['got', 'tough-cookie', 'qrcode-npm', 'png-js', 'qrcode-npm', 'tunnel', 'crypto-js', 'download', 'tough-cookie', 'request', 'ws', 'qrcode-terminal','http-server'])
   await loginEntrance()
@@ -424,6 +425,19 @@ function checkCmd(cmd) {
       }
     })
   })
+}
+function delTestLog() {
+   $exec('rm -f *.log', {
+  // 如果是在 windows powershell 下使用 nodejs 的方式运行，使用 rm *.log 命令替换，即 $exec('rm *.log', {...})
+  cwd: './logs',        // 日志文件所在文件夹（重要
+  call: true,
+  cb(data, error, finish){
+    error ? console.error(error) : console.log(data)
+    if (finish) {
+      console.log('上一个测试日志已删除..')
+    }
+  }
+})
 }
 // prettier-ignore
 function Env(name, opts) {
