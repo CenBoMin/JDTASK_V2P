@@ -220,14 +220,14 @@ const qrcode = {
     $evui({
       id: evuid,
       title: '打开京东 APP 扫码获取 cookie',
-      width: 760,
-      height: 530,
-      content: `<style>.bigf {font-size: 32px;margin: 16px;color: var(--back-bk);opacity: 0.3;}</style><div class='center'><div class='eflex'><span class="bigf">Powered<br>BY elecV2P</span>${this.img(url)}<span class="bigf">测试使用<br>请勿用于<br>实际生产环境中</span></div><p>扫码成功后，显示cookie,点击"确定保存"立即执行测试任务！<br></p><div>`,
+      width: 780,
+      height: 570,
+      content: `<style>.bigf {font-size: 32px;margin: 16px;color: var(--back-bk);opacity: 0.3;}</style><div class='center'><div class='eflex'><span class="bigf">Powered<br>BY elecV2P</span>${this.img(url)}<span class="bigf">测试使用<br>请勿用于<br>实际生产环境中</span></div><p><br>输入Cookie有两种方式,扫码测试或者直接贴上测试<br>显示Cookie之后,点击"确定保存"立即执行测试任务！<br></p><div>`,
       style: {
         cbdata: "height: 132px;",
       },
       cbable: true,
-      cbhint: '扫码成功后，显示cookie,点击"确定保存"立即执行测试任务！',
+      cbhint: '显示Cookie之后,点击"确定保存"立即执行测试任务！',
       cblabel: '确定保存'
     }, data=>{
       let fck = data
