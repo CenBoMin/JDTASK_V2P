@@ -2,12 +2,14 @@
 // cron:0 0 0 * * *
 
 //#东东超市兑换奖品
-$exec('node jd_blueCoinFix.js', {
+$exec('node jd_blueCoin.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
-    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+    MARKET_COIN_TO_BEANS:1000,
+    MARKET_REWARD_NOTIFY:true
   },
   cb(data, error){
     error ? console.error(error) : console.log(data)
