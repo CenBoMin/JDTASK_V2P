@@ -180,8 +180,6 @@ function getCookie() {
     } else {
       $.log(`其他异常：${JSON.stringify(checkRes)}\n`);
       clearInterval($.timer);
-      $message.error('🤖 直接执行[京东变动通知]测试任务', 10)
-      await testTask()
       $.done();
     }
     if (time < 0) {
