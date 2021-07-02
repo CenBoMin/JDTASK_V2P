@@ -199,7 +199,7 @@ function ckJDPush(cookies) {
     console.log('请先输入 cookie')
   }else{
     $store.put(cookies,'CookiesJDTest',"")
-    $message.error('🤖 直接执行[京东变动通知]测试任务', 10)
+    $message.success('🤖 执行[京东变动通知]测试任务\请查看运行日志', 5)
     testTask()
     $.done();
   }
