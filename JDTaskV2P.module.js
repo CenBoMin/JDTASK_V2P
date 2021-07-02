@@ -10,9 +10,9 @@ function moduleTask() {
           $download('https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/module.sh', {
             folder: './script/JSFile',
             name: 'module.sh'
-          }).then(d=> $message.success("✅  module.sh已下载script/JSFile", 5)).catch(e=>console.error(e))
+          }).then(d=> console.log("✅  module.sh已下载script/JSFile")).catch(e=>console.error(e))
         }else if (i == 1) {
-          $message.loading("⏳ 任务准备安装中...", 5)
+          console.log("⏳ 任务准备安装中...")
           $exec('chmod +x ./module.sh', {
             cwd: 'script/JSFile',
             cb(data, error) {
@@ -20,7 +20,7 @@ function moduleTask() {
             }
           })
         }else if (i == 2) {
-          $message.loading("⏳ 开始安装...请稍等片刻(第一次大约10分钟)", 120)
+          console.log("⏳ 开始安装...请稍等片刻")
           $exec('./module.sh', {
             cwd: 'script/JSFile',timeout: 0,
             cb(data, error) {
@@ -28,8 +28,7 @@ function moduleTask() {
             }
           })
         }else if (i == 6) {
-          $message.success("❗️请观察任务运行日志:JDTASKV2P模块安装完成\n👉 点击消息可打开程序运行日志(请刷新)",{ secd: 0, url: `${__home}/logs/${__name.replace(/\//,"-")}.log` })
-          $message.loading("[Tip]模块安装完成请刷新,测试扫码！\n如果有问题请尝试到setting=>初始化相关设置=>重启elecV2P", 0)
+          console.log("❗️请观察任务运行日志:JDTASKV2P模块安装完成");
         }
       },(i + 1) * 4000);
     })(i);

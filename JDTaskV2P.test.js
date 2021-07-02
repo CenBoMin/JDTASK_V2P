@@ -1,7 +1,7 @@
 // @grant require
 // @grant nodejs
 //============================
-$message.loading("【 JDTASKV2P安装检查 】", 0)
+$message.success("【 JDTASKV2P安装检查 】\n👉 点击打开运行日志 ",{ secd: 0, url: `${__home}/logs/${__name.replace(/\//,"-")}.log` })
 //============================
 const $ = new Env("JDTASKV2P安装检查");
 let s_token, cookies, guid, lsid, lstoken, okl_token, token
@@ -20,7 +20,7 @@ let evuid = 'jdcookie'
   .finally(() => {
     $.done();
   })
-
+//============================
 function testTask() {
   $exec('node jd_bean_change.js', {
     cwd: 'script/JSFile/jd_scripts', timeout: 0,
@@ -34,312 +34,6 @@ function testTask() {
     }
   })
 }
-function ckJDPush(cookies, key) {
-  if (!cookies) {
-    console.log('请先输入 cookie')
-  }
-  const cName = (ck)=>{
-    let cname = ck.match(/pt_pin=(\S+);/)
-    if (cname && cname[1]) {
-      return cname[1]
-    }
-    return false
-  }
-
-  if (!key) {
-    key = 'CookiesJDTest'
-  }
-  if (key === 'CookieJD2' || key === 'CookieJD') {
-    let sn = cName(cookies)
-    if (sn) {
-      $store.put(cookies,'CookiesJDTest')
-      let msg = '成功保存账号 ' + sn + ' 的 cookie 到 ' + 'CookiesJDTest'
-      console.log(msg)
-      return msg
-    }
-    return '无法识别的 cookie'
-  }
-  // if (key !== 'CookiesJD') {
-  //   console.log('key 不要乱输')
-  //   return 'key 不要乱输'
-  // }
-
-  let csjd = $store.get('CookiesJD'),
-      oldc = {},
-      fmsg = ''
-  if (csjd) {
-    try {
-      let jcs = JSON.parse(csjd)
-      if (jcs.length){
-        jcs.forEach((ck, index)=>{
-          if (ck && ck.cookie) {
-            let cname = cName(ck.cookie)
-            if (cname) {
-              oldc[cname] = { cookie: ck.cookie, index }
-            }
-          }
-        })
-      }
-    } catch (e) {
-      console.log('原 CookiesJD 数据如下:', csjd, '不符合格式，将被自动清除')
-    }
-  } else {
-    console.log('没有检测 CookiesJD 相关数据，将自动进行创建')
-  }
-
-  if (typeof(cookies) === 'string') {
-    cookies = [cookies]
-  } else if (typeof(cookies) === 'object' && cookies.length) {
-    console.log('即将添加', cookies.length, '个账号')
-  } else {
-    fmsg = '未知类型 cookies'
-    console.log(fmsg, cookies)
-    return fmsg
-  }
-
-  cookies.forEach(ck=>{
-    let cn = cName(ck)
-    if (cn) {
-      let msg
-      if (oldc[cn]) {
-        oldc[cn].cookie = ck
-        msg = '替换京东账号 ' + cn
-      } else {
-        oldc[cn] = { cookie: ck }
-        msg = '新增京东账号 ' + cn
-      }
-      console.log(msg)
-      fmsg += '\n' + msg
-    } else {
-      console.log('无效的 cookie', ck)
-    }
-  })
-
-  let fck = []
-  for (let cval in oldc) {
-    fck.push({ cookie: oldc[cval].cookie })
-  }
-
-  $store.put(JSON.stringify(fck, null, 2), 'CookiesJDTest')
-  return fmsg
-}
-const qrcode = {
-  img(text){
-    let qc = require('qrcode-npm')
-    let qr = qc.qrcode(6, 'L')
-    qr.addData(text)
-    qr.make()
-
-    return qr.createImgTag(6)
-  },
-  generate(url){
-    console.log('将', url, '转换为二维码进行显示')
-    $evui({
-      id: evuid,
-      title: '打开京东 APP 扫码获取 cookie',
-      width: 800,
-      height: 600,
-      content: `<style>.bigf {font-size: 32px;margin: 16px;color: var(--back-bk);opacity: 0.3;}</style><div class='center'><div class='eflex'><span class="bigf">Powered<br>BY elecV2P</span>${this.img(url)}<span class="bigf">测试使用<br>请勿用于<br>实际生产环境中</span></div><p>扫码成功后，下面输入框第一行表示获取到的 cookie 值<br>第二行为该 cookie 保存的关键字 KEY，默认为 CookieJD<br>可修改为 CookieJD2 (表示添加或替换第二个京东 cookie)<br>或者 CookiesJD (表示在 CookiesJD 中新增一个 cookie)</p><div>`,
-      style: {
-        cbdata: "height: 132px;",
-      },
-      cbable: true,
-      cbhint: '扫码成功后，第一行表示 cookie 值\n第二行表示对应保存的 KEY',
-      cblabel: '确定保存'
-    }, data=>{
-      let fck = data.split(/\r|\n/)
-      console.log('data from client:', fck)
-      if (fck && fck.length) {
-        let res = ckJDPush(fck[0], fck[1])
-        $message.success(res)
-      } else {
-        console.log('没有收到任何数据')
-        $message.error('后台没有收到任何数据')
-      }
-    })
-  }
-}
-function loginEntrance() {
-  return new Promise((resolve) => {
-    $.get(taskUrl(), async (err, resp, data) => {
-      try {
-        if (err) {
-          console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} API请求失败，请检查网路重试`);
-        } else {
-          $.headers = resp.headers;
-          $.data = JSON.parse(data);
-          await formatSetCookies($.headers, $.data);
-        }
-      } catch (e) {
-        $.logErr(e, resp)
-      } finally {
-        resolve();
-      }
-    })
-  })
-}
-
-function generateQrcode() {
-  return new Promise((resolve) => {
-    $.post(taskPostUrl(), (err, resp, data) => {
-      try {
-        if (err) {
-          console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} API请求失败，请检查网路重试`);
-        } else {
-          $.stepsHeaders = resp.headers;
-          data = JSON.parse(data);
-          token = data['token'];
-          const setCookie = resp.headers['set-cookie'][0];
-          okl_token = setCookie.substring(setCookie.indexOf("=") + 1, setCookie.indexOf(";"))
-          const url = 'https://plogin.m.jd.com/cgi-bin/m/tmauth?appid=300&client_type=m&token=' + token;
-          console.debug('token', token, 'okl_token', okl_token, '二维码url', url)
-          qrcode.generate(url); // 输出二维码
-          console.log("请打开 京东APP 扫码登录(二维码有效期为1分钟)");
-        }
-      } catch (e) {
-        $.logErr(e, resp)
-      } finally {
-        resolve();
-      }
-    })
-  })
-}
-
-function checkLogin() {
-  return new Promise((resolve) => {
-    const options = {
-      url: `https://plogin.m.jd.com/cgi-bin/m/tmauthchecktoken?&token=${token}&ou_state=0&okl_token=${okl_token}`,
-      body: `lang=chs&appid=300&source=wq_passport&returnurl=https://wqlogin2.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=//home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action`,
-      headers: {
-        'Referer': `https://plogin.m.jd.com/login/login?appid=300&returnurl=https://wqlogin2.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=//home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport`,
-        'Cookie': cookies,
-        'Connection': 'Keep-Alive',
-        'Content-Type': 'application/x-www-form-urlencoded; Charset=UTF-8',
-        'Accept': 'application/json, text/plain, */*',
-        'User-Agent': 'jdapp;android;10.0.5;11;0393465333165363-5333430323261366;network/wifi;model/M2102K1C;osVer/30;appBuild/88681;partner/lc001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; M2102K1C Build/RKQ1.201112.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045534 Mobile Safari/537.36',
-      }
-    }
-    $.post(options, (err, resp, data) => {
-      try {
-        if (err) {
-          console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} API请求失败，请检查网路重试`);
-        } else {
-          data = JSON.parse(data);
-          $.checkLoginHeaders = resp.headers;
-          // $.log(`errcode:${data['errcode']}`)
-        }
-      } catch (e) {
-        $.logErr(e, resp)
-      } finally {
-        resolve(data || {});
-      }
-    })
-  })
-}
-
-function getCookie() {
-  let time = 60
-  $.timer = setInterval(async () => {
-    const checkRes = await checkLogin();
-    if (checkRes['errcode'] === 0) {
-      //扫描登录成功
-      $.log(`扫描登录成功\n`)
-      clearInterval($.timer);
-      await formatCookie($.checkLoginHeaders);
-      $message.loading("⏳ 扫描登录成功,请点击保存测试Cookie\n请稍等30秒后,执行[京东变动通知]测试任务", 10)
-      await $.wait(30000)
-      await testTask()
-
-      $.done();
-    } else if (checkRes['errcode'] === 21) {
-      $.log(`二维码已失效，请重新获取二维码重新扫描\n`);
-      clearInterval($.timer);
-      $.done();
-    } else if (checkRes['errcode'] === 176) {
-      //未扫描登录
-    } else {
-      $.log(`其他异常：${JSON.stringify(checkRes)}\n`);
-      clearInterval($.timer);
-      $.done();
-    }
-    if (time < 0) {
-      clearInterval($.timer);
-      console.log('🤖 扫码超时,直接执行[京东变动通知]测试任务')
-      $ws.send({ type: 'evui', data: { id: evuid, data: '🤖 扫码超时,直接执行[京东变动通知]测试任务' }})
-      $message.error('🤖 扫码超时,直接执行[京东变动通知]测试任务', 10)
-      await testTask()
-      $.done()
-    } else {
-      time--
-    }
-  }, 1000)
-}
-
-function formatCookie(headers) {
-  new Promise(resolve => {
-    let pt_key = headers['set-cookie'][1]
-    pt_key = pt_key.substring(pt_key.indexOf("=") + 1, pt_key.indexOf(";"))
-    let pt_pin = headers['set-cookie'][2]
-    pt_pin = pt_pin.substring(pt_pin.indexOf("=") + 1, pt_pin.indexOf(";"))
-    const cookie1 = "pt_key=" + pt_key + ";pt_pin=" + pt_pin + ";";
-
-    $.UserName = decodeURIComponent(cookie1.match(/pt_pin=(.+?);/) && cookie1.match(/pt_pin=(.+?);/)[1])
-    $.log(`京东用户名：${$.UserName} 登录成功，此cookie(有效期为90天)如下：`);
-    $.log(`\n${cookie1}\n`);
-    // 发送给前端
-    $ws.send({ type: 'evui', data: { id: evuid, data: cookie1 + '\n' + 'CookieJD' }})
-    resolve()
-  })
-}
-
-function formatSetCookies(headers, body) {
-  new Promise(resolve => {
-    s_token = body['s_token']
-    guid = headers['set-cookie'][0]
-    guid = guid.substring(guid.indexOf("=") + 1, guid.indexOf(";"))
-    lsid = headers['set-cookie'][2]
-    lsid = lsid.substring(lsid.indexOf("=") + 1, lsid.indexOf(";"))
-    lstoken = headers['set-cookie'][3]
-    lstoken = lstoken.substring(lstoken.indexOf("=") + 1, lstoken.indexOf(";"))
-    cookies = "guid=" + guid + "; lang=chs; lsid=" + lsid + "; lstoken=" + lstoken + "; "
-    resolve()
-  })
-}
-
-function taskUrl() {
-  return {
-    url: `https://plogin.m.jd.com/cgi-bin/mm/new_login_entrance?lang=chs&appid=300&returnurl=https://wq.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport`,
-    headers: {
-      'Connection': 'Keep-Alive',
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Accept': 'application/json, text/plain, */*',
-      'Accept-Language': 'zh-cn',
-      'Referer': `https://plogin.m.jd.com/login/login?appid=300&returnurl=https://wq.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport`,
-      'User-Agent': 'jdapp;android;10.0.5;11;0393465333165363-5333430323261366;network/wifi;model/M2102K1C;osVer/30;appBuild/88681;partner/lc001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; M2102K1C Build/RKQ1.201112.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045534 Mobile Safari/537.36',
-      'Host': 'plogin.m.jd.com'
-    }
-  }
-}
-
-function taskPostUrl() {
-  return {
-    url: `https://plogin.m.jd.com/cgi-bin/m/tmauthreflogurl?s_token=${s_token}&v=${Date.now()}&remember=true`,
-    body: `lang=chs&appid=300&source=wq_passport&returnurl=https://wqlogin2.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=//home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action`,
-    headers: {
-      'Connection': 'Keep-Alive',
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Accept': 'application/json, text/plain, */*',
-      'Accept-Language': 'zh-cn',
-      'Referer': `https://plogin.m.jd.com/login/login?appid=300&returnurl=https://wq.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport`,
-      'User-Agent': 'jdapp;android;10.0.5;11;0393465333165363-5333430323261366;network/wifi;model/M2102K1C;osVer/30;appBuild/88681;partner/lc001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; M2102K1C Build/RKQ1.201112.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045534 Mobile Safari/537.36',
-      'Host': 'plogin.m.jd.com'
-    }
-  }
-}
-
 async function moduleCheck(name, install = true) {
   const fs = require('fs')
   const path = require('path')
@@ -367,6 +61,7 @@ async function moduleCheck(name, install = true) {
   }
   if (name.length === 0) {
     console.log('恭喜,所有module已安装 🎉')
+
     return true
   }
   name = name.join(' ')
@@ -420,6 +115,223 @@ async function intiCheck() {
     })
   })
 }
+function loginEntrance() {
+  return new Promise((resolve) => {
+    $.get(taskUrl(), async (err, resp, data) => {
+      try {
+        if (err) {
+          console.log(`${JSON.stringify(err)}`)
+          console.log(`${$.name} API请求失败，请检查网路重试`);
+        } else {
+          $.headers = resp.headers;
+          $.data = JSON.parse(data);
+          await formatSetCookies($.headers, $.data);
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve();
+      }
+    })
+  })
+}
+function generateQrcode() {
+  return new Promise((resolve) => {
+    $.post(taskPostUrl(), (err, resp, data) => {
+      try {
+        if (err) {
+          console.log(`${JSON.stringify(err)}`)
+          console.log(`${$.name} API请求失败，请检查网路重试`);
+        } else {
+          $.stepsHeaders = resp.headers;
+          data = JSON.parse(data);
+          token = data['token'];
+          const setCookie = resp.headers['set-cookie'][0];
+          okl_token = setCookie.substring(setCookie.indexOf("=") + 1, setCookie.indexOf(";"))
+          const url = 'https://plogin.m.jd.com/cgi-bin/m/tmauth?appid=300&client_type=m&token=' + token;
+          console.debug('token', token, 'okl_token', okl_token, '二维码url', url)
+          qrcode.generate(url); // 输出二维码
+          console.log("请打开 京东APP 扫码登录(二维码有效期为1分钟)");
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve();
+      }
+    })
+  })
+}
+function getCookie() {
+  let time = 60
+  $.timer = setInterval(async () => {
+    const checkRes = await checkLogin();
+    if (checkRes['errcode'] === 0) {
+      //扫描登录成功
+      $.log(`扫描登录成功\n`)
+      clearInterval($.timer);
+      await formatCookie($.checkLoginHeaders);
+      $.done();
+    } else if (checkRes['errcode'] === 21) {
+      $.log(`二维码已失效，请重新获取二维码重新扫描\n`);
+      clearInterval($.timer);
+      $.done();
+    } else if (checkRes['errcode'] === 176) {
+      //未扫描登录
+    } else {
+      $.log(`其他异常：${JSON.stringify(checkRes)}\n`);
+      clearInterval($.timer);
+      $message.error('🤖 直接执行[京东变动通知]测试任务', 10)
+      await testTask()
+      $.done();
+    }
+    if (time < 0) {
+      clearInterval($.timer);
+      console.log('扫码超时')
+      $ws.send({ type: 'evui', data: { id: evuid, data: '扫码超时，如有需要请重新运行脚本' }})
+      $message.error('扫码超时，如有需要请重新运行脚本', 10)
+      $.done()
+    } else {
+      time--
+    }
+  }, 1000)
+}
+//============================
+function ckJDPush(cookies) {
+  if (!cookies) {
+    console.log('请先输入 cookie')
+  }else{
+    $store.put(cookies,'CookiesJDTest',"")
+    $message.error('🤖 直接执行[京东变动通知]测试任务', 10)
+    testTask()
+    $.done();
+  }
+}
+const qrcode = {
+  img(text){
+    let qc = require('qrcode-npm')
+    let qr = qc.qrcode(6, 'L')
+    qr.addData(text)
+    qr.make()
+
+    return qr.createImgTag(6)
+  },
+  generate(url){
+    console.log('将', url, '转换为二维码进行显示')
+    $evui({
+      id: evuid,
+      title: '打开京东 APP 扫码获取 cookie',
+      width: 760,
+      height: 530,
+      content: `<style>.bigf {font-size: 32px;margin: 16px;color: var(--back-bk);opacity: 0.3;}</style><div class='center'><div class='eflex'><span class="bigf">Powered<br>BY elecV2P</span>${this.img(url)}<span class="bigf">测试使用<br>请勿用于<br>实际生产环境中</span></div><p>扫码成功后，显示cookie,点击"确定保存"立即执行测试任务！<br></p><div>`,
+      style: {
+        cbdata: "height: 132px;",
+      },
+      cbable: true,
+      cbhint: '扫码成功后，显示cookie,点击"确定保存"立即执行测试任务！',
+      cblabel: '确定保存'
+    }, data=>{
+      let fck = data
+      console.log('data from client:', fck)
+      if (fck) {
+        let res = ckJDPush(fck)
+        $message.success(res)
+      } else {
+        console.log('没有收到任何数据')
+        $message.error('后台没有收到任何数据')
+      }
+    })
+  }
+}
+function checkLogin() {
+  return new Promise((resolve) => {
+    const options = {
+      url: `https://plogin.m.jd.com/cgi-bin/m/tmauthchecktoken?&token=${token}&ou_state=0&okl_token=${okl_token}`,
+      body: `lang=chs&appid=300&source=wq_passport&returnurl=https://wqlogin2.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=//home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action`,
+      headers: {
+        'Referer': `https://plogin.m.jd.com/login/login?appid=300&returnurl=https://wqlogin2.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=//home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport`,
+        'Cookie': cookies,
+        'Connection': 'Keep-Alive',
+        'Content-Type': 'application/x-www-form-urlencoded; Charset=UTF-8',
+        'Accept': 'application/json, text/plain, */*',
+        'User-Agent': 'jdapp;android;10.0.5;11;0393465333165363-5333430323261366;network/wifi;model/M2102K1C;osVer/30;appBuild/88681;partner/lc001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; M2102K1C Build/RKQ1.201112.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045534 Mobile Safari/537.36',
+      }
+    }
+    $.post(options, (err, resp, data) => {
+      try {
+        if (err) {
+          console.log(`${JSON.stringify(err)}`)
+          console.log(`${$.name} API请求失败，请检查网路重试`);
+        } else {
+          data = JSON.parse(data);
+          $.checkLoginHeaders = resp.headers;
+          // $.log(`errcode:${data['errcode']}`)
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve(data || {});
+      }
+    })
+  })
+}
+function formatCookie(headers) {
+  new Promise(resolve => {
+    let pt_key = headers['set-cookie'][1]
+    pt_key = pt_key.substring(pt_key.indexOf("=") + 1, pt_key.indexOf(";"))
+    let pt_pin = headers['set-cookie'][2]
+    pt_pin = pt_pin.substring(pt_pin.indexOf("=") + 1, pt_pin.indexOf(";"))
+    const cookie1 = "pt_key=" + pt_key + ";pt_pin=" + pt_pin + ";";
+
+    $.UserName = decodeURIComponent(cookie1.match(/pt_pin=(.+?);/) && cookie1.match(/pt_pin=(.+?);/)[1])
+    $.log(`京东用户名：${$.UserName} 登录成功，此cookie(有效期为90天)如下：`);
+    $.log(`\n${cookie1}\n`);
+    // 发送给前端
+    $ws.send({ type: 'evui', data: { id: evuid, data: cookie1}})
+    resolve()
+  })
+}
+function formatSetCookies(headers, body) {
+  new Promise(resolve => {
+    s_token = body['s_token']
+    guid = headers['set-cookie'][0]
+    guid = guid.substring(guid.indexOf("=") + 1, guid.indexOf(";"))
+    lsid = headers['set-cookie'][2]
+    lsid = lsid.substring(lsid.indexOf("=") + 1, lsid.indexOf(";"))
+    lstoken = headers['set-cookie'][3]
+    lstoken = lstoken.substring(lstoken.indexOf("=") + 1, lstoken.indexOf(";"))
+    cookies = "guid=" + guid + "; lang=chs; lsid=" + lsid + "; lstoken=" + lstoken + "; "
+    resolve()
+  })
+}
+function taskUrl() {
+  return {
+    url: `https://plogin.m.jd.com/cgi-bin/mm/new_login_entrance?lang=chs&appid=300&returnurl=https://wq.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport`,
+    headers: {
+      'Connection': 'Keep-Alive',
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Accept': 'application/json, text/plain, */*',
+      'Accept-Language': 'zh-cn',
+      'Referer': `https://plogin.m.jd.com/login/login?appid=300&returnurl=https://wq.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport`,
+      'User-Agent': 'jdapp;android;10.0.5;11;0393465333165363-5333430323261366;network/wifi;model/M2102K1C;osVer/30;appBuild/88681;partner/lc001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; M2102K1C Build/RKQ1.201112.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045534 Mobile Safari/537.36',
+      'Host': 'plogin.m.jd.com'
+    }
+  }
+}
+function taskPostUrl() {
+  return {
+    url: `https://plogin.m.jd.com/cgi-bin/m/tmauthreflogurl?s_token=${s_token}&v=${Date.now()}&remember=true`,
+    body: `lang=chs&appid=300&source=wq_passport&returnurl=https://wqlogin2.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=//home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action`,
+    headers: {
+      'Connection': 'Keep-Alive',
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Accept': 'application/json, text/plain, */*',
+      'Accept-Language': 'zh-cn',
+      'Referer': `https://plogin.m.jd.com/login/login?appid=300&returnurl=https://wq.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport`,
+      'User-Agent': 'jdapp;android;10.0.5;11;0393465333165363-5333430323261366;network/wifi;model/M2102K1C;osVer/30;appBuild/88681;partner/lc001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; M2102K1C Build/RKQ1.201112.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045534 Mobile Safari/537.36',
+      'Host': 'plogin.m.jd.com'
+    }
+  }
+}
 function installModule() {
   //============================
   $message.loading("🤖 检测有Module未安装-开始执行[模块安装程序]", 21)
@@ -452,7 +364,7 @@ function moduleTask() {
             }
           })
         }else if (i == 2) {
-          $message.loading("⏳ 开始安装...请稍等片刻后...\n执行QRCode扫码任务", 60)
+          $message.loading("⏳ 开始安装...请稍等片刻后...\n", 60)
           $exec('./module.sh', {
             cwd: 'script/JSFile',timeout: 0,
             cb(data, error) {
@@ -460,7 +372,7 @@ function moduleTask() {
             }
           })
         }else if (i == 6) {
-          $message.success("👉 点击打开安装运行日志 ",{ secd: 0, url: `${__home}/logs/${__name.replace(/\//,"-")}.log` })
+        $message.loading("⏳ 查看运行日志,检查模块安装完成,再次执行JS\n", 30)
         }
       },(i + 1) * 4000);
     })(i);
