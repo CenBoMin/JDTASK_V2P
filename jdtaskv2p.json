@@ -5,7 +5,7 @@
   "date": "2021-06-29 23:11:16",
   "list": [
     {
-      "name": "JDTask自动更新",
+      "name": "JDTask更新",
       "type": "cron",
       "time": "0 0 0-23/8 * * *",
       "job": {
@@ -14,7 +14,7 @@
       }
     },
     {
-      "name": "JDModule自动更新",
+      "name": "JDModule更新",
       "type": "cron",
       "time": "30 0 0-23/8 * * *",
       "job": {
@@ -23,7 +23,7 @@
       }
     },
     {
-      "name": "JDCookie自动转换",
+      "name": "JDCookie转换",
       "type": "cron",
       "time": "20 0 0-23/1 * * *",
       "job": {
@@ -113,7 +113,7 @@
       }
     },
     {
-      "name": "一键JDCookie扫码服务",
+      "name": "JDCookie扫码服务",
       "type": "schedule",
       "time": "0",
       "job": {
@@ -122,22 +122,13 @@
       }
     },
     {
-      "name": "一键JDTASKV2P安装与测试",
+      "name": "一键安装与测试运行",
       "type": "schedule",
       "time": "0",
       "job": {
         "type": "runjs",
         "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.test.js"
       }
-    },
-    {
-      "name": "一键删除Log",
-      "type": "schedule",
-      "time": "0",
-      "job": {
-        "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/elecV2/elecV2P/master/script/JSFile/deletelog.js"
-      }
-    },
+    }
   ]
 }
