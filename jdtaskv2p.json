@@ -118,7 +118,7 @@
       "time": "0,30,59 59 7,15,23 * * *",
       "job": {
         "type": "runjs",
-        "target": "JDTASK_V2P/task9.js"
+        "target": "JDTASK_V2P/task10.js"
       }
     },
     {
