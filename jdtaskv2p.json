@@ -113,6 +113,24 @@
       }
     },
     {
+      "name": "JDTASK_10",
+      "type": "cron",
+      "time": "0,30,59 59 7,15,23 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "JDTASK_V2P/task9.js"
+      }
+    },
+    {
+      "name": "宠旺旺换500豆",
+      "type": "cron",
+      "time": "59 59 7,15,23 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_joy_reward.js"
+      }
+    },
+    {
       "name": "JDCookie扫码服务",
       "type": "schedule",
       "time": "0",
