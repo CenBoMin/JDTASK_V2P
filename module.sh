@@ -21,4 +21,3 @@ npm upgrade
 echo "✅ [Node-Module]安装完成";
 echo "✅ 恭喜！JDTASKV2P模块安装完成,PM2重启elecV2P 🎉 ";
 echo "\n\n🤖 pm2 restart elecV2P...";
-pm2 restart elecV2P

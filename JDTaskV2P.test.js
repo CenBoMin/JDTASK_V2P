@@ -23,6 +23,7 @@ let evuid = 'jdcookie'
   })
 //============================
 function testTask() {
+  $ws.send({ type: 'evui', data: { id: evuid, type: 'close' }})
   $exec('node jd_bean_change.js', {
     cwd: 'script/JSFile/jd_scripts', timeout: 0,
     env: {
@@ -30,8 +31,11 @@ function testTask() {
       V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
       JD_COOKIE: $store.get('CookiesJDTest', 'string')
     },
-    cb(data, error){
+    cb(data, error , finish){
       error ? console.error(error) : console.log(data)
+      if (finish) {
+        reboot();
+      }
     }
   })
 }
@@ -436,6 +440,14 @@ function delTestLog() {
     if (finish) {
       console.log('上一个测试日志已删除..')
     }
+  }
+})
+}
+function reboot() {
+  $message.success("🔄 安装检查结束..正在重启elecv2p ",0)
+   $exec('pm2 restart elecV2P', {
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
   }
 })
 }
