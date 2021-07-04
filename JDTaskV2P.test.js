@@ -84,8 +84,8 @@ async function moduleCheck(name, install = true) {
 }
 async function intiCheck() {
   // 在 Docker 下安装 git
-  checkCmd('git --version').then(data=>console.log('-[ok] git已安装')).catch(e=>{
-    $message.loading("🤖 检测有尚未初始化-开始执行[初始化程序]", 21)
+  // checkCmd('git --version').then(data=>console.log('-[ok] git已安装')).catch(e=>{
+    // $message.loading("🤖 检测有尚未初始化-开始执行[初始化程序]", 21)
     $message.loading("🤖 使用国内镜像下载Alpine Linux包管理工具apk", 3)
     $exec("sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories", {
       cwd: 'script/JSFile',
@@ -94,7 +94,7 @@ async function intiCheck() {
       }
     })
     intiTask();
-  })
+  // })
   // 在 Docker 下安装 python
   checkCmd('python3 -V').then(data=>console.log('-[ok] python已安装')).catch(e=>{
     // 开始安装 python
