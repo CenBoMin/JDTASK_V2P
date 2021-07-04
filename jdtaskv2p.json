@@ -10,7 +10,7 @@
       "time": "0 0 0-23/8 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.gitPull.js"
+        "target": "JDTASK_V2P/JDTaskV2P.gitPull.js"
       }
     },
     {
@@ -19,7 +19,7 @@
       "time": "30 0 0-23/8 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.module.js"
+        "target": "JDTASK_V2P/JDTaskV2P.module.js"
       }
     },
     {
@@ -28,7 +28,7 @@
       "time": "20 0 0-23/1 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.cookie.js"
+        "target": "JDTASK_V2P/JDTaskV2P.cookie.js"
       }
     },
     {
@@ -127,7 +127,34 @@
       "time": "59 59 7,15,23 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_joy_reward.js"
+        "target": "JDTASK_V2P/JDScriptsBak/jd_joy_reward.js"
+      }
+    },
+    {
+      "name": "财富岛元宝",
+      "type": "cron",
+      "time": "59 59 7,15,23 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "JDTASK_V2P/JDScriptsBak/jd_blueCoinFixed.js"
+      }
+    },
+    {
+      "name": "财富岛换1000豆",
+      "type": "cron",
+      "time": "0 0 0 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "JDTASK_V2P/JDScriptsBak/jd_cfd_SlotMachine.js"
+      }
+    },
+    {
+      "name": "财富岛提现",
+      "type": "cron",
+      "time": "0 0 0 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "JDTASK_V2P/JDScriptsBak/jx_cfdtx.js"
       }
     },
     {
@@ -136,7 +163,16 @@
       "time": "0",
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/getJDCookie.elecV2P.js"
+        "target": "JDTASK_V2P/getJDCookie.elecV2P.js"
+      }
+    },
+    {
+      "name": "手动拉库更新",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "runjs",
+        "target": "JDTASK_V2P/JDTaskV2P.gitPull.js"
       }
     },
     {
@@ -147,6 +183,7 @@
         "type": "runjs",
         "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.test.js"
       }
-    }
+    },
+
   ]
 }
