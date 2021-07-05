@@ -1,15 +1,15 @@
 //定时和任务参考https://github.com/JDHelloWorld/jd_scripts/blob/main/serverless.yml
 
-- task1: #签到 #东东超市兑换奖品 #摇京豆 #京东汽车兑换
+- task1: #签到 #东东超市兑换奖品 #摇京豆 #京东汽车兑换 #全民抢京豆
           cronExpression: "0 0 0 * * *"
-          argument: jd_bean_sign.js & jd_blueCoinFix.js & jd_club_lottery.js
+          argument: jd_bean_sign.js & jd_blueCoinFix.js & jd_club_lottery.js &
 - task2: #东东农场 #东东萌宠 #口袋书店 #京喜农场 #京东极速版签到 #京东家庭号 #金榜创造营
           cronExpression: "0 5 6-18/6,8 * * *"
           argument: jd_fruit.js & jd_pet.js & jd_bookshop.js & jd_jxnc.js & jd_speed_sign.js & jd_family.js & jd_gold_creator.js
 - task3: #宠汪汪 #摇钱树 #京东种豆得豆 #京喜工厂 #东东工厂 #电竞经理
           cronExpression: "0 3 */1 * * *"
           argument: jd_joy_new.js & jd_moneyTree.js & jd_plantBean.js & jd_dreamFactory.js & jd_jdfactory.js & jd_EsportsManager.js
-- task4: #签到领现金 #点点券 #东东小窝 #京喜财富岛 #京东直播 #5G超级盲盒
+- task4: #签到领现金 #点点券 #东东小窝 #京喜财富岛 #京东直播 #5G超级盲盒 #女装盲盒
           cronExpression: "0 0 0-16/8,20 * * *"
           argument:jd_cash.js & jd_necklace_new.js & jd_small_home.js & jd_cfd.js & jd_live.js & jd_mohe.js
 - task5: #京东全民开红包 #进店领豆 #取关京东店铺商品 #京东汽车 #京东秒秒币

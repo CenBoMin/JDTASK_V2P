@@ -131,18 +131,18 @@
       }
     },
     {
-      "name": "财富岛元宝",
+      "name": "超市换1000豆",
       "type": "cron",
-      "time": "30 */30 1-10 * * *",
+      "time": "59,0,1 59,0 0,23 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/JDScriptsBak/jd_blueCoinFixed.js"
       }
     },
     {
-      "name": "财富岛换1000豆",
+      "name": "财富岛元宝",
       "type": "cron",
-      "time": "59,0,1 59,0 0,23 * * *",
+      "time": "30 */30 1-10 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/JDScriptsBak/jd_cfd_SlotMachine.js"
