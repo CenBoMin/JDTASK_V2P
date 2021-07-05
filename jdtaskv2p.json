@@ -115,7 +115,7 @@
     {
       "name": "JDTASK_10",
       "type": "cron",
-      "time": "0,30,59 59 7,15,23 * * *",
+      "time": "30 55 7,15,23 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/task10.js"
@@ -124,7 +124,7 @@
     {
       "name": "宠旺旺换500豆",
       "type": "cron",
-      "time": "59 59 7,15,23 * * *",
+      "time": "54-59,0-3 0,59 7,8,15,16,23,0 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/JDScriptsBak/jd_joy_reward.js"
@@ -142,7 +142,7 @@
     {
       "name": "财富岛换1000豆",
       "type": "cron",
-      "time": "0 0 0 * * *",
+      "time": "59,0,1 59,0 0,23 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/JDScriptsBak/jd_cfd_SlotMachine.js"
@@ -151,7 +151,7 @@
     {
       "name": "财富岛提现",
       "type": "cron",
-      "time": "0 0 0 * * *",
+      "time": "59,0,1 59,0 0,23 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/JDScriptsBak/jx_cfdtx.js"

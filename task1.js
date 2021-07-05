@@ -15,18 +15,7 @@ $exec('node jd_blueCoin.js', {
     error ? console.error(error) : console.log(data)
   }
 })
-// // #京东汽车兑换
-// $exec('node jd_car_exchange.js', {
-//   cwd: 'script/JSFile/jd_scripts', timeout: 0,
-//   env: {
-//     ...process.env,
-//     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
-//     JD_COOKIE: $store.get('CookiesJDV2P', 'string')
-//   },
-//   cb(data, error){
-//     error ? console.error(error) : console.log(data)
-//   }
-// })
+
 //#摇京豆
 $exec('node jd_club_lottery.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
