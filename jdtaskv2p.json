@@ -158,6 +158,15 @@
       }
     },
     {
+      "name": "京东试用",
+      "type": "cron",
+      "time": "0 0 1 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "JDTASK_V2P/JDScriptsBak/jd_try.js"
+      }
+    },
+    {
       "name": "JDCookie扫码服务",
       "type": "schedule",
       "time": "0",

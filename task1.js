@@ -1,6 +1,20 @@
 // @grant nodejs
 // cron:0 0 0 * * *
 
+//jd_qjd.js全民抢京豆（7.2-7.15）
+$exec('node jd_qjd.js', {
+  cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
+  env: {
+    ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
+  }
+})
+
+
 //#东东超市兑换奖品
 $exec('node jd_blueCoin.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
