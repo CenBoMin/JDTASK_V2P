@@ -122,6 +122,15 @@
       }
     },
     {
+      "name": "JDTASK_11",
+      "type": "cron",
+      "time": "0 */5 * * * *",
+      "job": {
+        "type": "runjs",
+        "target": "JDTASK_V2P/task11.js"
+      }
+    },
+    {
       "name": "宠旺旺换500豆",
       "type": "cron",
       "time": "54-59,0-3 0,59 7,8,15,16,23,0 * * *",

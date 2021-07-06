@@ -1,6 +1,33 @@
 // @grant nodejs
 // cron:0 0 0-16/8,20 * * *
 
+// @grant nodejs
+//许愿池
+$exec('node jd_wishingPool.js', {
+  cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
+  env: {
+    ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
+  }
+})
+
+//旺旺乐园任务
+$exec('node jd_joy_park.js', {
+  cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
+  env: {
+    ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
+  }
+})
+
 // 女装盲盒
 $exec('node jd_nzmh.js', {
   cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
