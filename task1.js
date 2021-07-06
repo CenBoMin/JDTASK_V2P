@@ -42,13 +42,13 @@ $exec('node jd_club_lottery.js', {
     error ? console.error(error) : console.log(data)
   }
 })
-// #签到
-$exec('node jd_bean_sign.js', {
-  cwd: 'script/JSFile/jd_scripts', timeout: 0,
+
+//#京东签到验证
+$exec('node jd_sign.js', {
+  cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
   env: {
     ...process.env,
-    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
-    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
   },
   cb(data, error){
     error ? console.error(error) : console.log(data)
