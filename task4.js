@@ -1,7 +1,5 @@
 // @grant nodejs
 // cron:0 0 0-16/8,20 * * *
-
-// @grant nodejs
 //许愿池
 $exec('node jd_wishingPool.js', {
   cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
