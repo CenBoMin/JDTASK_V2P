@@ -115,7 +115,12 @@ Date.prototype.Format = function (fmt) { //author: meizz
     $.log(`debug场次:${giftSaleInfos}\n待执行任务账号数：${allAc.length}`)
     if(allAc.length>0){
       let rtList = await Promise.all(allAc.map((ac, i) => joyReward(ac, giftSaleInfos)))
-      msgInfo.push(rtList.map(ac => `【账号${ac.index}】${ac.nickName||''}${ac.result?'\n\t'+ac.result:''}`).join('\n\n'))
+      var h = (new Date()).getHours();
+      var m = (new Date()).getMinutes();
+      if ((h == 7 && m >= 59) || (h == 8 && m <= 1) || (h == 16 && m >= 59) || (h == 17 && m <= 1) || (h == 23 && m >= 59) || (h == 0 && m <= 1)) {
+        msgInfo.push(rtList.map(ac => `【账号${ac.index}】${ac.nickName||''}${ac.result?'\n\t'+ac.result:''}`).join('\n\n'))
+      }
+
     }
     if (msgInfo.length > 0) {
       if ($.isNode()) {
