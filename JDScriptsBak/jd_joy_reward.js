@@ -168,51 +168,26 @@ async function joyReward(ac, giftSaleInfos) {
           giftValue = item.giftValue;
         }
       }
-      // 兼容之前BoxJs兑换设置的数据
-      if (rewardNum && (rewardNum === 1 || rewardNum === 20 || rewardNum === 50 || rewardNum === 100 || rewardNum === 500 || rewardNum === 1000)) {
         //开始兑换
         if (salePrice) {
           if (leftStock) {
             if (!saleInfoId) return
             let startDate = new Date()
-            let count = 30
+            let count = 20;
             do {
               await exchange(ac, saleInfoId, 'pet');
               let endDate = new Date()
-              console.log(`账号${ac.index} 请求兑换API后时间 ${$.time('yyyy-MM-dd HH:mm:ss.S', endDate)}`);
-              if (ac.exchangeRes && !ac.exchangeRes.success && ac.exchangeRes.errorCode === 'H0001') {
-                // 需滑动验证，跳出循环
-                break
-              } else if (ac.exchangeRes && ac.exchangeRes.success && ['buy_success', 'buy_limit', 'insufficient'].includes(ac.exchangeRes.errorCode + '')) {
+              if (ac.exchangeRes && ac.exchangeRes.success && ['buy_success', 'buy_limit', 'insufficient'].includes(ac.exchangeRes.errorCode + '')) {
                 // 兑换成功，跳出循环
                 break
-              } else if (startDate.getSeconds() == endDate.getSeconds()) {
-                // 未兑换到，等下一秒再尝试
-                if (endDate.getMilliseconds() < 550) {
-                  await $.wait(600 - endDate.getMilliseconds())
-                } else {
-                  await $.wait(1010 - endDate.getMilliseconds())
-                }
-                startDate = new Date()
               } else {
-                await $.wait(10)
                 startDate = endDate
               }
               count--
-            } while (count > 0 && startDate.getSeconds() < 18)
+            } while (count > 0)
             if (ac.exchangeRes && ac.exchangeRes.success) {
               if (ac.exchangeRes.errorCode === 'buy_success') {
                 ac.result = `【${giftValue}京豆】兑换成功🎉\n【积分详情】消耗积分 ${salePrice}`
-                console.log(`\n${ac.result}\n`)
-              } else if (ac.exchangeRes.errorCode === 'buy_limit') {
-                ac.result = `兑换${rewardNum}京豆失败，原因：兑换京豆已达上限，请把机会留给更多的小伙伴~`
-                console.log(`\n${ac.result}\n`)
-                //$.msg($.name, `兑换${giftName}失败`, `【京东账号${$.index}】${$.nickName}\n兑换京豆已达上限\n请把机会留给更多的小伙伴~\n`)
-              } else if (ac.exchangeRes.errorCode === 'stock_empty'){
-                ac.result = `兑换${rewardNum}京豆失败，原因：当前京豆库存为空`
-                console.log(`\n${ac.result}\n`)
-              } else if (ac.exchangeRes.errorCode === 'insufficient'){
-                ac.result = `兑换${rewardNum}京豆失败，原因：当前账号积分不足兑换${giftValue}京豆所需的${salePrice}积分`
                 console.log(`\n${ac.result}\n`)
               } else {
                 ac.result = `兑奖失败:${JSON.stringify(ac.exchangeRes)}`
@@ -230,10 +205,7 @@ async function joyReward(ac, giftSaleInfos) {
           // console.log(`兑换${rewardNum}京豆失败，原因：您目前只有${data.coin}积分，已不足兑换${giftValue}京豆所需的${salePrice}积分\n`)
           //$.msg($.name, `兑换${giftName}失败`, `【京东账号${$.index}】${$.nickName}\n目前只有${data.coin}积分\n已不足兑换${giftName}所需的${salePrice}积分\n`)
         }
-      } else {
-        ac.result = `您设置了不兑换京豆,如需兑换京豆，请去BoxJs处设置或修改joyRewardName代码或设置环境变量 JD_JOY_REWARD_NAME`
-        console.log(`\n${ac.result}\n`)
-      }
+
     } else {
       console.log(`${$.name}getExchangeRewards异常,${JSON.stringify(ac.getExchangeRewardsRes)}`)
     }
@@ -314,9 +286,9 @@ function exchange(ac, saleInfoId, orderSource) {
       },
     }
     let now = new Date()
-    if (now.getSeconds() <= 59 && now.getSeconds() >= 50) {
-      await $.wait(Math.max((60 - now.getSeconds()) * 1000 - now.getMilliseconds() - 66, 0))
-    }
+    // if (now.getSeconds() <= 59 && now.getSeconds() >= 50) {
+    //   await $.wait(Math.max((60 - now.getSeconds()) * 1000 - now.getMilliseconds() - 66, 0))
+    // }
     $.log(`账号 ${ac.index} 开始兑换${ac.rewardNum}京豆：${$.time('yyyy-MM-dd HH:mm:ss.S')}`)
     $.post(option, (err, resp, data) => {
       try {
