@@ -1,6 +1,6 @@
 // @grant nodejs
 
-// #宠汪汪偷好友积分与狗粮
+// #宠汪汪偷好友积分与狗粮smiek2221
 $exec('node jd_joy_steal.js', {
   cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
   env: {
