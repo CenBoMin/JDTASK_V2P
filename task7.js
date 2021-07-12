@@ -1,24 +1,29 @@
 // @grant nodejs
-//燃动夏季
+//燃动夏季smiek2221
 $exec('node jd_summer_movement.js', {
   cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
-    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+    summer_movement_ShHelpFlag:1,
+    summer_movement_HelpHelpHelpFlag:true
   },
   cb(data, error){
     error ? console.error(error) : console.log(data)
   }
 })
 
-//燃动夏季_SH助力
+// @grant nodejs
+//燃动夏季_SH助力smiek2221
 $exec('node jd_summer_movement_help.js', {
   cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
-    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+    summer_movement_ShHelpFlag:1,
+
   },
   cb(data, error){
     error ? console.error(error) : console.log(data)

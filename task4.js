@@ -39,10 +39,10 @@ $exec('node jd_nzmh.js', {
   }
 })
 
-
-// 点点券
-$exec('node jd_necklace_new.js', {
-  cwd: 'script/JSFile/jd_scripts', timeout: 0,
+// @grant nodejs
+// 点点券smiek2221
+$exec('node jd_necklace.js', {
+  cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,

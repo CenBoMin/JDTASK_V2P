@@ -15,12 +15,12 @@
 - task5: #京东全民开红包 #进店领豆 #取关京东店铺商品 #京东汽车 #京东秒秒币
           cronExpression: "0 10 0 * * *"
           argument: jd_redPacket.js & jd_shop.js & jd_unsubscribe.js & jd_car.js & jd_ms.js
-- task6: #天天提鹅 #京喜牧场ts
+- task6: #天天提鹅 #京喜牧场ts(弃用改star) #宠汪汪偷好友积分与狗粮
           cronExpression: "0 8 */3 * * *"
-          argument: jd_daily_egg.js & jd_jxmc.js
-- task7: #东东超市 #十元街
+          argument: jd_daily_egg.js & jd_jxmc.js & jd_joy_steal.js
+- task7: #东东超市 #十元街 #燃动夏季 燃动夏季_SH助力
           cronExpression: "0 15 */1 * * *"
-          argument: jd_superMarket.js & jd_syj.js & jd_big_winner.js
+          argument: jd_superMarket.js & jd_syj.js& jd_summer_movement.js&jd_summer_movement_help.js
 - task8: #京豆变动通知 #京东排行榜 #领京豆额外奖励 #京东保价 #闪购盲盒
           cronExpression: "0 30 7 * * *"
           argument: jd_bean_change.js & jd_rankingList.js & jd_bean_home.js & jd_price.js & jd_sgmh.js
