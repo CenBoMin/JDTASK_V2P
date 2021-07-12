@@ -13,6 +13,7 @@ npm install tunnel
 npm install crypto-js
 npm install download
 npm install tough-cookie
+npm install date-fns
 echo "✅ [Node-Module]安装完成";
 
 echo "🤖 开始更新[NPM]";

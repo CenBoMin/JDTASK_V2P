@@ -1,5 +1,5 @@
 // @grant nodejs
-
+// #十元街
 $exec('node jd_syj.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
@@ -11,7 +11,7 @@ $exec('node jd_syj.js', {
     error ? console.error(error) : console.log(data)
   }
 })
-
+// #东东超市
 $exec('node jd_superMarket.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
