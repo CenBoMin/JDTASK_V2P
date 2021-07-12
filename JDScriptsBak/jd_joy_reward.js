@@ -173,7 +173,7 @@ async function joyReward(ac, giftSaleInfos) {
           if (leftStock) {
             if (!saleInfoId) return
             let startDate = new Date()
-            let count = 20;
+            let count = 15;
             do {
               await exchange(ac, saleInfoId, 'pet');
               let endDate = new Date()
