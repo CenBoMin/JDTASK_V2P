@@ -18,6 +18,9 @@ if ($.isNode()) {
 
 const JD_API_HOST = `https://api.m.jd.com/api?appid=jdsupermarket`;
 !(async () => {
+  let startDate = new Date()
+  let mscheck = startDate.getSeconds();
+  console.log(mscheck);
   let allAc = []
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
@@ -46,8 +49,9 @@ const JD_API_HOST = `https://api.m.jd.com/api?appid=jdsupermarket`;
 async function joyReward(ac) {
   try {
     ac.result = ''
-    let count = 12;
+    let count = 1;
     do {
+      // await $.wait(mscheck)
       await smtg_obtainPrize(ac);
       count--
     } while (count > 0)

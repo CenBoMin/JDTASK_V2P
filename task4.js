@@ -66,9 +66,9 @@ $exec('node jd_cash.js', {
   }
 })
 
-// 京喜财富岛
+// 京喜财富岛/Aaron-lv
 $exec('node jd_cfd.js', {
-  cwd: 'script/JSFile/jd_scripts', timeout: 0,
+  cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
