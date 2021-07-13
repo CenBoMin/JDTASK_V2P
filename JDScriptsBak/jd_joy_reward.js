@@ -190,15 +190,15 @@ async function joyReward(ac, giftSaleInfos) {
                 ac.result = `【${giftValue}京豆】兑换成功🎉\n【积分详情】消耗积分 ${salePrice}`
                 console.log(`\n${ac.result}\n`)
               } else {
-                ac.result = `兑奖失败:${JSON.stringify(ac.exchangeRes)}`
+                // ac.result = `兑奖失败:${JSON.stringify(ac.exchangeRes)}`
                 console.log(`\n${ac.result}\n`)
               }
             } else {
-              ac.result = `兑换京豆异常:${JSON.stringify(ac.exchangeRes)}`
+              // ac.result = `兑换京豆异常:${JSON.stringify(ac.exchangeRes)}`
               console.log(`\n${ac.result}\n`)
             }
           } else {
-            ac.result = `按您设置的兑换${rewardNum}京豆失败，原因：京豆库存不足，已抢完，请下一场再兑换`
+            // ac.result = `按您设置的兑换${rewardNum}京豆失败，原因：京豆库存不足，已抢完，请下一场再兑换`
             console.log(`\n${ac.result}\n`);
           }
         } else {
