@@ -115,11 +115,19 @@ Date.prototype.Format = function (fmt) { //author: meizz
     $.log(`debug场次:${giftSaleInfos}\n待执行任务账号数：${allAc.length}`)
     if(allAc.length>0){
       let rtList = await Promise.all(allAc.map((ac, i) => joyReward(ac, giftSaleInfos)))
+<<<<<<< HEAD
       // var h = (new Date()).getHours();
       // var m = (new Date()).getMinutes();
       // if ((h == 7 && m >= 56) || (h == 8 && m <= 1) || (h == 15 && m >= 56) || (h == 16 && m <= 1) || (h == 23 && m >= 56) || (h == 0 && m <= 1)) {
       //   msgInfo.push(rtList.map(ac => `${ac.result?'\n\t'+ac.result:''}`).join('\n\n'))
       // }
+=======
+      var h = (new Date()).getHours();
+      var m = (new Date()).getMinutes();
+      if ((h == 7 && m >= 56) || (h == 8 && m <= 1) || (h == 15 && m >= 56) || (h == 16 && m <= 1) || (h == 23 && m >= 56) || (h == 0 && m <= 1)) {
+        msgInfo.push(rtList.map(ac => `${ac.result?'\n\t'+ac.result:''}`).join('\n\n'))
+      }
+>>>>>>> 132cea9ae8f55fedd195e41bfbca7a59696fb4e0
 
     }
     if (msgInfo.length > 0) {
@@ -187,8 +195,12 @@ async function joyReward(ac, giftSaleInfos) {
             } while (count > 0)
             if (ac.exchangeRes && ac.exchangeRes.success) {
               if (ac.exchangeRes.errorCode === 'buy_success') {
+<<<<<<< HEAD
                 $.msg(`【账号${ac.index}】${ac.nickName||''}\n【${giftValue}京豆】兑换成功🎉\n【积分详情】消耗积分 ${salePrice}`)
 
+=======
+                ac.result = `【账号${ac.index}】${ac.nickName||''}\n【${giftValue}京豆】兑换成功🎉\n【积分详情】消耗积分 ${salePrice}`
+>>>>>>> 132cea9ae8f55fedd195e41bfbca7a59696fb4e0
                 console.log(`\n${ac.result}\n`)
               } else {
                 // ac.result = `兑奖失败:${JSON.stringify(ac.exchangeRes)}`
