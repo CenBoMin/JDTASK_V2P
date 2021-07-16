@@ -1,13 +1,11 @@
 // @grant nodejs
 // cron:0 0 0 * * *
-
-//jd_qjd.js全民抢京豆（7.2-7.15）
-$exec('node jd_qjd.js', {
+//#京东签到验证
+$exec('node jd_sign.js', {
   cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
   env: {
     ...process.env,
-    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
-    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
   },
   cb(data, error){
     error ? console.error(error) : console.log(data)
@@ -37,18 +35,6 @@ $exec('node jd_club_lottery.js', {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
     JD_COOKIE: $store.get('CookiesJDV2P', 'string')
-  },
-  cb(data, error){
-    error ? console.error(error) : console.log(data)
-  }
-})
-
-//#京东签到验证
-$exec('node jd_sign.js', {
-  cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
-  env: {
-    ...process.env,
-    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
   },
   cb(data, error){
     error ? console.error(error) : console.log(data)
