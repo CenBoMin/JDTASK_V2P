@@ -79,6 +79,19 @@ $exec('node jd_cfd.js', {
   }
 })
 
+// @grant nodejs
+//#故事会 财富岛？smiek2221
+$exec('node gua_wealth_island.js', {
+  cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
+  env: {
+    ...process.env,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
+  }
+})
+
 // 东东小窝
 $exec('node jd_small_home.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
