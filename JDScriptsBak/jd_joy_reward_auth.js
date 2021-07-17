@@ -5,7 +5,6 @@ const zlib = require('zlib');
 const vm = require('vm');
 const PNG = require('png-js');
 const UA = require('./USER_AGENTS.js').USER_AGENT;
-const fetch = require('node-fetch');
 const fs = require("fs");
 
 
@@ -127,76 +126,6 @@ class PuzzleRecognizer {
     // not found
     return -1;
   }
-
-  runWithCanvas() {
-    const {createCanvas, Image} = require('canvas');
-    const canvas = createCanvas();
-    const ctx = canvas.getContext('2d');
-    const imgBg = new Image();
-    const imgPatch = new Image();
-    const prefix = 'data:image/png;base64,';
-
-    imgBg.src = prefix + this.rawBg;
-    imgPatch.src = prefix + this.rawPatch;
-    const {naturalWidth: w, naturalHeight: h} = imgBg;
-    canvas.width = w;
-    canvas.height = h;
-    ctx.clearRect(0, 0, w, h);
-    ctx.drawImage(imgBg, 0, 0, w, h);
-
-    const width = w;
-    const {naturalWidth, naturalHeight} = imgPatch;
-    const posY = this.y + PUZZLE_PAD + ((naturalHeight - PUZZLE_PAD) / 2) - (PUZZLE_GAP / 2);
-    // const cData = ctx.getImageData(0, a.y + 10 + 20 - 4, 360, 8).data;
-    const cData = ctx.getImageData(0, posY, width, PUZZLE_GAP).data;
-    const lumas = [];
-
-    for (let x = 0; x < width; x++) {
-      var sum = 0;
-
-      // y xais
-      for (let y = 0; y < PUZZLE_GAP; y++) {
-        var idx = x * 4 + y * (width * 4);
-        var r = cData[idx];
-        var g = cData[idx + 1];
-        var b = cData[idx + 2];
-        var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-
-        sum += luma;
-      }
-
-      lumas.push(sum / PUZZLE_GAP);
-    }
-
-    const n = 2; // minium macroscopic image width (px)
-    const margin = naturalWidth - PUZZLE_PAD;
-    const diff = 20; // macroscopic brightness difference
-    const radius = PUZZLE_PAD;
-    for (let i = 0, len = lumas.length - 2 * 4; i < len; i++) {
-      const left = (lumas[i] + lumas[i + 1]) / n;
-      const right = (lumas[i + 2] + lumas[i + 3]) / n;
-      const mi = margin + i;
-      const mLeft = (lumas[mi] + lumas[mi + 1]) / n;
-      const mRigth = (lumas[mi + 2] + lumas[mi + 3]) / n;
-
-      if (left - right > diff && mLeft - mRigth < -diff) {
-        const pieces = lumas.slice(i + 2, margin + i + 2);
-        const median = pieces.sort((x1, x2) => x1 - x2)[20];
-        const avg = Math.avg(pieces);
-
-        // noise reducation
-        if (median > left || median > mRigth) return;
-        if (avg > 100) return;
-        // console.table({left,right,mLeft,mRigth,median});
-        // ctx.fillRect(i+n-radius, 0, 1, 360);
-        // console.log(i+n-radius);
-        return i + n - radius;
-      }
-    }
-
-    // not found
-    return -1;
-  }
 }
 
 const DATA = {
@@ -205,7 +134,7 @@ const DATA = {
   "product": "embed",
   "lang": "zh_CN",
 };
-const SERVER = '61.49.99.122';
+const SERVER = '49.7.27.91';
 
 class JDJRValidator {
   constructor() {
@@ -387,7 +316,7 @@ function getCoordinate(c) {
   return b.join("")
 }
 
-const HZ = 60;
+const HZ = 25;
 
 class MousePosFaker {
   constructor(puzzleX) {
