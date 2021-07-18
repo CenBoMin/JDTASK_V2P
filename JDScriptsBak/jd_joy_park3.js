@@ -94,7 +94,7 @@ const USER_AGENTS = [
 ]
 let JDUA = USER_AGENTS[randomNumber(0, USER_AGENTS.length)];
 console.log(`随机UA:\n${JDUA}`);
-const $ = new Env('柠檬旺财乐园新手上路版');
+const $ = new Env('旺财乐园');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -174,7 +174,7 @@ function joyBaseInfo() {
       headers: {
         "Origin": "https://joypark.jd.com",
         "Host": "api.m.jd.com",
-        "User-Agent": JDUA,
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 UBrowser/5.6.12150.8 Safari/537.36",
         "Cookie": cookie,
       }
     }
@@ -182,9 +182,10 @@ function joyBaseInfo() {
     $.post(options, async (err, resp, data) => {
       try {
 
-
-        // console.log(data);
         data = JSON.parse(data);
+
+
+
         if (data.errMsg == "success") {
           dj = data.data.level
           gmdj = data.data.fastBuyLevel
@@ -211,20 +212,24 @@ function joyList() {
   return new Promise(async (resolve) => {
 
     let options = {
-      url: `https://api.m.jd.com/?functionId=joyList&body={%22linkId%22:%22LsQNxL7iWDlXUs6cFl-AAg%22}&appid=activities_platform`,
+      url: `https://api.m.jd.com/?functionId=joyList&body={%22linkId%22:%22LsQNxL7iWDlXUs6cFl-AAg%22}&_t=1625484389027&appid=activities_platform`,
+
+
       headers: {
-        'host': 'api.m.jd.com',
-        'cookie': cookie,
-        'origin': 'https://joypark.jd.com',
-        'referer': 'https://joypark.jd.com'
+        "Origin": "https://joypark.jd.com",
+        "Host": "api.m.jd.com",
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 UBrowser/5.6.12150.8 Safari/537.36",
+        "Cookie": cookie,
       }
     }
 
     $.get(options, async (err, resp, data) => {
       try {
 
-        console.log(data);
         data = JSON.parse(data);
+
+
+
         if (data.errMsg == "success") {
           joyNumber = data.data.joyNumber
           $.log(`\n===================================`)
@@ -318,7 +323,7 @@ function joyMerge(a, b) {
       headers: {
         "Origin": "https://joypark.jd.com",
         "Host": "api.m.jd.com",
-        "User-Agent": JDUA,
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 UBrowser/5.6.12150.8 Safari/537.36",
         "Cookie": cookie,
       }
     }
@@ -363,7 +368,7 @@ function joyBuy() {
       headers: {
         "Origin": "https://joypark.jd.com",
         "Host": "api.m.jd.com",
-        "User-Agent": JDUA,
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 UBrowser/5.6.12150.8 Safari/537.36",
         "Cookie": cookie,
       }
     }
@@ -407,7 +412,7 @@ function tasklist() {
       headers: {
         "Origin": "https://joypark.jd.com",
         "Host": "api.m.jd.com",
-        "User-Agent": JDUA,
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 UBrowser/5.6.12150.8 Safari/537.36",
         //"Cookie": cookie,
       }
     }
@@ -464,16 +469,16 @@ function tasklist() {
           await dotask(ll1taskType, ll1signtaskid, "https://pro.m.jd.com/jdlite/active/4AMo3SQzbqAzJgowhXqvt8Dpo8iA/index.html")
           await apTaskDrawAward(ll1taskType, ll1signtaskid, "https://pro.m.jd.com/jdlite/active/4AMo3SQzbqAzJgowhXqvt8Dpo8iA/index.html")
           $.log(`\n===============邀请任务===============`)
-          $.log(`\n===============取随机CK邀请===========`)
-          for (let i = 0; i < 5; i++) {
-            await inviteType()
-          }
+
+
+          await inviteType()
+          await apTaskinviter()
+
           $.log(`\n===============开地邀请===============`)
-          $.log(`\n===============取随机CK邀请===========`)
-          for (let i = 0; i < 15; i++) {
-            await openinvite()
-          }
-        } else if (data.errMsg == "操作失败") {
+
+          await openinvite()
+          //$.log(`\n===============升级奖励===============`)
+          //await levelDrawAward()
 
           console.log("操作失败")
 
@@ -493,12 +498,12 @@ function openinvite() {
     let options = {
       url: `https://api.m.jd.com/`,
 
-      body: `functionId=joyBaseInfo&body={"taskId":"","inviteType":"2","inviterPin":"${yqm}","linkId":"LsQNxL7iWDlXUs6cFl-AAg"}&_t=1625540360946&appid=activities_platform`,
+      body: `functionId=joyBaseInfo&body={"taskId":"","inviteType":"2","inviterPin":"${joyinviterPin}","linkId":"LsQNxL7iWDlXUs6cFl-AAg"}&_t=1625540360946&appid=activities_platform`,
       headers: {
         "Origin": "https://joypark.jd.com",
         "Host": "api.m.jd.com",
-        "User-Agent": JDUA,
-        "Cookie": ck2,
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 UBrowser/5.6.12150.8 Safari/537.36",
+        "Cookie": cookie,
       }
     }
 
@@ -537,12 +542,12 @@ function inviteType() {
     let options = {
       url: `https://api.m.jd.com/`,
 
-      body: `functionId=joyBaseInfo&body={"taskId":"167","inviteType":"1","inviterPin":"${yqm}","linkId":"LsQNxL7iWDlXUs6cFl-AAg"}&_t=1625540360946&appid=activities_platform`,
+      body: `functionId=joyBaseInfo&body={"taskId":"167","inviteType":"1","inviterPin":"${joyinviterPin}","linkId":"LsQNxL7iWDlXUs6cFl-AAg"}&_t=1625540360946&appid=activities_platform`,
       headers: {
         "Origin": "https://joypark.jd.com",
         "Host": "api.m.jd.com",
-        "User-Agent": JDUA,
-        "Cookie": ck2,
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 UBrowser/5.6.12150.8 Safari/537.36",
+        "Cookie": cookie,
       }
     }
 
@@ -575,6 +580,50 @@ function inviteType() {
   });
 }
 
+function levelDrawAward() {
+  return new Promise(async (resolve) => {
+
+    let options = {
+      url: `https://api.m.jd.com/`,
+
+      body: `functionId=joyBaseInfo&body={"taskId":"167","inviteType":"1","inviterPin":"${yqm}","linkId":"LsQNxL7iWDlXUs6cFl-AAg"}&_t=1625545015696&appid=activities_platform`,
+      headers: {
+        "Origin": "https://joypark.jd.com",
+        "Host": "api.m.jd.com",
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 UBrowser/5.6.12150.8 Safari/537.36",
+        "Cookie": cookie,
+      }
+    }
+
+    $.post(options, async (err, resp, data) => {
+      //$.log(data)
+      try {
+
+        data = JSON.parse(data);
+
+
+
+        if (data.success == true) {
+
+
+          $.log(data.errMsg)
+
+
+
+        } else if (data.success == false) {
+
+          console.log(data.errMsg)
+
+        }
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
+    });
+  });
+}
+
 function dotask(taskType, taskid, itemId) {
   return new Promise(async (resolve) => {
 
@@ -585,7 +634,7 @@ function dotask(taskType, taskid, itemId) {
       headers: {
         "Origin": "https://joypark.jd.com",
         "Host": "api.m.jd.com",
-        "User-Agent": JDUA,
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 UBrowser/5.6.12150.8 Safari/537.36",
         "Cookie": cookie,
       }
     }
@@ -621,6 +670,46 @@ function dotask(taskType, taskid, itemId) {
   });
 }
 
+function apTaskinviter() {
+  return new Promise(async (resolve) => {
+
+    let options = {
+      url: `https://api.m.jd.com/`,
+
+      body: `functionId=joyBaseInfo&body={"taskId":"167","inviteType":"1","inviterPin":"${yqm}","linkId":"LsQNxL7iWDlXUs6cFl-AAg"}&_t=1625543629130&appid=activities_platform`,
+      headers: {
+        "Origin": "https://joypark.jd.com",
+        "Host": "api.m.jd.com",
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 UBrowser/5.6.12150.8 Safari/537.36",
+        "Cookie": cookie,
+      }
+    }
+
+    $.post(options, async (err, resp, data) => {
+      try {
+
+        data = JSON.parse(data);
+
+
+
+        if (data.success == true) {
+          data.errMsg
+
+
+        } else if (data.success == false) {
+
+          console.log(data.errMsg)
+
+        }
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
+    });
+  });
+}
+
 function apTaskDrawAward(taskType, taskid) {
   return new Promise(async (resolve) => {
 
@@ -631,7 +720,7 @@ function apTaskDrawAward(taskType, taskid) {
       headers: {
         "Origin": "https://joypark.jd.com",
         "Host": "api.m.jd.com",
-        "User-Agent": JDUA,
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 UBrowser/5.6.12150.8 Safari/537.36",
         "Cookie": cookie,
       }
     }
@@ -672,13 +761,12 @@ async function taskPostUrl(functionId, body) {
       'Host': 'api.m.jd.com',
       'Connection': 'keep-alive',
       'Content-Type': 'application/x-www-form-urlencoded',
-      "User-Agent": JDUA,
+      "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
       'Accept-Language': 'zh-cn',
       'Accept-Encoding': 'gzip, deflate, br',
     }
   }
 }
-
 async function TotalBean() {
   return new Promise(async resolve => {
     const options = {
@@ -691,7 +779,7 @@ async function TotalBean() {
         "Connection": "keep-alive",
         "Cookie": cookie,
         "Referer": "https://wqs.jd.com/my/jingdou/my.shtml?sceneval=2",
-        "User-Agent": JDUA
+        "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
       }
     }
     $.post(options, (err, resp, data) => {
