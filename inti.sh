@@ -4,7 +4,7 @@ echo "🤖 开始安装[git]";
 apk add git
 echo "✅ [git]安装完成";
 
-rm -rf JDTASK_V2P && rm -rf jd_scripts && rm -rf faker2 && rm -rf sync
+rm -rf JDTASK_V2P && rm -rf jd_scripts && rm -rf faker2 
 
 # echo "🤖 [gitclone]:Aaron-lv/jd_scripts";
 # git clone -b jd_scripts https://ghproxy.com/https://github.com/Aaron-lv/sync
