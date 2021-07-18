@@ -14,14 +14,14 @@ $exec('git config pull.rebase false && git fetch https://ghproxy.com/https://git
   }
 })
 
-// //Aaron-lv/jd_scripts
-// $exec('git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/Aaron-lv/sync && git pull origin main && git log --pretty=format:"%h - %an, %ar : %s" --since=2.day', {
-//   cwd: 'script/JSFile/jd_scripts',
-//   timeout: 0,
-//   cb(data, error) {
-//     error ? console.error(error) : console.log(data)
-//   }
-// })
+//smiek2221/scripts
+$exec('git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/smiek2221/scripts && git pull origin main && git log --pretty=format:"%h - %an, %ar : %s" --since=2.day', {
+  cwd: 'script/JSFile/jd_scripts',
+  timeout: 0,
+  cb(data, error) {
+    error ? console.error(error) : console.log(data)
+  }
+})
 
 //shufflewzc/jd_scripts
 $exec('git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/shufflewzc/faker2 && git pull origin main && git log --pretty=format:"%h - %an, %ar : %s" --since=2.day', {
