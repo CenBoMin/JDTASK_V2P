@@ -22,4 +22,4 @@ git clone https://github.com/JDHelloWorld/jd_scripts
 echo "🌟 [gitclone]:CenBoMin/JDTASK_V2P";
 git clone https://github.com/CenBoMin/JDTASK_V2P
 
-echo "✅ 恭喜！JDTASKV2P脚本初始化完成 🎉 ";
+echo "✅ 恭喜！JDTASKV2P脚本gitclone完成 🎉 ";
