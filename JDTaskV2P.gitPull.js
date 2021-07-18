@@ -4,7 +4,6 @@
 */
 
 console.log("✅  开始git pull更新库文件");
-$message.loading("✅  开始git pull更新库文件", 20)
 
 //CenBoMin/JDTASK_V2P
 $exec('git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/CenBoMin/JDTASK_V2P && git pull origin main && git log --pretty=format:"%h - %an, %ar : %s" --since=2.day', {
