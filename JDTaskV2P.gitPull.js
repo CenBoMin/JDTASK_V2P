@@ -13,7 +13,7 @@ function gitpullTask() {
           $download('https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/inti.sh', {
             folder: './script/JSFile',
             name: 'inti.sh'
-          }).then(d=> $message.success("✅  inti.sh已下载script/JSFile", 5)).catch(e=>console.error(e))
+          }).then(d=> console.log("✅ 准备初始化脚本库")).catch(e=>console.error(e))
         }else if (i == 1) {
           // $message.loading("⏳ 初始化任务准备安装中...", 5)
           $exec('chmod +x ./inti.sh', {
@@ -30,7 +30,10 @@ function gitpullTask() {
               error ? console.error(error) : console.log(data)
             }
           })
-        }else if (i == 20) {
+        }else if (i == 8) {
+          console.log("✅  开始git pull更新库文件");
+          $message.loading("✅  开始git pull更新库文件", 20)
+
           //CenBoMin/JDTASK_V2P
           $exec('git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/CenBoMin/JDTASK_V2P && git pull origin main && git log --pretty=format:"%h - %an, %ar : %s" --since=2.day', {
             cwd: 'script/JSFile/JDTASK_V2P', timeout: 0,
@@ -55,13 +58,13 @@ function gitpullTask() {
             }
           })
 
-          //JDHelloWorld/jd_scripts
-          $exec('git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/JDHelloWorld/jd_scripts && git pull origin main && git log --pretty=format:"%h - %an, %ar : %s" --since=2.day', {
-            cwd: 'script/JSFile/jd_scripts', timeout: 0,
-            cb(data, error){
-              error ? console.error(error) : console.log(data)
-            }
-          })
+          // //JDHelloWorld/jd_scripts
+          // $exec('git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/JDHelloWorld/jd_scripts && git pull origin main && git log --pretty=format:"%h - %an, %ar : %s" --since=2.day', {
+          //   cwd: 'script/JSFile/jd_scripts', timeout: 0,
+          //   cb(data, error){
+          //     error ? console.error(error) : console.log(data)
+          //   }
+          // })
 
         }
       },(i + 1) * 4000);
