@@ -52,17 +52,29 @@ $exec('node jd_nzmh.js', {
 
 // @grant nodejs
 // 点点券smiek2221
-$exec('node jd_necklace.js', {
-  cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
-  env: {
-    ...process.env,
-    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
-    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
-  },
-  cb(data, error){
-    error ? console.error(error) : console.log(data)
+$exec('\cp jd_necklace.js ../JDTASK_V2P/JDScriptsBak', {
+  cwd: 'script/JSFile/scripts',
+  timeout: 0,
+  cb(data, error, finish) {
+    if (finish) {
+      $exec('node jd_necklace.js', {
+        cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak',
+        timeout: 0,
+        env: {
+          ...process.env,
+          JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+        },
+        cb(data, error) {
+          error ? console.error(error) : console.log(data)
+        }
+      })
+    } else {
+      error ? console.error(error) : console.log(data)
+    }
   }
 })
+
+
 // @grant nodejs
 //签到领现金
 $exec('node jd_cash.js', {
@@ -78,10 +90,10 @@ $exec('node jd_cash.js', {
   }
 })
 
-
+// @grant nodejs
 // 东东小窝
 $exec('node jd_small_home.js', {
-  cwd: 'script/JSFile/jd_scripts', timeout: 0,
+  cwd: 'script/JSFile/sync', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,

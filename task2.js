@@ -61,9 +61,10 @@ $exec('node jd_pet.js', {
     error ? console.error(error) : console.log(data)
   }
 })
+// @grant nodejs
 //#口袋书店
 $exec('node jd_bookshop.js', {
-  cwd: 'script/JSFile/jd_scripts', timeout: 0,
+  cwd: 'script/JSFile/sync', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,

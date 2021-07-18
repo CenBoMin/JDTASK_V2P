@@ -1,5 +1,31 @@
 // @grant nodejs
-// cron:0 0 0 * * *
+//京东零食街jd_lsj.js
+$exec('node jd_lsj.js', {
+  cwd: 'script/JSFile/faker2', timeout: 0,
+  env: {
+    ...process.env,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+    lsjdh: "jdAward3"
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
+  }
+})
+
+// @grant nodejs
+//早起福利jd_goodMorning.js
+$exec('node jd_goodMorning.js', {
+  cwd: 'script/JSFile/faker2', timeout: 0,
+  env: {
+    ...process.env,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
+  }
+})
+
+// @grant nodejs
 //#京东签到验证
 $exec('node jd_sign_graphics.js', {
   cwd: 'script/JSFile/faker2', timeout: 0,

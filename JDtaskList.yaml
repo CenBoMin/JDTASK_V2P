@@ -5,6 +5,8 @@
   Aaron-lv#京东签到验证jd_bean_sign.js
   faker2#京东签到验证jd_bean_sign.js
   #摇京豆d_club_lottery.js
+  faker2#早起福利jd_goodMorning.js
+  faker2#京东零食街jd_lsj.js
 
 ++++++ task2 ++++++
 - cronExpression: "0 5 6-18/6,8 * * *"
@@ -39,7 +41,7 @@
 
 ++++++ task5 ++++++
 - cronExpression: "0 10 0 * * *"
-  #京东全民开红包jd_redPacket.js
+  Aaron-lv#京东全民开红包jd_redPacket.js
   #进店领豆jd_shop.js
   #取关京东店铺商品jd_unsubscribe.js
   #京东汽车jd_car.js
@@ -57,7 +59,7 @@
 ++++++ task7 ++++++
 - cronExpression: "0 15 */1 * * *"
   Aaron-lv#东东超市jd_superMarket.js
-  #十元街jd_syj.js
+  Aaron#赚京豆jd_syj.js
   smiek2221#燃动夏季 jd_summer_movement.js（失效中）
 
 
