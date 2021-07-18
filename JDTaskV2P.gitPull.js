@@ -40,7 +40,7 @@ function gitpullTask() {
           })
 
           //Aaron-lv/jd_scripts
-          $exec('git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/Aaron-lv/sync/tree/jd_scripts && git pull origin main && git log --pretty=format:"%h - %an, %ar : %s" --since=2.day', {
+          $exec('git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/Aaron-lv/sync && git pull origin main && git log --pretty=format:"%h - %an, %ar : %s" --since=2.day', {
             cwd: 'script/JSFile/jd_scripts', timeout: 0,
             cb(data, error){
               error ? console.error(error) : console.log(data)
@@ -55,13 +55,13 @@ function gitpullTask() {
             }
           })
 
-          // //JDHelloWorld/jd_scripts
-          // $exec('git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/JDHelloWorld/jd_scripts && git pull origin main && git log --pretty=format:"%h - %an, %ar : %s" --since=2.day', {
-          //   cwd: 'script/JSFile/jd_scripts', timeout: 0,
-          //   cb(data, error){
-          //     error ? console.error(error) : console.log(data)
-          //   }
-          // })
+          //JDHelloWorld/jd_scripts
+          $exec('git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/JDHelloWorld/jd_scripts && git pull origin main && git log --pretty=format:"%h - %an, %ar : %s" --since=2.day', {
+            cwd: 'script/JSFile/jd_scripts', timeout: 0,
+            cb(data, error){
+              error ? console.error(error) : console.log(data)
+            }
+          })
 
         }
       },(i + 1) * 4000);
