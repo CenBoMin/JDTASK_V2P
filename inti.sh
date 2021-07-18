@@ -5,7 +5,7 @@ apk add git
 echo "✅ [git]安装完成";
 
 echo "🌟 [gitpull]:开始下载库文件";
-rm -rf JDTASK_V2P && rm -rf jd_scripts && rm -rf faker2 && rm -rf sync
+rm -rf JDTASK_V2P && rm -rf jd_scripts && rm -rf faker2 && rm -rf sync && rm -rf scripts
 
 echo "🌟 [gitclone]:Aaron-lv/sync";
 git clone -b jd_scripts https://github.com/Aaron-lv/sync
