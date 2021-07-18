@@ -387,7 +387,7 @@ function intiTask() {
       setTimeout(function () {
         if (i == 0) {
           $message.loading("⏳ 下载初始化文件:inti.sh", 2)
-          $download('https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/inti.sh', {
+          $download('https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/inti.sh', {
             folder: './script/JSFile',
             name: 'inti.sh'
           }).then(d=> $message.success("✅  inti.sh已下载script/JSFile", 5)).catch(e=>console.error(e))
