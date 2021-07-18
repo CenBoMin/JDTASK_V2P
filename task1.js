@@ -1,8 +1,19 @@
 // @grant nodejs
 // cron:0 0 0 * * *
 //#京东签到验证
-$exec('node jd_sign.js', {
-  cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
+$exec('node jd_sign_graphics.js', {
+  cwd: 'script/JSFile/faker2', timeout: 0,
+  env: {
+    ...process.env,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
+  }
+})
+
+$exec('node jd_bean_sign.js', {
+  cwd: 'script/JSFile/sync', timeout: 0,
   env: {
     ...process.env,
     JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
@@ -13,20 +24,6 @@ $exec('node jd_sign.js', {
 })
 
 
-//#东东超市兑换奖品
-$exec('node jd_blueCoin.js', {
-  cwd: 'script/JSFile/jd_scripts', timeout: 0,
-  env: {
-    ...process.env,
-    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
-    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
-    MARKET_COIN_TO_BEANS:'超值京豆包',
-    MARKET_REWARD_NOTIFY:true
-  },
-  cb(data, error){
-    error ? console.error(error) : console.log(data)
-  }
-})
 
 //#摇京豆
 $exec('node jd_club_lottery.js', {

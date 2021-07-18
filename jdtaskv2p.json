@@ -115,7 +115,7 @@
     {
       "name": "JDTASK_10",
       "type": "cron",
-      "time": "30 55 7,15,23 * * *",
+      "time": "0 57 7,15,23 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/task10.js"
@@ -124,7 +124,7 @@
     {
       "name": "JDTASK_11",
       "type": "cron",
-      "time": "0 */5 * * * *",
+      "time": "15 * * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/task11.js"
@@ -142,10 +142,19 @@
     {
       "name": "超市换1000豆",
       "type": "cron",
-      "time": "59,0,1 59,0 0,23 * * *",
+      "time": "53-56 59 23 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/JDScriptsBak/jd_blueCoinFixed.js"
+      }
+    },
+    {
+      "name": "汽车换500豆",
+      "type": "cron",
+      "time": "53-56 59 23 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "JDTASK_V2P/JDScriptsBak/jdcar500.js"
       }
     },
     {
@@ -155,15 +164,6 @@
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/JDScriptsBak/jd_cfd_SlotMachine.js"
-      }
-    },
-    {
-      "name": "财富岛提现",
-      "type": "cron",
-      "time": "59,0,1 59,0 0,23 * * *",
-      "job": {
-        "type": "runjs",
-        "target": "JDTASK_V2P/JDScriptsBak/jx_cfdtx.js"
       }
     },
     {

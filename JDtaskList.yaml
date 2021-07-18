@@ -1,29 +1,89 @@
 //定时和任务参考https://github.com/JDHelloWorld/jd_scripts/blob/main/serverless.yml
 
-- task1: #签到 #东东超市兑换奖品 #摇京豆 #京东汽车兑换
-          cronExpression: "0 0 0 * * *"
-          argument: jd_bean_sign.js & jd_blueCoinFix.js & jd_club_lottery.js &
-- task2: #东东农场 #东东萌宠 #口袋书店 #京喜农场 #京东极速版签到/Aaron-lv #京东家庭号 #金榜创造营
-          cronExpression: "0 5 6-18/6,8 * * *"
-          argument: jd_fruit.js & jd_pet.js & jd_bookshop.js & jd_jxnc.js & jd_speed_sign.js & jd_family.js & jd_gold_creator.js
-- task3: #宠汪汪 #摇钱树 #京东种豆得豆 #京喜工厂 #东东工厂 #电竞经理
-          cronExpression: "0 3 */1 * * *"
-          argument: jd_joy_new.js & jd_moneyTree.js & jd_plantBean.js & jd_dreamFactory.js & jd_jdfactory.js & jd_EsportsManager.js
-- task4: #许愿池 #狗狗乐园任务 #签到领现金 #点点券 #东东小窝 #京喜财富岛/Aaron-lv #京东直播 #5G超级盲盒 #女装盲盒
-          cronExpression: "0 0 0-16/8,20 * * *"
-          argument:jd_cash.js & jd_necklace_new.js & jd_small_home.js & jd_cfd.js & jd_live.js & jd_mohe.js
-- task5: #京东全民开红包 #进店领豆 #取关京东店铺商品 #京东汽车 #京东秒秒币
-          cronExpression: "0 10 0 * * *"
-          argument: jd_redPacket.js & jd_shop.js & jd_unsubscribe.js & jd_car.js & jd_ms.js
-- task6: #天天提鹅 #京喜牧场ts(弃用改star) #宠汪汪偷好友积分与狗粮
-          cronExpression: "0 8 */3 * * *"
-          argument: jd_daily_egg.js & jd_jxmc.js & jd_joy_steal.js
-- task7: #东东超市 #十元街 #燃动夏季
-          cronExpression: "0 15 */1 * * *"
-          argument: jd_superMarket.js & jd_syj.js& jd_summer_movement.js&jd_summer_movement_help.js
-- task8: #京豆变动通知 #京东排行榜 #领京豆额外奖励 #京东保价 #闪购盲盒
-          cronExpression: "0 30 7 * * *"
-          argument: jd_bean_change.js & jd_rankingList.js & jd_bean_home.js & jd_price.js & jd_sgmh.js
-- task9: #金融养猪 #京东快递 #京东赚赚 #京东极速版红包 #领金贴
-          cronExpression: "0 3 1 * * *"
-          argument: jd_pigPet.js & jd_kd.js & jd_jdzz.js & jd_speed_redpocke.js & jd_jin_tie.js
+++++++ task1 ++++++
+- cronExpression: "0 0 0 * * *"
+  Aaron-lv#京东签到验证jd_bean_sign.js
+  faker2#京东签到验证jd_bean_sign.js
+  #摇京豆d_club_lottery.js
+
+++++++ task2 ++++++
+- cronExpression: "0 5 6-18/6,8 * * *"
+  #东东农场jd_fruit.js
+  #东东萌宠jd_pet.js
+  Aaron-lv#口袋书店jd_bookshop.js
+  #京喜农场jd_jxnc.js
+  Aaron-lv#京东极速版签到jd_speed_sign.js
+  #京东家庭号jd_family.js
+  #金榜创造营jd_gold_creator.js
+
+++++++ task3 ++++++
+- cronExpression: "0 3 */1 * * *"
+  #宠汪汪jd_joy_new.js
+  #摇钱树jd_moneyTree.js
+  #京东种豆得豆jd_plantBean.js
+  #京喜工厂jd_dreamFactory.js
+  #东东工厂jd_jdfactory.js
+  #电竞经理jd_EsportsManager.js
+
+++++++ task4 ++++++
+- cronExpression: "0 0 0-16/8,20 * * *"
+  Cenbomin#许愿池
+  Cenbomin#狗狗乐园任务
+  Aaron-lv#签到领现金jd_cash.js
+  smiek2221#点点券jd_necklace_new.js（失效中）
+  Aaron-lv#东东小窝jd_small_home.js
+  Aaron-lv#小鸽有礼jd_daily_lottery.js
+  #京东直播jd_live.js
+  #5G超级盲盒jd_mohe.js
+  Cenbomin#女装盲盒jd_nzmh.js
+
+++++++ task5 ++++++
+- cronExpression: "0 10 0 * * *"
+  #京东全民开红包jd_redPacket.js
+  #进店领豆jd_shop.js
+  #取关京东店铺商品jd_unsubscribe.js
+  #京东汽车jd_car.js
+  #京东秒秒币jd_ms.js
+
+++++++ task6 ++++++
+- cronExpression: "0 8 */3 * * *"
+  #天天提鹅jd_daily_egg.js
+  faker2#京喜牧场jd_jxmc.js
+  smiek2221#宠汪汪偷好友积分与狗粮jd_joy_steal.js
+  star#惊喜开团star_dreamFactory_tuan.js
+  faker2#美丽研究院jd_beauty.js
+
+
+++++++ task7 ++++++
+- cronExpression: "0 15 */1 * * *"
+  Aaron-lv#东东超市jd_superMarket.js
+  #十元街jd_syj.js
+  smiek2221#燃动夏季 jd_summer_movement.js（失效中）
+
+
+++++++ task8 ++++++
+- cronExpression: "0 30 7 * * *"
+  #京豆变动通知jd_bean_change.js
+  #京东排行榜jd_rankingList.js
+  #领京豆额外奖励jd_bean_home.js
+  #京东保价jd_price.js
+  #闪购盲盒jd_sgmh.js
+
+++++++ task9 ++++++
+- cronExpression: "0 3 1 * * *"
+  #金融养猪jd_pigPet.js
+  #京东快递jd_kd.js
+  #京东赚赚jd_jdzz.js
+  #京东极速版红包jd_speed_redpocke.js
+  #领金贴jd_jin_tie.js
+++++++ task10 ++++++
+- cronExpression: "0 57 7,15,23 * * *"
+  Cenbomin#宠旺旺换豆验证jd_joy_reward_auth.js
+
+++++++ task11 ++++++
+- cronExpression: "15 * * * *"
+  Aaron-lv#京喜财富岛jd_cfd.js
+  Aaron-lv#京喜财富岛热气球挂机jd_cfd_loop.js
+  Aaron-lv#省钱大赢家之翻翻乐jd_big_winner.js
+  smiek2221#财富大陆gua_wealth_island.js
+  faker2#旺旺乐园

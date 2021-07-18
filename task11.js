@@ -1,56 +1,61 @@
 // @grant nodejs
-//美丽研究院jd_beauty.js
-$exec('node jd_beauty.js', {
-  cwd: 'script/JSFile/faker2', timeout: 0,
-  env: {
-    ...process.env,
-    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
-  },
-  cb(data, error){
-    error ? console.error(error) : console.log(data)
-  }
-})
-
-// @grant nodejs
-//京东京喜牧场
-$exec('node jd_jxmc.js', {
-  cwd: 'script/JSFile/faker2', timeout: 0,
-  env: {
-    ...process.env,
-    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
-  },
-  cb(data, error){
-    error ? console.error(error) : console.log(data)
-  }
-})
-// @grant nodejs
-//惊喜开团
-$exec('node star_dreamFactory_tuan.js', {
-  cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
+// 京喜财富岛/Aaron-lvjd_cfd_loop
+$exec('node jd_cfd.js', {
+  cwd: 'script/JSFile/sync',
+  timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
     JD_COOKIE: $store.get('CookiesJDV2P', 'string')
   },
-  cb(data, error){
+  cb(data, error) {
     error ? console.error(error) : console.log(data)
   }
 })
+
 // @grant nodejs
-// #宠汪汪偷好友积分与狗粮smiek2221
-$exec('\cp jd_joy_steal.js ../JDTASK_V2P/JDScriptsBak', {
+// 京喜财富岛挂机/Aaron-lv
+$exec('node jd_cfd_loop.js', {
+  cwd: 'script/JSFile/sync',
+  timeout: 0,
+  env: {
+    ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+  },
+  cb(data, error) {
+    error ? console.error(error) : console.log(data)
+  }
+})
+
+// @grant nodejs
+// 省钱大赢家之翻翻乐
+$exec('node jd_big_winner.js', {
+  cwd: 'script/JSFile/sync',
+  timeout: 0,
+  env: {
+    ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+  },
+  cb(data, error) {
+    error ? console.error(error) : console.log(data)
+  }
+})
+
+// @grant nodejs
+//#故事会 财富大陆smiek2221
+$exec('\cp gua_wealth_island.js ../jd_scripts', {
   cwd: 'script/JSFile/scripts',
   timeout: 0,
   cb(data, error, finish) {
     if (finish) {
-      $exec('node jd_joy_steal.js', {
-        cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak',
+      $exec('node gua_wealth_island.js', {
+        cwd: 'script/JSFile/jd_scripts',
         timeout: 0,
         env: {
           ...process.env,
           JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
-          JOY_HELP_FEED:true,
-          jdJoyStealCoin:true,
         },
         cb(data, error) {
           error ? console.error(error) : console.log(data)
@@ -61,15 +66,18 @@ $exec('\cp jd_joy_steal.js ../JDTASK_V2P/JDScriptsBak', {
     }
   }
 })
-// #天天提鹅
-$exec('node jd_daily_egg.js', {
-  cwd: 'script/JSFile/jd_scripts', timeout: 0,
+
+// @grant nodejs
+// 旺旺乐园
+$exec('node jd_joy-park.js', {
+  cwd: 'script/JSFile/faker2',
+  timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
     JD_COOKIE: $store.get('CookiesJDV2P', 'string')
   },
-  cb(data, error){
+  cb(data, error) {
     error ? console.error(error) : console.log(data)
   }
 })
