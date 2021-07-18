@@ -13,8 +13,8 @@ $exec('node jd_summer_movement.js', {
     error ? console.error(error) : console.log(data)
   }
 })
-
-// #十元街
+// @grant nodejs
+//赚京豆
 $exec('node jd_syj.js', {
   cwd: 'script/JSFile/sync', timeout: 0,
   env: {

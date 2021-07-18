@@ -48,9 +48,11 @@ $exec('node jd_shop.js', {
     error ? console.error(error) : console.log(data)
   }
 })
+
+// @grant nodejs
 // #京东全民开红包
 $exec('node jd_redPacket.js', {
-  cwd: 'script/JSFile/jd_scripts', timeout: 0,
+  cwd: 'script/JSFile/sync', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,

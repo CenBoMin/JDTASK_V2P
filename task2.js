@@ -27,7 +27,7 @@ $exec('node jd_family.js', {
 })
 //#京东极速版签到
 $exec('node jd_speed_sign.js', {
-  cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
+  cwd: 'script/JSFile/sync', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
