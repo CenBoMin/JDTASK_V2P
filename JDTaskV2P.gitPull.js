@@ -42,7 +42,7 @@ $exec('git config pull.rebase false && git fetch https://ghproxy.com/https://git
 })
 
 //Aaron-lv/sync
-$exec('git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/Aaron-lv/sync && git pull origin jd_scripts:Aaron-lv && git log --pretty=format:"%h - %an, %ar : %s" --since=7.day', {
+$exec('git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/Aaron-lv/sync && git pull origin jd_scripts:Aaron && git log --pretty=format:"%h - %an, %ar : %s" --since=2.day', {
   cwd: 'script/JSFile/sync',
   timeout: 0,
   cb(data, error) {
