@@ -21,7 +21,7 @@ git clone https://ghproxy.com/https://github.com/JDHelloWorld/jd_scripts
 echo "🌟 [gitclone]:CenBoMin/JDTASK_V2P";
 git clone https://ghproxy.com/https://github.com/CenBoMin/JDTASK_V2P
 
-echo "🌟 [gitpull]:开始下载库文件";
+# echo "🌟 [gitpull]:开始下载库文件";
 
 # git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/smiek2221/scripts && git pull origin master:smiek2221 && git log --pretty=format:"%h - %an, %ar : %s" --since=2.day
 #
@@ -33,4 +33,4 @@ echo "🌟 [gitpull]:开始下载库文件";
 #
 # git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/Aaron-lv/sync && git pull origin jd_scripts:Aaron-lv && git log --pretty=format:"%h - %an, %ar : %s" --since=2.day
 
-echo "✅ 恭喜！JDTASKV2P拉库完成 🎉 ";
+echo "✅ 恭喜！JDTASKV2P脚本初始化完成 🎉 ";
