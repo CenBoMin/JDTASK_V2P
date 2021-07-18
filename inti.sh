@@ -20,8 +20,11 @@ git clone https://ghproxy.com/https://github.com/CenBoMin/JDTASK_V2P
 
 echo "🤖 [gitpull]:CenBoMin/JDTASK_V2P && Aaron-lv/jd_scripts && shufflewzc/faker2";
 git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/JDHelloWorld/jd_scripts && git pull origin main
+
 git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/CenBoMin/JDTASK_V2P && git pull origin main
+
 git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/Aaron-lv/sync && git pull origin main
+
 git config pull.rebase false && git fetch https://ghproxy.com/https://github.com/shufflewzc/faker2 && git pull origin main
 
 echo "✅ 恭喜！JDTASKV2P初始化完成 🎉 ";
