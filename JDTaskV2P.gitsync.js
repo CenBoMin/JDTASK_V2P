@@ -38,6 +38,14 @@ function intiTask() {
               error ? console.error(error) : console.log(data)
             }
           })
+
+          $exec('wget https://ghproxy.com/https://raw.githubusercontent.com/elecV2/elecV2P/master/script/Shell/test.py', {
+            cwd: 'script/Shell',
+            timeout: 0,
+            cb(data, error) {
+              error ? console.error(error) : console.log(data)
+            }
+          })
         } else if (i == 1) {
           // $message.loading("⏳ 初始化任务准备安装中...", 5)
           $exec('chmod +x ./inti.sh', {
@@ -57,9 +65,10 @@ function intiTask() {
           })
         } else if (i == 7) {
           // 开始安装 python
+          console.log("🌟 开始...安装python");
           $exec('apk add python3 py3-pip', {
             call: true, timeout: 0,
-            cwd: '/script/Shell',
+            cwd: 'script/Shell',
             cb(data, error, finish){
               if (!error && finish) {
                 // 安装一些 python 库，根据需要自行选择更改
@@ -67,8 +76,9 @@ function intiTask() {
 
                 // python 和库安装完成后可直接在系统或其他脚本中调用，不需要再次安装
                 // 下面这段代码可在新的脚本中单独运行
+                console.log("🌟 开始...测试Py脚本运行,显示当前python版本号");
                 $exec('python3 -u test.py', {
-                  cwd: './script/Shell',    // test.py 所在目录（其他文件可通过 EFSS 文件管理界面进行上传
+                  cwd: 'script/Shell',    // test.py 所在目录（其他文件可通过 EFSS 文件管理界面进行上传
                   cb(data, error){
                     error ? console.error(error) : console.log(data)
                   }
