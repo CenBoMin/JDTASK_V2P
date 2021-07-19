@@ -27,6 +27,8 @@
   #京喜工厂jd_dreamFactory.js
   #东东工厂jd_jdfactory.js
   #电竞经理jd_EsportsManager.js
+  Cenbomin#Py脚本cookie转换JDTaskV2P.pycookie.js
+
 
 ++++++ task4 ++++++
 - cronExpression: "0 0 0-16/8,20 * * *"

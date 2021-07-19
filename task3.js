@@ -1,5 +1,16 @@
 // @grant nodejs
-//cronExpression: "0 3 */1 * * *"
+//pycookie转换
+$exec('node JDTaskV2P.pycookie.js', {
+  cwd: 'script/JSFile', timeout: 0,
+  env: {
+    ...process.env,
+    CookiesJDV2P: $store.get('CookiesJDV2P', 'string'),
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
+  }
+})
+// @grant nodejs
 // #宠汪汪
 $exec('node jd_joy_new.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
