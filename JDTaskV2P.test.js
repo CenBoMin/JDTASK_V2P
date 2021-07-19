@@ -382,6 +382,13 @@ function moduleTask() {
   }
 }
 function intiTask() {
+  $exec('rm -rf inti.sh', {
+    cwd: 'script/JSFile',
+    cb(data, error) {
+      error ? console.error(error) : console.log(data)
+    }
+  })
+
   for (let i = 0; i < 8; i++) {
     (function (i) {
       setTimeout(function () {
@@ -390,7 +397,7 @@ function intiTask() {
           $exec('wget https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/inti.sh', {
             cwd: 'script/JSFile',timeout: 0,
             cb(data, error) {
-              error ? console.error(error) : $message.success("✅  inti.sh已下载script/JSFile"
+              error ? console.error(error) : $message.success("✅  inti.sh已下载script/JSFile")
             }
           })
           // $download('wget https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/inti.sh', {
