@@ -37,25 +37,29 @@ $exec('node jd_speed_sign.js', {
     error ? console.error(error) : console.log(data)
   }
 })
+// @grant nodejs
 //#东东农场
 $exec('node jd_fruit.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
-    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+    FRUITSHARECODES: $store.get('JDFruitV2P', 'string')
   },
   cb(data, error){
     error ? console.error(error) : console.log(data)
   }
 })
+// @grant nodejs
 //#东东萌宠
 $exec('node jd_pet.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
-    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+    PETSHARECODES: $store.get('JdPetV2P', 'string')
   },
   cb(data, error){
     error ? console.error(error) : console.log(data)
