@@ -176,6 +176,34 @@
       }
     },
     {
+      "name": "京喜工厂开团py",
+      "type": "cron",
+      "time": "0 0 0 * * *",
+      "job": {
+        "type": "exec",
+        "target": "python3 -u -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_jxgc_tuan.py"
+      }
+    },
+    {
+      "name": "签到领现金助力py",
+      "type": "cron",
+      "time": "0 0 0 * * *",
+      "job": {
+        "type": "exec",
+        "target": "cash_zlzh=改助力pin的值不要; python3 -u -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_cashHelp.py"
+      }
+    },
+    {
+      "name": "关注有礼py",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "exec",
+        "target": "python3 -u -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/getFollowGifts/jd_getFollowGift.py"
+      },
+      "running": false
+    },
+    {
       "name": "JDCookie扫码服务",
       "type": "schedule",
       "time": "0",
