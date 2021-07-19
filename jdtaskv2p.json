@@ -185,12 +185,12 @@
       }
     },
     {
-      "name": "手动拉库更新",
+      "name": "手动拉库更新修复",
       "type": "schedule",
       "time": "0",
       "job": {
         "type": "runjs",
-        "target": "JDTASK_V2P/JDTaskV2P.gitPull.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.gitsync.js"
       }
     },
     {
