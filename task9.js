@@ -23,6 +23,7 @@ $exec('node jd_speed_redpocke.js', {
     error ? console.error(error) : console.log(data)
   }
 })
+// @grant nodejs
 // #京东赚赚
 $exec('node jd_jdzz.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,

@@ -5,7 +5,8 @@ $exec('node jd_sgmh.js', {
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
-    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+    JDSGMH_SHARECODES: $store.get('JDSGMHV2P', 'string')
   },
   cb(data, error){
     error ? console.error(error) : console.log(data)
