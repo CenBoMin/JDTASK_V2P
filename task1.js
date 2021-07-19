@@ -1,4 +1,17 @@
 // @grant nodejs
+//店铺签到jd_shop_sign.js
+$exec('node jd_shop_sign.js', {
+  cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
+  env: {
+    ...process.env,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
+  }
+})
+
+// @grant nodejs
 //京东财富岛提现jd_cfdtx.js
 $exec('node jd_cfdtx.js', {
   cwd: 'script/JSFile/sync', timeout: 0,
