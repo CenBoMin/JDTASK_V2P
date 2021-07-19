@@ -50,7 +50,6 @@ $exec('node jd_bean_sign.js', {
 })
 
 
-
 //#摇京豆
 $exec('node jd_club_lottery.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
