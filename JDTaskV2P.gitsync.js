@@ -4,14 +4,17 @@ const $ = new Env("JDTASKV2P手动拉库");
 !(async () => {
   console.log("🌟 开始...gitclone拉脚本");
     await intiTask();
-    await $.wait(60000)
+    await $.wait(65000)
    console.log("🌟 开始...gitpull更新");
     await gitPull();
+    await $.wait(5000)
+  console.log("✅ JDTASKV2P手动拉库:完成")
   })()
   .catch((e) => {
     $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
   })
   .finally(() => {
+
     $.done();
   })
 //============================
