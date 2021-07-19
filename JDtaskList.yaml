@@ -2,6 +2,7 @@
 
 ++++++ task1 ++++++
 - cronExpression: "0 0 0 * * *"
+  Aaron-lv#京东财富岛提现jd_cfdtx.js
   Aaron-lv#京东签到验证jd_bean_sign.js
   faker2#京东签到验证jd_bean_sign.js
   #摇京豆d_club_lottery.js

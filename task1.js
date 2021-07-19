@@ -1,4 +1,17 @@
 // @grant nodejs
+//京东财富岛提现jd_cfdtx.js
+$exec('node jd_cfdtx.js', {
+  cwd: 'script/JSFile/sync', timeout: 0,
+  env: {
+    ...process.env,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
+  }
+})
+
+// @grant nodejs
 //京东零食街jd_lsj.js
 $exec('node jd_lsj.js', {
   cwd: 'script/JSFile/faker2', timeout: 0,
