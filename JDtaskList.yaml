@@ -74,6 +74,7 @@
   #领京豆额外奖励jd_bean_home.js
   Aaron-lv#京东保价jd_price.js
   #闪购盲盒jd_sgmh.js
+  Aaron-lv#宠汪汪邀请助力与赛跑助力jd_joy_run.js
 
 ++++++ task9 ++++++
 - cronExpression: "0 3 1 * * *"

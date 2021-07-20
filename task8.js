@@ -1,4 +1,19 @@
 // @grant nodejs
+// #宠汪汪邀请助力与赛跑助力jd_joy_run.js
+$exec('node jd_joy_run.js', {
+  cwd: 'script/JSFile/sync', timeout: 0,
+  env: {
+    ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+    JOY_RUN_HELP_MYSELF:true
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
+  }
+})
+
+// @grant nodejs
 // #闪购盲盒
 $exec('node jd_sgmh.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
