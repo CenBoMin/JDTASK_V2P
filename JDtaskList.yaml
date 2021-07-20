@@ -70,9 +70,8 @@
 ++++++ task8 ++++++
 - cronExpression: "0 30 7 * * *"
   #京豆变动通知jd_bean_change.js
-  #京东排行榜jd_rankingList.js
   #领京豆额外奖励jd_bean_home.js
-  #京东保价jd_price.js
+  Aaron-lv#京东保价jd_price.js
   #闪购盲盒jd_sgmh.js
 
 ++++++ task9 ++++++
