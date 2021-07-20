@@ -2,6 +2,7 @@
 
 ++++++ task1 ++++++
 - cronExpression: "0 0 0 * * *"
+  faker2#东东乐园大风车jd_ddnc_farmpark.js
   Aaron-lv#京东财富岛提现jd_cfdtx.js
   Aaron-lv#京东签到验证jd_bean_sign.js
   faker2#京东签到验证jd_bean_sign.js
@@ -28,6 +29,7 @@
   #京喜工厂jd_dreamFactory.js
   #东东工厂jd_jdfactory.js
   Cenbomin#Py脚本cookie转换JDTaskV2P.pycookie.js
+  Aaron-lv#京喜财富岛热气球挂机jd_cfd_loop.js
 
 
 ++++++ task4 ++++++
@@ -87,7 +89,6 @@
 ++++++ task11 ++++++
 - cronExpression: "15 * * * *"
   Aaron-lv#京喜财富岛jd_cfd.js
-  Aaron-lv#京喜财富岛热气球挂机jd_cfd_loop.js
   Aaron-lv#省钱大赢家之翻翻乐jd_big_winner.js
   smiek2221#财富大陆gua_wealth_island.js
   faker2#旺旺乐园
