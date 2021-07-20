@@ -78,16 +78,3 @@ $exec('node jd_moneyTree.js', {
     error ? console.error(error) : console.log(data)
   }
 })
-// @grant nodejs
-// #电竞经理
-$exec('node jd_EsportsManager.js', {
-  cwd: 'script/JSFile/jd_scripts', timeout: 0,
-  env: {
-    ...process.env,
-    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
-    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
-  },
-  cb(data, error){
-    error ? console.error(error) : console.log(data)
-  }
-})
