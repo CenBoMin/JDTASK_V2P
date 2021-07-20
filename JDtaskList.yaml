@@ -18,7 +18,7 @@
   #京喜农场jd_jxnc.js
   Aaron-lv#京东极速版签到jd_speed_sign.js
   #京东家庭号jd_family.js
-  #金榜创造营jd_gold_creator.js
+  Aaron-lv#金榜创造营jd_gold_creator.js
 
 ++++++ task3 ++++++
 - cronExpression: "0 3 */1 * * *"

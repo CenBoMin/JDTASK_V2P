@@ -3,7 +3,7 @@
 
 //#金榜创造营
 $exec('node jd_gold_creator.js', {
-  cwd: 'script/JSFile/jd_scripts', timeout: 0,
+  cwd: 'script/JSFile/sync', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
