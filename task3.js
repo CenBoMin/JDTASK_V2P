@@ -1,7 +1,7 @@
 // @grant nodejs
 //pycookie转换
 $exec('node JDTaskV2P.pycookie.js', {
-  cwd: 'script/JSFile', timeout: 0,
+  cwd: 'script/JSFile/JDTASK_V2P', timeout: 0,
   env: {
     ...process.env,
     CookiesJDV2P: $store.get('CookiesJDV2P', 'string'),
