@@ -18,7 +18,7 @@ $exec('node jd_health_exchange.js', {
   env: {
     ...process.env,
     JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
-    HEALTH_EXCHANGE: "20"
+    HEALTH_EXCHANGE: 20
   },
   cb(data, error){
     error ? console.error(error) : console.log(data)
