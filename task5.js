@@ -39,6 +39,7 @@ $exec('node jd_ms.js', {
     error ? console.error(error) : console.log(data)
   }
 })
+// @grant nodejs
 //#京东汽车
 $exec('node jd_car.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
@@ -51,6 +52,7 @@ $exec('node jd_car.js', {
     error ? console.error(error) : console.log(data)
   }
 })
+// @grant nodejs
 // #取关京东店铺商品
 $exec('node jd_unsubscribe.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
@@ -63,6 +65,7 @@ $exec('node jd_unsubscribe.js', {
     error ? console.error(error) : console.log(data)
   }
 })
+// @grant nodejs
 // #进店领豆
 $exec('node jd_shop.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
