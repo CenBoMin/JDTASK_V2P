@@ -7,7 +7,7 @@
     {
       "name": "JDTask更新",
       "type": "cron",
-      "time": "0 0 0-23/4 * * *",
+      "time": "0 0 0-23/1 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/JDTaskV2P.gitPull.js"
