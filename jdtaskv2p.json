@@ -7,7 +7,7 @@
     {
       "name": "JDTask更新",
       "type": "cron",
-      "time": "0 0 0-23/1 * * *",
+      "time": "0 30 0-23/1 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/JDTaskV2P.gitPull.js"
@@ -16,7 +16,7 @@
     {
       "name": "JDModule更新",
       "type": "cron",
-      "time": "30 0 0-23/8 * * *",
+      "time": "30 30 0-23/8 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/JDTaskV2P.module.js"
@@ -25,7 +25,7 @@
     {
       "name": "JDCookie转换",
       "type": "cron",
-      "time": "20 0 0-23/1 * * *",
+      "time": "30 30 0-23/1 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/JDTaskV2P.cookie.js"
@@ -34,7 +34,7 @@
     {
       "name": "JD账号互助码转换",
       "type": "cron",
-      "time": "0 0 0-23/6 * * *",
+      "time": "0 30 0-23/6 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/JDTaskV2P.sharecode.js"
