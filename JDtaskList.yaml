@@ -2,24 +2,23 @@
 
 ++++++ task1 ++++++
 - cronExpression: "0 0 0 * * *"
-  faker2#东东乐园大风车jd_ddnc_farmpark.js
+  Aaron-lv#送豆得豆jd_sendBeans.js
   Aaron-lv#京东财富岛提现jd_cfdtx.js
   Aaron-lv#京东签到验证jd_bean_sign.js
   faker2#京东签到验证jd_bean_sign.js
-  #摇京豆d_club_lottery.js
-  faker2#早起福利jd_goodMorning.js
-  faker2#京东零食街jd_lsj.js
-  Aaron-lv&Cenbomin#店铺签到jd_shop_sign.js
+  Aaron-lv##摇京豆d_club_lottery.js
 
 ++++++ task2 ++++++
 - cronExpression: "0 5 6-18/6,8 * * *"
   #东东农场jd_fruit.js
   #东东萌宠jd_pet.js
   Aaron-lv#口袋书店jd_bookshop.js
-  #京喜农场jd_jxnc.js
+  暂时注释 #京喜农场jd_jxnc.js（只有一个种子）
   Aaron-lv#京东极速版签到jd_speed_sign.js
   #京东家庭号jd_family.js
   Aaron-lv#金榜创造营jd_gold_creator.js
+  #东东健康社区jd_health.js
+
 
 ++++++ task3 ++++++
 - cronExpression: "0 3 */1 * * *"
@@ -34,28 +33,29 @@
 
 ++++++ task4 ++++++
 - cronExpression: "0 0 0-16/8,20 * * *"
-  Cenbomin#许愿池
-  Cenbomin#狗狗乐园任务
+  Aaron-lv#跳跳乐瓜分京豆脚本jd_jump.js
   Aaron-lv#签到领现金jd_cash.js
   smiek2221#点点券jd_necklace_new.js（失效中）
   Aaron-lv#东东小窝jd_small_home.js
   Aaron-lv#小鸽有礼jd_daily_lottery.js
   #京东直播jd_live.js
   #5G超级盲盒jd_mohe.js
-  Cenbomin#女装盲盒jd_nzmh.js
+  Aaron-lv#女装盲盒jd_nzmh.js
 
 ++++++ task5 ++++++
 - cronExpression: "0 10 0 * * *"
+  Aaron-lv#京小鸽吾悦寄jd_jxg.js
   Aaron-lv#京东全民开红包jd_redPacket.js
   #进店领豆jd_shop.js
   #取关京东店铺商品jd_unsubscribe.js
   #京东汽车jd_car.js
   #京东秒秒币jd_ms.js
+  faker2#东东乐园大风车jd_ddnc_farmpark.js
 
 ++++++ task6 ++++++
 - cronExpression: "0 8 */3 * * *"
   #天天提鹅jd_daily_egg.js
-  faker2#京喜牧场jd_jxmc.js
+  Aaron-lv#京喜牧场jd_jxmc.js
   smiek2221#宠汪汪偷好友积分与狗粮jd_joy_steal.js
   star#惊喜开团star_dreamFactory_tuan.js
   faker2#美丽研究院jd_beauty.js
@@ -66,6 +66,7 @@
   Aaron-lv#东东超市jd_superMarket.js
   Aaron#赚京豆jd_syj.js
   smiek2221#燃动夏季 jd_summer_movement.js（失效中）
+  #东东健康社区收集能量收集能量jd_health_collect.js
 
 
 ++++++ task8 ++++++
@@ -75,6 +76,7 @@
   Aaron-lv#京东保价jd_price.js
   #闪购盲盒jd_sgmh.js
   Aaron-lv#宠汪汪邀请助力与赛跑助力jd_joy_run.js
+  faker2#早起福利jd_goodMorning.js
 
 ++++++ task9 ++++++
 - cronExpression: "0 3 1 * * *"
@@ -83,9 +85,14 @@
   #京东赚赚jd_jdzz.js
   #京东极速版红包jd_speed_redpocke.js
   #领金贴jd_jin_tie.js
+  faker2#京东零食街jd_lsj.js
+  Aaron-lv&Cenbomin#店铺签到jd_shop_sign.js
+
+
 ++++++ task10 ++++++
-- cronExpression: "0 57 7,15,23 * * *"
+- cronExpression: "0 58 7,15,23 * * *"
   Cenbomin#宠旺旺换豆验证jd_joy_reward_auth.js
+  Aaron-lv#幸运大转盘jd_market_lottery.js
 
 ++++++ task11 ++++++
 - cronExpression: "15 * * * *"

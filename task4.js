@@ -1,4 +1,19 @@
 // @grant nodejs
+// #跳跳乐瓜分京豆脚本jd_jump.js
+$exec('node jd_jump.js', {
+  cwd: 'script/JSFile/sync', timeout: 0,
+  env: {
+    ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
+  }
+})
+
+
+// @grant nodejs
 // cron:0 0 0-16/8,20 * * *
 //小鸽有礼
 $exec('node jd_daily_lottery.js', {
@@ -11,35 +26,10 @@ $exec('node jd_daily_lottery.js', {
     error ? console.error(error) : console.log(data)
   }
 })
-//许愿池
-$exec('node jd_wishingPool.js', {
-  cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
-  env: {
-    ...process.env,
-    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
-    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
-  },
-  cb(data, error){
-    error ? console.error(error) : console.log(data)
-  }
-})
-
-//旺旺乐园任务
-$exec('node jd_joy_park.js', {
-  cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
-  env: {
-    ...process.env,
-    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
-    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
-  },
-  cb(data, error){
-    error ? console.error(error) : console.log(data)
-  }
-})
-
+// @grant nodejs
 // 女装盲盒
 $exec('node jd_nzmh.js', {
-  cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,
+  cwd: 'script/JSFile/sync', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,

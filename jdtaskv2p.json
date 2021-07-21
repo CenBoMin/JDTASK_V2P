@@ -124,7 +124,7 @@
     {
       "name": "JDTASK_10",
       "type": "cron",
-      "time": "0 57 7,15,23 * * *",
+      "time": "0 58 7,15,23 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/task10.js"

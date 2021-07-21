@@ -1,4 +1,17 @@
 // @grant nodejs
+//早起福利jd_goodMorning.js
+$exec('node jd_goodMorning.js', {
+  cwd: 'script/JSFile/faker2', timeout: 0,
+  env: {
+    ...process.env,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
+  }
+})
+
+// @grant nodejs
 // #宠汪汪邀请助力与赛跑助力jd_joy_run.js
 $exec('node jd_joy_run.js', {
   cwd: 'script/JSFile/sync', timeout: 0,

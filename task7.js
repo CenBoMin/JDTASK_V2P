@@ -1,4 +1,18 @@
 // @grant nodejs
+//#东东健康社区收集能量收集能量jd_health_collect.js
+$exec('node jd_health_collect.js', {
+  cwd: 'script/JSFile/jd_scripts', timeout: 0,
+  env: {
+    ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
+  }
+})
+
+// @grant nodejs
 //燃动夏季smiek2221
 $exec('node jd_summer_movement.js', {
   cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak', timeout: 0,

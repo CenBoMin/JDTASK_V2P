@@ -14,7 +14,7 @@ $exec('node jd_beauty.js', {
 // @grant nodejs
 //京东京喜牧场
 $exec('node jd_jxmc.js', {
-  cwd: 'script/JSFile/faker2', timeout: 0,
+  cwd: 'script/JSFile/sync', timeout: 0,
   env: {
     ...process.env,
     JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
