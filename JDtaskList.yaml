@@ -93,6 +93,7 @@
 - cronExpression: "0 58 7,15,23 * * *"
   Cenbomin#宠旺旺换豆验证jd_joy_reward_auth.js
   Aaron-lv#幸运大转盘jd_market_lottery.js
+  Cenbomin#东东健康社区兑换20豆jd_health_exchange.js
 
 ++++++ task11 ++++++
 - cronExpression: "15 * * * *"
