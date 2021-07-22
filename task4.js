@@ -110,7 +110,7 @@ $exec('node jd_mohe.js', {
 
 // 京东直播
 $exec('node jd_live.js', {
-  cwd: 'script/JSFile/jd_scripts', timeout: 0,
+  cwd: 'script/JSFile/sync', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
