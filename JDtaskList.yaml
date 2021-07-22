@@ -41,6 +41,7 @@
   Aaron-lv#京东直播jd_live.js
   #5G超级盲盒jd_mohe.js
   Aaron-lv#女装盲盒jd_nzmh.js
+  faker2#全民摸冰jd_mb.j
 
 ++++++ task5 ++++++
 - cronExpression: "0 10 0 * * *"

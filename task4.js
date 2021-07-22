@@ -1,4 +1,16 @@
 // @grant nodejs
+//全民摸冰jd_mb.js
+$exec('node jd_mb.js', {
+  cwd: 'script/JSFile/faker2', timeout: 0,
+  env: {
+    ...process.env,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
+  }
+})
+// @grant nodejs
 // #跳跳乐瓜分京豆脚本jd_jump.js
 $exec('node jd_jump.js', {
   cwd: 'script/JSFile/sync', timeout: 0,
