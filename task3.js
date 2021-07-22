@@ -1,17 +1,17 @@
 // @grant nodejs
 // 京喜财富岛挂机/Aaron-lv
-// $exec('node jd_cfd_loop.js', {
-//   cwd: 'script/JSFile/sync',
-//   timeout: 0,
-//   env: {
-//     ...process.env,
-//     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
-//     JD_COOKIE: $store.get('CookiesJDV2P', 'string')
-//   },
-//   cb(data, error) {
-//     error ? console.error(error) : console.log(data)
-//   }
-// })
+$exec('node jd_cfd_loop.js', {
+  cwd: 'script/JSFile/sync',
+  timeout: 0,
+  env: {
+    ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+  },
+  cb(data, error) {
+    error ? console.error(error) : console.log(data)
+  }
+})
 
 // @grant nodejs
 //pycookie转换
@@ -84,6 +84,20 @@ $exec('node jd_plantBean.js', {
 // #摇钱树
 $exec('node jd_moneyTree.js', {
   cwd: 'script/JSFile/jd_scripts', timeout: 0,
+  env: {
+    ...process.env,
+    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
+  }
+})
+
+// @grant nodejs
+// #东东电竞经理jd_esManager.js
+$exec('node jd_esManager.js', {
+  cwd: 'script/JSFile/sync', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
