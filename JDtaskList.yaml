@@ -77,6 +77,7 @@
   #闪购盲盒jd_sgmh.js
   Aaron-lv#宠汪汪邀请助力与赛跑助力jd_joy_run.js
   faker2#早起福利jd_goodMorning.js
+  faker2#MM领京豆jd_MMdou.js
 
 ++++++ task9 ++++++
 - cronExpression: "0 3 1 * * *"
