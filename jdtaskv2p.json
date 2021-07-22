@@ -172,7 +172,7 @@
       "time": "53-56 59 23 * * *",
       "job": {
         "type": "runjs",
-        "target": "JDTASK_V2P/JDScriptsBak/jdcar500.js"
+        "target": "JDTASK_V2P/JDScriptsBak/jdcar500bean.js"
       }
     },
     {
@@ -211,6 +211,15 @@
         "target": "python3 -u -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/getFollowGifts/jd_getFollowGift.py"
       },
       "running": false
+    },
+    {
+      "name": "Aaron-lv热气球挂机",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "runjs",
+        "target": "JDTASK_V2P/JDScriptsBak/jdcfdloop.js"
+      }
     },
     {
       "name": "JDCookie扫码服务",
