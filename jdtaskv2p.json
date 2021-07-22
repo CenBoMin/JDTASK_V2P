@@ -304,16 +304,6 @@
         "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.test.js"
       },
       "running": false
-    },
-    {
-      "name": "Aaron-lv热气球挂机",
-      "type": "schedule",
-      "time": "0",
-      "job": {
-        "type": "runjs",
-        "target": "JDTASK_V2P/JDScriptsBak/jdcfdloop.js"
-      },
-      "running": false
     }
   ]
 }
