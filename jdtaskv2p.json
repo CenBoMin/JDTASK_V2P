@@ -158,6 +158,15 @@
       }
     },
     {
+      "name": "宠旺旺换500豆-延时版",
+      "type": "cron",
+      "time": "53-56 59 7,15,23 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "JDTASK_V2P/JDScriptsBak/jd_joy_reward2.js"
+      }
+    },
+    {
       "name": "超市换1000豆",
       "type": "cron",
       "time": "53-56 59 23 * * *",
