@@ -7,8 +7,9 @@ const $ = new Env("JDTASKV2P手动拉库");
     await $.wait(65000)
    console.log("🌟 开始...gitpull更新");
     await gitPull();
-    await $.wait(5000)
-  console.log("✅ JDTASKV2P手动拉库:完成")
+    await $.wait(8000)
+   console.log("✅ JDTASKV2P手动拉库:完成")
+    await reboot();
   })()
   .catch((e) => {
     $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
@@ -93,7 +94,6 @@ function intiTask() {
     })(i);
   }
 }
-
 function gitPull() {
   /*
   1.8小时拉一次库更新
@@ -148,6 +148,21 @@ function gitPull() {
   })
 
 };
+function reboot() {
+  $message.loading("🔄 正在重启elecv2p ",5)
+  $exec('pm2 restart elecV2P', {
+    cb(data, error){
+      if (error) {
+        console.error(error)
+        console.log('尝试使用 pm2 的方式重启失败，将直接重启服务器')
+        $exec('reboot')
+      } else {
+        console.log(data)
+      }
+    }
+  })
+}
+
 // prettier-ignore
 function Env(name, opts) {
   class Http {

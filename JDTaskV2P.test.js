@@ -458,12 +458,18 @@ function delTestLog() {
 })
 }
 function reboot() {
-  $message.success("🔄 安装检查结束..正在重启elecv2p ",0)
-   $exec('pm2 restart elecV2P', {
-  cb(data, error){
-    error ? console.error(error) : console.log(data)
-  }
-})
+  $message.loading("🔄 安装检查结束..正在重启elecv2p ",5)
+  $exec('pm2 restart elecV2P', {
+    cb(data, error){
+      if (error) {
+        console.error(error)
+        console.log('尝试使用 pm2 的方式重启失败，将直接重启服务器')
+        $exec('reboot')
+      } else {
+        console.log(data)
+      }
+    }
+  })
 }
 // prettier-ignore
 function Env(name, opts) {
