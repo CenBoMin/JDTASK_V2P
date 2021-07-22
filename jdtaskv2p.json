@@ -2,7 +2,7 @@
   "name": "JDTASK_V2P",
   "author": "CenBomin",
   "desc": "该订阅适用于elecV2P,在node环境跑京东任务,并与V2p交互使用",
-  "date": "2021-06-29 23:11:16",
+  "date": "2021-07-23 23:11:16",
   "list": [
     {
       "name": "JDTask更新",
@@ -212,6 +212,70 @@
       }
     },
     {
+      "name": "Aaron半点京豆雨",
+      "type": "cron",
+      "time": "30 16-23/1 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/Aaron-lv/JavaScript/master/Task/jd_half_redrain.js"
+      }
+    },
+    {
+      "name": "Aaron超级直播间盲盒抽京豆",
+      "type": "cron",
+      "time": "1-3 18-20 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/Aaron-lv/JavaScript/master/Task/jd_super_mh.js"
+      }
+    },
+    {
+      "name": "Aaron整点京豆雨",
+      "type": "cron",
+      "time": "0 0-23/1 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/Aaron-lv/JavaScript/master/Task/jd_super_redrain.js"
+      }
+    },
+    {
+      "name": "Aaron超级直播间红包雨",
+      "type": "cron",
+      "time": "0,30 0-23/1 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_live_redrain.js"
+      }
+    },
+    {
+      "name": "TG机器人签到py",
+      "type": "cron",
+      "time": "30 0 0 * * *",
+      "job": {
+        "type": "exec",
+        "target": "python3 -u auto_sign.py -cwd script/JSFile/Python"
+      }
+    },
+    {
+      "name": "京东定时上车py",
+      "type": "cron",
+      "time": "0 0 21 1-31 1-12 6",
+      "job": {
+        "type": "exec",
+        "target": "python3 -u auto_jdcar.py -cwd script/JSFile/Python"
+      }
+    },
+    {
+      "name": "手动拉库更新修复",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "runjs",
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.gitsync.js"
+      },
+      "running": false
+    },
+    {
       "name": "关注有礼py",
       "type": "schedule",
       "time": "0",
@@ -222,31 +286,14 @@
       "running": false
     },
     {
-      "name": "Aaron-lv热气球挂机",
-      "type": "schedule",
-      "time": "0",
-      "job": {
-        "type": "runjs",
-        "target": "JDTASK_V2P/JDScriptsBak/jdcfdloop.js"
-      }
-    },
-    {
       "name": "JDCookie扫码服务",
       "type": "schedule",
       "time": "0",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/getJDCookie.elecV2P.js"
-      }
-    },
-    {
-      "name": "手动拉库更新修复",
-      "type": "schedule",
-      "time": "0",
-      "job": {
-        "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.gitsync.js"
-      }
+      },
+      "running": false
     },
     {
       "name": "一键安装与测试运行",
@@ -255,8 +302,18 @@
       "job": {
         "type": "runjs",
         "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.test.js"
-      }
+      },
+      "running": false
     },
-
+    {
+      "name": "Aaron-lv热气球挂机",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "runjs",
+        "target": "JDTASK_V2P/JDScriptsBak/jdcfdloop.js"
+      },
+      "running": false
+    },
   ]
 }
