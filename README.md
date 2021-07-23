@@ -53,9 +53,7 @@ https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/jdtaskv2p.json
 - 以上环境以及搭建好了，需要添加JDcookie值（即CookieJD/CookieJD2/CookiesJD这三个)
 - 由于有许多种方式,只介绍自己目前使用的两种...
 
-- 另外也可以参照[@Oreomeow](https://github.com/Oreomeow)JDCK填写指南:
-
-https://github.com/Oreomeow/VIP/blob/main/INS/Vtop/Tutorial.md#v2p-tutorial
+- 另外也可以参照[@Oreomeow](https://github.com/Oreomeow)JDCK填写指南:https://github.com/Oreomeow/VIP/blob/main/INS/Vtop/Tutorial.md#v2p-tutorial
 
 ## 第一种方式:BOXJS.Cookie上传V2P服务脚本
 
@@ -84,7 +82,7 @@ https://raw.githubusercontent.com/CenBoMin/GithubSync/main/ELECV2PJS/PushBoxjsCo
 直接执行TASK任务的JDCookie扫码服务，扫码获取JDcookie，多试至少两次
 
 
-- 来自elecV2P大佬的自用本地版本[https://github.com/elecV2/elecV2P-dei/blob/master/examples/JSTEST/getJDCookie.elecV2P.js]
+- 来自elecV2P大佬的自用本地版本https://github.com/elecV2/elecV2P-dei/blob/master/examples/JSTEST/getJDCookie.elecV2P.js
 
 
 # 通知
@@ -105,8 +103,7 @@ https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/sendNotify.js
 # 任务
 - 有时间就同步更新关注库的Task
 - 拉取仓库更新JS-JDTaskV2P.gitPull.js每1小时同步拉新一次,相关信息查看log
-- 任务cron和执行脚本对照：
-https://github.com/CenBoMin/JDTASK_V2P/blob/main/JDtaskList.yaml
+- 任务cron和执行脚本对照：https://github.com/CenBoMin/JDTASK_V2P/blob/main/JDtaskList.yaml
 
 
 # DOCUMENTS&EXAMPLES
