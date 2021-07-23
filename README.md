@@ -2,11 +2,11 @@
 
 - JDTASK_V2P - **Docker环境**下,搭建用elecV2P执行JDTASK的方案
 - 脚本基础库来自：
-1.JDHelloWorld：https://github.com/JDHelloWorld/jd_scripts
-2.Aaron-lv:https://github.com/Aaron-lv/sync/tree/jd_scripts
-3.shufflewzc:https://github.com/shufflewzc/faker2
-4.curtinlv:https://github.com/curtinlv/JD-Script
-5.smiek2221:https://github.com/smiek2221/scripts
+ - 1.JDHelloWorld：https://github.com/JDHelloWorld/jd_scripts
+ - 2.Aaron-lv:https://github.com/Aaron-lv/sync/tree/jd_scripts
+ - 3.shufflewzc:https://github.com/shufflewzc/faker2
+ - 4.curtinlv:https://github.com/curtinlv/JD-Script
+ - 5.smiek2221:https://github.com/smiek2221/scripts
 - 写程序的思路来自v4和青龙qinglong:https://github.com/whyour/qinglong
 
 ![](https://raw.githubusercontent.com/elecV2/elecV2P-dei/master/docs/res/overview.png)
