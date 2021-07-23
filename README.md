@@ -9,10 +9,6 @@
  - 5.smiek2221:https://github.com/smiek2221/scripts
 - 写程序的思路来自v4和青龙qinglong:https://github.com/whyour/qinglong
 
-![](https://raw.githubusercontent.com/elecV2/elecV2P-dei/master/docs/res/overview.png)
-
-
-
 
 # 基础功能
 
