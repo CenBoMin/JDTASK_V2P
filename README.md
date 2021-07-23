@@ -1,4 +1,4 @@
-## 简介
+# 简介
 
 - JDTASK_V2P - **Docker环境**下,搭建用elecV2P执行JDTASK的方案
 - 脚本基础库来自：
@@ -52,7 +52,9 @@ https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/jdtaskv2p.json
 ```
 https://github.com/Oreomeow/VIP/blob/main/INS/Vtop/Tutorial.md#v2p-tutorial
 ```
-### 第一种方式:BOXJS.Cookie上传V2P服务脚本
+## 第一种方式:BOXJS.Cookie上传V2P服务脚本
+
+
 - 打开重写获取京东Cookie：
 - 1.微信访问含有会员机制的京东自营店会员页面
 - 2.访问京东APP内嵌了H5页面：后台杀京东APP后再进入或进首页的免费水果都可获取
@@ -69,7 +71,9 @@ https://raw.githubusercontent.com/ztxtop/x/main/subscribe/rewrite-jd.plugin
 https://raw.githubusercontent.com/CenBoMin/GithubSync/main/ELECV2PJS/PushBoxjsCookie_elecV2p.js
 ```
 
-### 第二种方式:本地JD扫码服务(扫码未弹窗,请自行去设置-重启动elecv2p)
+## 第二种方式:本地JD扫码服务(扫码未弹窗,请自行去设置-重启动elecv2p)
+
+
 ![](https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/PNGFile/cookie.png)
 
 直接执行TASK任务的JDCookie扫码服务，扫码获取JDcookie，多试至少两次
