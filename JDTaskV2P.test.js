@@ -108,12 +108,12 @@ async function intiCheck() {
 
           // python 和库安装完成后可直接在系统或其他脚本中调用，不需要再次安装
           // 下面这段代码可在新的脚本中单独运行
-          $exec('python3 -u test.py', {
-            cwd: './script/Shell',    // test.py 所在目录（其他文件可通过 EFSS 文件管理界面进行上传
-            cb(data, error){
-              error ? console.error(error) : console.log(data)
-            }
-          })
+          // $exec('python3 -u test.py', {
+          //   cwd: './script/Shell',    // test.py 所在目录（其他文件可通过 EFSS 文件管理界面进行上传
+          //   cb(data, error){
+          //     error ? console.error(error) : console.log(data)
+          //   }
+          // })
         } else {
           error ? console.error(error) : console.log(data)
         }

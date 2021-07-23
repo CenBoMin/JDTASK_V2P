@@ -54,13 +54,13 @@ $exec('node jd_nzmh.js', {
 
 // @grant nodejs
 // 点点券smiek2221
-$exec('\cp jd_necklace.js ../JDTASK_V2P/JDScriptsBak', {
+$exec('\cp jd_necklace.js ../faker2', {
   cwd: 'script/JSFile/scripts',
   timeout: 0,
   cb(data, error, finish) {
     if (finish) {
       $exec('node jd_necklace.js', {
-        cwd: 'script/JSFile/JDTASK_V2P/JDScriptsBak',
+        cwd: 'script/JSFile/faker2',
         timeout: 0,
         env: {
           ...process.env,
@@ -73,6 +73,19 @@ $exec('\cp jd_necklace.js ../JDTASK_V2P/JDScriptsBak', {
     } else {
       error ? console.error(error) : console.log(data)
     }
+  }
+})
+
+// @grant nodejs
+// 点点券Aaron-lv
+$exec('node jd_necklace.js', {
+  cwd: 'script/JSFile/sync', timeout: 0,
+  env: {
+    ...process.env,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
   }
 })
 

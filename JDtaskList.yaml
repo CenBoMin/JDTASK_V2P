@@ -35,7 +35,8 @@
 - cronExpression: "0 0 0-16/8,20 * * *"
   Aaron-lv#跳跳乐瓜分京豆脚本jd_jump.js
   Aaron-lv#签到领现金jd_cash.js
-  smiek2221#点点券jd_necklace_new.js（失效中）
+  smiek2221#点点券jd_necklace.js
+  Aaron-lv#点点券jd_necklace.js
   Aaron-lv#东东小窝jd_small_home.js
   Aaron-lv#小鸽有礼jd_daily_lottery.js
   Aaron-lv#京东直播jd_live.js
@@ -66,7 +67,8 @@
 - cronExpression: "0 15 */1 * * *"
   Aaron-lv#东东超市jd_superMarket.js
   Aaron#赚京豆jd_syj.js
-  smiek2221#燃动夏季 jd_summer_movement.js（失效中）
+  smiek2221#燃动夏季 jd_summer_movement.js
+  (暂时停止)Aaron-lv#燃动夏季 jd_summer_movement.js
   #东东健康社区收集能量收集能量jd_health_collect.js
 
 
