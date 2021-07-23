@@ -106,7 +106,7 @@ https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/sendNotify.js
 - 任务cron和执行脚本对照：https://github.com/CenBoMin/JDTASK_V2P/blob/main/JDtaskList.yaml
 
 
-# DOCUMENTS&EXAMPLES
+# 问题&文档
 
 关于一些使用问题的查询：
 - 1.elecV2P说明文档及一些例程: [https://github.com/elecV2/elecV2P-dei](https://github.com/elecV2/elecV2P-dei)
