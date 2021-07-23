@@ -43,7 +43,7 @@
     {
       "name": "JDTASK_1",
       "type": "cron",
-      "time": "0 0 0 * * *",
+      "time": "0 3 0 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/task1.js"
@@ -52,7 +52,7 @@
     {
       "name": "JDTASK_2",
       "type": "cron",
-      "time": "0 5 6-18/6,8 * * *",
+      "time": "0 20 6-18/6,8 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/task2.js"
@@ -61,7 +61,7 @@
     {
       "name": "JDTASK_3",
       "type": "cron",
-      "time": "0 3 */1 * * *",
+      "time": "0 30 */1 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/task3.js"
@@ -70,7 +70,7 @@
     {
       "name": "JDTASK_4",
       "type": "cron",
-      "time": "0 0 0-16/8,20 * * *",
+      "time": "0 15 0-16/8,20 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/task4.js"
@@ -97,7 +97,7 @@
     {
       "name": "JDTASK_7",
       "type": "cron",
-      "time": "0 15 */1 * * *",
+      "time": "0 25 */1 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/task7.js"
@@ -115,7 +115,7 @@
     {
       "name": "JDTASK_9",
       "type": "cron",
-      "time": "0 3 1 * * *",
+      "time": "0 10 1 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/task9.js"
@@ -124,7 +124,7 @@
     {
       "name": "JDTASK_10",
       "type": "cron",
-      "time": "0 58 7,15,23 * * *",
+      "time": "0 59 7,15,23 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/task10.js"
