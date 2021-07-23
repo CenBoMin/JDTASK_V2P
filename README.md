@@ -54,9 +54,9 @@ https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/jdtaskv2p.json
 - 由于有许多种方式,只介绍自己目前使用的两种...
 
 - 另外也可以参照[@Oreomeow](https://github.com/Oreomeow)JDCK填写指南:
-```
+
 https://github.com/Oreomeow/VIP/blob/main/INS/Vtop/Tutorial.md#v2p-tutorial
-```
+
 ## 第一种方式:BOXJS.Cookie上传V2P服务脚本
 
 
