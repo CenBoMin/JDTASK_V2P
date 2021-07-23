@@ -119,6 +119,6 @@ https://github.com/CenBoMin/JDTASK_V2P/blob/main/JDtaskList.yaml
 
 
 # 致谢
->  [@elecV2](https://github.com/elecV2) | [JDHelloWorld](https://github.com/JDHelloWorld) | [@ztxtop](https://github.com/ztxtop) | [@whyour](https://github.com/whyour)
+>  [@elecV2](https://github.com/elecV2) | [JDHelloWorld](https://github.com/JDHelloWorld) | [@ztxtop](https://github.com/ztxtop) | [@whyour](https://github.com/whyour)|[@Oreomeow](https://github.com/Oreomeow)| [@Aaron-lv](https://github.com/Aaron-lv/sync/tree/jd_scripts)| [@shufflewzc](https://github.com/shufflewzc/faker2)| [@curtinlv](https://github.com/curtinlv/JD-Script) | [smiek2221](https://github.com/smiek2221/scripts)
 
 - 感谢以上开发者的支持和贡献。
