@@ -199,7 +199,7 @@
       "time": "0 0 0 * * *",
       "job": {
         "type": "exec",
-        "target": "python3 -u -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_jxgc_tuan.py"
+        "target": "python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_jxgc_tuan.py"
       }
     },
     {
@@ -208,7 +208,7 @@
       "time": "0 0 0 * * *",
       "job": {
         "type": "exec",
-        "target": "cash_zlzh=改助力pin的值不要; python3 -u -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_cashHelp.py"
+        "target": "cash_zlzh=改助力pin的值不要; python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_cashHelp.py"
       }
     },
     {
@@ -250,7 +250,7 @@
     {
       "name": "TG机器人签到py",
       "type": "cron",
-      "time": "30 0 0 * * *",
+      "time": "30 0 8 * * *",
       "job": {
         "type": "exec",
         "target": "python3 -u auto_sign.py -cwd script/JSFile/Python"
@@ -281,7 +281,7 @@
       "time": "0",
       "job": {
         "type": "exec",
-        "target": "python3 -u -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/getFollowGifts/jd_getFollowGift.py"
+        "target": "python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/getFollowGifts/jd_getFollowGift.py"
       },
       "running": false
     },
