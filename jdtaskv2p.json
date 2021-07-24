@@ -169,7 +169,7 @@
     {
       "name": "超市换1000豆",
       "type": "cron",
-      "time": "53-56 59 23 * * *",
+      "time": "53 59 23 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/JDScriptsBak/jd_blueCoinFixed.js"
@@ -178,7 +178,7 @@
     {
       "name": "汽车换500豆",
       "type": "cron",
-      "time": "53-56 59 23 * * *",
+      "time": "53 59 23 * * *",
       "job": {
         "type": "runjs",
         "target": "JDTASK_V2P/JDScriptsBak/jdcar500bean.js"
