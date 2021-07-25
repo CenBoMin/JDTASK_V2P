@@ -10,6 +10,7 @@
 
 ++++++ task2 ++++++
 - cronExpression: "0 20 6-18/6,8 * * *"
+  faker2#特务Zxjd_productZ4Brand.js
   #东东农场jd_fruit.js
   #东东萌宠jd_pet.js
   Aaron-lv#口袋书店jd_bookshop.js
@@ -45,7 +46,7 @@
   faker2#全民摸冰jd_mb.j
 
 ++++++ task5 ++++++
-- cronExpression: "0 10 0 * * *"
+- cronExpression: "0 10 2 * * *"
   Aaron-lv#京小鸽吾悦寄jd_jxg.js
   Aaron-lv#京东全民开红包jd_redPacket.js
   #进店领豆jd_shop.js
