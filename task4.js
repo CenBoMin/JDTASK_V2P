@@ -54,31 +54,20 @@ $exec('node jd_nzmh.js', {
 
 // @grant nodejs
 // 点点券smiek2221
-$exec('\cp jd_necklace.js ../faker2', {
-  cwd: 'script/JSFile/scripts',
-  timeout: 0,
-  cb(data, error, finish) {
-    if (finish) {
-      $exec('node jd_necklace.js', {
-        cwd: 'script/JSFile/faker2',
-        timeout: 0,
-        env: {
-          ...process.env,
-          JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
-        },
-        cb(data, error) {
-          error ? console.error(error) : console.log(data)
-        }
-      })
-    } else {
-      error ? console.error(error) : console.log(data)
-    }
+$exec('node https://raw.githubusercontent.com/smiek2221/scripts/master/JDJRValidator_Pure.js', {
+  cwd: 'script/JSFile/faker2', timeout: 0,
+  env: {
+    ...process.env,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
   }
 })
 
 // @grant nodejs
 // 点点券Aaron-lv
-$exec('node jd_necklace.js', {
+$exec('node https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_necklace.js', {
   cwd: 'script/JSFile/sync', timeout: 0,
   env: {
     ...process.env,
