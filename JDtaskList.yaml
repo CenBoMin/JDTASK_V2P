@@ -13,9 +13,9 @@
   #东东农场jd_fruit.js
   #东东萌宠jd_pet.js
   Aaron-lv#口袋书店jd_bookshop.js
-  暂时注释 #京喜农场jd_jxnc.js（只有一个种子）
+  stoptask #京喜农场jd_jxnc.js（只有一个种子）
   Aaron-lv#京东极速版签到jd_speed_sign.js
-  #京东家庭号jd_family.js
+  stoptask #京东家庭号jd_family.js
   Aaron-lv#金榜创造营jd_gold_creator.js
   #东东健康社区jd_health.js
 

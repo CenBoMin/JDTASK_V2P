@@ -26,19 +26,19 @@ $exec('node jd_gold_creator.js', {
     error ? console.error(error) : console.log(data)
   }
 })
-// @grant nodejs
-//#京东家庭号
-$exec('node jd_family.js', {
-  cwd: 'script/JSFile/jd_scripts', timeout: 0,
-  env: {
-    ...process.env,
-    V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
-    JD_COOKIE: $store.get('CookiesJDV2P', 'string')
-  },
-  cb(data, error){
-    error ? console.error(error) : console.log(data)
-  }
-})
+// // @grant nodejs
+// //#京东家庭号
+// $exec('node jd_family.js', {
+//   cwd: 'script/JSFile/sync', timeout: 0,
+//   env: {
+//     ...process.env,
+//     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
+//     JD_COOKIE: $store.get('CookiesJDV2P', 'string')
+//   },
+//   cb(data, error){
+//     error ? console.error(error) : console.log(data)
+//   }
+// })
 // @grant nodejs
 //#京东极速版签到
 $exec('node jd_speed_sign.js', {
