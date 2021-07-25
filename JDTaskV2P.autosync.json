@@ -7,7 +7,6 @@
     	"30 11 * * * https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/jd_superBrand.js, tag=特物Z|万物皆可国创, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true",
     	"45 */2,23 * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_joy_new.js, tag=宠汪汪",
       "10 7-22/1 * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_plantBean.js, tag=京东种豆得豆",
-      "10 7-22/1 * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_plantBean.js, tag=京东种豆得豆",
-
+      "10 7-22/1 * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_plantBean.js, tag=京东种豆得豆"
     ]
 }
