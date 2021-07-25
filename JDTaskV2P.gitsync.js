@@ -149,7 +149,8 @@ function gitPull() {
 
 };
 function reboot() {
-  $message.loading("🔄 正在重启elecv2p ",5)
+  $message.loading("🔄 正在重启elecv2p ",7)
+  $message.success("🆗 重启elecv2p成功 ",0)
   $exec('pm2 restart elecV2P', {
     cb(data, error){
       if (error) {
