@@ -10,11 +10,10 @@
 
 ++++++ task2 ++++++
 - cronExpression: "0 20 6-18/6,8 * * *"
-  faker2#特务Zxjd_productZ4Brand.js
   #东东农场jd_fruit.js
   #东东萌宠jd_pet.js
   Aaron-lv#口袋书店jd_bookshop.js
-  stoptask #京喜农场jd_jxnc.js（只有一个种子）
+  STOP_TASK #京喜农场jd_jxnc.js（只有一个种子）
   Aaron-lv#京东极速版签到jd_speed_sign.js
   stoptask #京东家庭号jd_family.js
   Aaron-lv#金榜创造营jd_gold_creator.js
@@ -60,8 +59,9 @@
   #天天提鹅jd_daily_egg.js
   Aaron-lv#京喜牧场jd_jxmc.js
   smiek2221#宠汪汪偷好友积分与狗粮jd_joy_steal.js
-  star#惊喜开团star_dreamFactory_tuan.js
+  star261#惊喜开团star_dreamFactory_tuan.js
   faker2#美丽研究院jd_beauty.js
+  star261#特务Zxjd_productZ4Brand.js
 
 
 ++++++ task7 ++++++

@@ -1,4 +1,16 @@
 // @grant nodejs
+//#特务Zxjd_productZ4Brand.js
+$exec('node https://raw.githubusercontent.com/star261/jd/main/scripts/jd_productZ4Brand.js', {
+  cwd: 'script/JSFile/faker2', timeout: 0,
+  env: {
+    ...process.env,
+    JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
+  },
+  cb(data, error){
+    error ? console.error(error) : console.log(data)
+  }
+})
+// @grant nodejs
 //美丽研究院jd_beauty.js
 $exec('node jd_beauty.js', {
   cwd: 'script/JSFile/faker2', timeout: 0,
