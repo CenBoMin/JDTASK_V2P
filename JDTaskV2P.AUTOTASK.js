@@ -41,10 +41,13 @@ let tz = "";
       for (let i = 0; i < nowUpdateTaskArr.length; i++) {
         V2PtaskName = nowUpdateTaskArr[i].split("tag=")[1].split(",")[0];
         V2PtaskCron = nowUpdateTaskArr[i].split("RUNJDTASK_V2P")[0];
-        V2PtaskUrl = nowUpdateTaskArr[i].split(",")[0].replace(/https/, "&https").split("&")[1];
+        V2PtaskUrl = nowUpdateTaskArr[i].split("task=")[1].split("tag=")[0];
+        console.log(V2PtaskName);
+        console.log(V2PtaskCron);
+        console.log(V2PtaskUrl);
         await pushtask();
-        await $.wait(1000)
-        await downloadJS();
+        // await $.wait(1000)
+        // await downloadJS();
       }
       // $.msg($.name, `💡已更新JDTASK任务列表`);
   // }

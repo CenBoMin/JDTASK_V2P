@@ -2,19 +2,19 @@
     "name": "JDTASk脚本集合",
     "description": "2021-07-25 23:11:16",
     "task": [
-    "13 1,6,22 * * * RUNJDTASK_V2P.js -env JDTASK=jd_health.js, tag=京东健康社区",
-    "45 */2,23 * * * RUNJDTASK_V2P.js -env JDTASK=jd_joy_new.js, tag=宠汪汪",
-    "10 7-22/1 * * * RUNJDTASK_V2P.js -env JDTASK=jd_plantBean.js, tag=京东种豆得豆",
-    "50 * * * * RUNJDTASK_V2P.js -env JDTASK=jd_dreamFactory.js, tag=京喜工厂",
-    "26 * * * * RUNJDTASK_V2P.js -env JDTASK=jd_jdfactory.js, tag=东东工厂",
-    "5-45/20 * * * * RUNJDTASK_V2P.js -env JDTASK=jd_health_collect.js, tag=京东健康社区收集健康能量",
-    "47 8,22 * * * RUNJDTASK_V2P.js -env JDTASK=jd_sgmh.js, tag=闪购盲盒",
-    "15 6-18/6 * * * RUNJDTASK_V2P.js -env JDTASK=jd_fruit.js, tag=东东农场",
-    "35 6-18/6 * * * RUNJDTASK_V2P.js -env JDTASK=jd_pet.js, tag=东东萌宠",
-    "10 */4 * * * RUNJDTASK_V2P.js -env JDTASK=jd_cash.js, tag=签到领现金",
-    "10 13-20/1 * * * RUNJDTASK_V2P.js -env JDTASK=jd_joy_run.js, tag=宠汪汪邀请助力",
-    "10 11,20 * * * RUNJDTASK_V2P.js -env JDTASK=jd_health_exchange.js, tag=东东健康社区兑换20豆",
-    "24 0 * * * RUNJDTASK_V2P.js -env JDTASK=jd_sendBeans.js, tag=送豆得豆",
-    "59 11,12,23 * * * RUNJDTASK_V2P.js -env JDTASK=jd_cfdtx.js, tag=京喜财富岛提现"
+    "13 1,6,22 * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_health.js, tag=京东健康社区",
+    "45 */2,23 * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_joy_new.js, tag=宠汪汪",
+    "10 7-22/1 * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_plantBean.js, tag=京东种豆得豆",
+    "50 * * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_dreamFactory.js, tag=京喜工厂",
+    "26 * * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_jdfactory.js, tag=东东工厂",
+    "5-45/20 * * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_health_collect.js, tag=京东健康社区收集健康能量",
+    "47 8,22 * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_sgmh.js, tag=闪购盲盒",
+    "15 6-18/6 * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_fruit.js, tag=东东农场",
+    "35 6-18/6 * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_pet.js, tag=东东萌宠",
+    "10 */4 * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_cash.js, tag=签到领现金",
+    "10 13-20/1 * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_joy_run.js, tag=宠汪汪邀请助力",
+    "10 11,20 * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_health_exchange.js, tag=东东健康社区兑换20豆",
+    "24 0 * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_sendBeans.js, tag=送豆得豆",
+    "59 11,12,23 * * * RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_cfdtx.js, tag=京喜财富岛提现"
     ]
 }
