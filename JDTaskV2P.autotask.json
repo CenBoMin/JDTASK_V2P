@@ -1,0 +1,201 @@
+{
+  "name": "JDTASK_V2P",
+  "author": "CenBomin",
+  "desc": "该订阅适用于elecV2P,在node环境跑京东任务,并与V2p交互使用",
+  "date": "2021-07-23 23:11:16",
+  "list": [
+    {
+      "name": "JDTask更新",
+      "type": "cron",
+      "time": "0 30 0-23/1 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.gitPull.js"
+      }
+    },
+    {
+      "name": "JDModule更新",
+      "type": "cron",
+      "time": "30 30 0-23/8 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.module.js"
+      }
+    },
+    {
+      "name": "JDCookie转换",
+      "type": "cron",
+      "time": "30 30 0-23/1 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.cookie.js"
+      }
+    },
+    {
+      "name": "JD账号互助码转换",
+      "type": "cron",
+      "time": "0 30 0-23/6 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.sharecode.js"
+      }
+    },
+    {
+      "name": "宠旺旺换500豆",
+      "type": "cron",
+      "time": "54-59,0-3 0,59 7,8,15,16,23,0 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "JDTASK_V2P/JDScriptsBak/jd_joy_reward.js"
+      }
+    },
+    {
+      "name": "宠旺旺换500豆-延时版",
+      "type": "cron",
+      "time": "53-56 59 7,15,23 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "JDTASK_V2P/JDScriptsBak/jd_joy_reward2.js"
+      }
+    },
+    {
+      "name": "超市换1000豆",
+      "type": "cron",
+      "time": "53 59 23 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "JDTASK_V2P/JDScriptsBak/jd_blueCoinFixed.js"
+      }
+    },
+    {
+      "name": "汽车换500豆",
+      "type": "cron",
+      "time": "53 59 23 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "JDTASK_V2P/JDScriptsBak/jdcar500bean.js"
+      }
+    },
+    {
+      "name": "京东试用",
+      "type": "cron",
+      "time": "0 0 5 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "JDTASK_V2P/JDScriptsBak/jd_try.js"
+      }
+    },
+    {
+      "name": "京喜工厂开团py",
+      "type": "cron",
+      "time": "0 0 0 * * *",
+      "job": {
+        "type": "exec",
+        "target": "python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_jxgc_tuan.py"
+      }
+    },
+    {
+      "name": "签到领现金助力py",
+      "type": "cron",
+      "time": "0 0 0 * * *",
+      "job": {
+        "type": "exec",
+        "target": "cash_zlzh=改助力pin的值不要; python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_cashHelp.py"
+      }
+    },
+    {
+      "name": "Aaron半点京豆雨",
+      "type": "cron",
+      "time": "30 16-23/1 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/Aaron-lv/JavaScript/master/Task/jd_half_redrain.js"
+      }
+    },
+    {
+      "name": "Aaron超级直播间盲盒抽京豆",
+      "type": "cron",
+      "time": "1-3 18-20 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/Aaron-lv/JavaScript/master/Task/jd_super_mh.js"
+      }
+    },
+    {
+      "name": "Aaron整点京豆雨",
+      "type": "cron",
+      "time": "0 0-23/1 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/Aaron-lv/JavaScript/master/Task/jd_super_redrain.js"
+      }
+    },
+    {
+      "name": "Aaron超级直播间红包雨",
+      "type": "cron",
+      "time": "0,30 0-23/1 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_live_redrain.js"
+      }
+    },
+    {
+      "name": "TG机器人签到py",
+      "type": "cron",
+      "time": "30 0 8 * * *",
+      "job": {
+        "type": "exec",
+        "target": "python3 -u auto_sign.py -cwd script/JSFile/Python"
+      }
+    },
+    {
+      "name": "京东定时上车py",
+      "type": "cron",
+      "time": "0 0 21 1-31 1-12 6",
+      "job": {
+        "type": "exec",
+        "target": "python3 -u auto_jdcar.py -cwd script/JSFile/Python"
+      }
+    },
+    {
+      "name": "手动拉库更新修复",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "runjs",
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.gitsync.js"
+      },
+      "running": false
+    },
+    {
+      "name": "关注有礼py",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "exec",
+        "target": "python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/getFollowGifts/jd_getFollowGift.py"
+      },
+      "running": false
+    },
+    {
+      "name": "JDCookie扫码服务",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "runjs",
+        "target": "JDTASK_V2P/getJDCookie.elecV2P.js"
+      },
+      "running": false
+    },
+    {
+      "name": "一键安装与测试运行",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "runjs",
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.test.js"
+      },
+      "running": false
+    }
+  ]
+}
