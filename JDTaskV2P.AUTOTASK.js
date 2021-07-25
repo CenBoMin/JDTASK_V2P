@@ -40,10 +40,10 @@ let tz = "";
       console.log(`\n🤖[${$.name}]:💲开始上传定时任务 🙆‍♀️`)
       for (let i = 0; i < nowUpdateTaskArr.length; i++) {
         V2PtaskName = nowUpdateTaskArr[i].split("tag=")[1].split(",")[0];
-        V2PtaskCron = nowUpdateTaskArr[i].split("RUNJDTASK_V2P")[0];
-        V2PtaskUrl = nowUpdateTaskArr[i].split("task=")[1].split("tag=")[0];
-        console.log(V2PtaskUrl);
+        V2PtaskCron = nowUpdateTaskArr[i].split("https")[0];
+        V2PtaskUrl = nowUpdateTaskArr[i].split(":")[1].split(", tag=")[0].replace(/\/\//,"RUNJDTASK_V2P.js -env JDTASK=https://");
         await pushtask();
+        //RUNJDTASK_V2P.js -env JDTASK=
         // await $.wait(1000)
         // await downloadJS();
       }
@@ -70,7 +70,7 @@ async function downloadJS() {
         token: `${v2ptoken}`,
         type: 'download',
         op: 'put',
-        url: V2PtaskUrl,
+        url: $.V2PtaskUrl,
         dest: "./script/JSFile"
       }),
       headers: {
@@ -151,7 +151,7 @@ async function pushtask() {
               // $.msg($.name, `💡上传定时任务:${data.taskinfo.name}`);
               break;
             case 0:
-              console.log(`\n💡 成功更新定时任务:${data.taskinfo.name}\n${data.taskinfo.time} ${data.taskinfo.job.target}`);
+              console.log(`\n💡 成功更新定时任务:${data.taskinfo.name}`);
               // $.msg($.name, `💡上传定时任务:${data.taskinfo.name}`);
               break;
             default:
@@ -226,7 +226,8 @@ async function getKeyList() {
 async function getCronList() {
   return new Promise((resolve) => {
     const options = {
-      url: `https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.autosync.json`
+      // url: `https://ghproxy.com/https://raw.githubusercontent.com/shufflewzc/faker/main/qx.json`
+      url: `https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.autosync.json`
     };
     $.get(options, async (err, resp, data) => {
       try {
