@@ -40,7 +40,7 @@ let tz = "";
       console.log(`\n🤖[${$.name}]:💲开始上传定时任务 🙆‍♀️`)
       for (let i = 0; i < nowUpdateTaskArr.length; i++) {
         V2PtaskName = nowUpdateTaskArr[i].split("tag=")[1].split(",")[0];
-        V2PtaskCron = nowUpdateTaskArr[i].split("https")[0];
+        V2PtaskCron = nowUpdateTaskArr[i].split("RUNJDTASK_V2P")[0];
         V2PtaskUrl = nowUpdateTaskArr[i].split(",")[0].replace(/https/, "&https").split("&")[1];
         await pushtask();
         await $.wait(1000)

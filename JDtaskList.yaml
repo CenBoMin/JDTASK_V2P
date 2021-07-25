@@ -161,41 +161,40 @@
   10 16,22 * * * RUNJDTASK_V2P.js -env JDTASK=jd_shop_sign.js, tag=店铺签到
 
   🌀smiek2221#点点券jd_necklace.js
-  10 0,1,20 * * * RUNJDTASK_V2P.js -env JDTASK=jd_necklace.js, tag=点点券
+  10 0,1,20 * * * RUNJDTASK_V2P.js -env JDTASK=jd_necklace.js, tag=smiek2221#点点券
 
   🌀smiek2221#财富大陆gua_wealth_island.js(新版财富岛)
-  15 * * * *
+  15 * * * * RUNJDTASK_V2P.js -env JDTASK=gua_wealth_island.js, tag=smiek2221#财富大陆
 
   🌀smiek2221#燃动夏季 summer_movement_ShHelpFlag:1,summer_movement_HelpHelpHelpFlag:true
-  7 0,6-23/2 * * * RUNJDTASK_V2P.js -env JDTASK=jd_summer_movement.js, tag=燃动夏季
+  7 0,6-23/2 * * * RUNJDTASK_V2P.js -env JDTASK=jd_summer_movement.js, tag=smiek2221#燃动夏季
 
   🌀smiek2221#宠汪汪偷好友积分与喂食 JOY_HELP_FEED:true,jdJoyStealCoin:true
-
   10 0-21/3 * * * RUNJDTASK_V2P.js -env JDTASK=jd_joy_steal.js, tag=宠汪汪偷好友积分与喂食
 
+  🌀smiek2221#MM领京豆jd_MMdou.js
+  21 9 * * * RUNJDTASK_V2P.js -env JDTASK=gua_MMdou.js, tag=smiek2221#MM领京豆
+
   🌀star261#特务Zxjd_productZ4Brand.js
-  23 2,9,13,17 * * * RUNJDTASK_V2P.js -env JDTASK=Zxjd_productZ4Brand.js, tag=特务Zx
+  23 2,9,13,17 * * * RUNJDTASK_V2P.js -env JDTASK=Zxjd_productZ4Brand.js, tag=star261#特务Zx
 
   🌀faker2#全民摸冰jd_mb.js
-  6 9,12 * * * RUNJDTASK_V2P.js -env JDTASK=jd_mb.js
+  6 9,12 * * * RUNJDTASK_V2P.js -env JDTASK=jd_mb.js, tag=faker2#全民摸冰
 
   🌀faker2#美丽研究院jd_beauty.js
-  1 7,12,19 * * * RUNJDTASK_V2P.js -env JDTASK=jd_beauty.js
+  1 7,12,19 * * * RUNJDTASK_V2P.js -env JDTASK=jd_beauty.js, tag=faker2#美丽研究院
 
   🌀faker2#东东乐园大风车jd_ddnc_farmpark.js lsjdh: "jdAward3"
-  30 7 * * * RUNJDTASK_V2P.js -env JDTASK=jd_ddnc_farmpark.js
+  30 7 * * * RUNJDTASK_V2P.js -env JDTASK=jd_ddnc_farmpark.js, tag=faker2#东东乐园大风车
 
   🌀faker2#早起福利jd_goodMorning.js
-  30 6 * * * RUNJDTASK_V2P.js -env JDTASK=jd_goodMorning.js
-
-  🌀faker2#MM领京豆jd_MMdou.js
-  21 9 * * * RUNJDTASK_V2P.js -env JDTASK=gua_MMdou.js
+  30 6 * * * RUNJDTASK_V2P.js -env JDTASK=jd_goodMorning.js, tag=faker2#早起福利
 
   🌀faker2#京东零食街jd_lsj.js lsjdh: "jdAward3"
-  0 11 * * * RUNJDTASK_V2P.js -env JDTASK=jd_lsj.js
+  0 11 * * * RUNJDTASK_V2P.js -env JDTASK=jd_lsj.js, tag=faker2#京东零食街
 
   🌀faker2#旺旺乐园jd_joy-park.js
-  15 * * * * RUNJDTASK_V2P.js -env JDTASK=jd_joy-park.js
+  15 * * * * RUNJDTASK_V2P.js -env JDTASK=jd_joy-park.js, tag=faker2#旺旺乐园
 
   Aaron-lv#天天加速
   30 12 * * * RUNJDTASK_V2P.js -env JDTASK=jd_speed.js, tag=天天加速
