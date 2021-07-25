@@ -42,8 +42,6 @@ let tz = "";
         V2PtaskName = nowUpdateTaskArr[i].split("tag=")[1].split(",")[0];
         V2PtaskCron = nowUpdateTaskArr[i].split("RUNJDTASK_V2P")[0];
         V2PtaskUrl = nowUpdateTaskArr[i].split("task=")[1].split("tag=")[0];
-        console.log(V2PtaskName);
-        console.log(V2PtaskCron);
         console.log(V2PtaskUrl);
         await pushtask();
         // await $.wait(1000)

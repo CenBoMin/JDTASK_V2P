@@ -1,209 +1,209 @@
 //定时和任务参考https://github.com/JDHelloWorld/jd_scripts/blob/main/serverless.yml
 
   🌟#京东健康社区
-  13 1,6,22 * * * RUNJDTASK_V2P.js -env JDTASK=jd_health.js, tag=京东健康社区
+  13 1,6,22 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_health.js, tag=京东健康社区
 
   🌟#宠汪汪jd_joy_new.js
-  45 */2,23 * * * RUNJDTASK_V2P.js -env JDTASK=jd_joy_new.js, tag=宠汪汪
+  45 */2,23 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_joy_new.js, tag=宠汪汪
 
   🌟#京东种豆得豆 PLANT_BEAN_SHARECODES: $store.get('PlantBeanV2P', 'string')
-  10 7-22/1 * * * RUNJDTASK_V2P.js -env JDTASK=jd_plantBean.js, tag=京东种豆得豆
+  10 7-22/1 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_plantBean.js, tag=京东种豆得豆
 
   🌟#京喜工厂 DREAM_FACTORY_SHARE_CODES: $store.get('JxFactoryV2P', 'string')
-  50 * * * * RUNJDTASK_V2P.js -env JDTASK=jd_dreamFactory.js, tag=京喜工厂
+  50 * * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_dreamFactory.js, tag=京喜工厂
 
   🌟#东东工厂 DDFACTORY_SHARECODES: $store.get('JdFactoryV2P', 'string')
-  26 * * * * RUNJDTASK_V2P.js -env JDTASK=jd_jdfactory.js, tag=东东工厂
+  26 * * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_jdfactory.js, tag=东东工厂
 
   🌟#京东健康社区收集健康能量
-  5-45/20 * * * * RUNJDTASK_V2P.js -env JDTASK=jd_health_collect.js, tag=京东健康社区收集健康能量
+  5-45/20 * * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_health_collect.js, tag=京东健康社区收集健康能量
 
   🌟#闪购盲盒 JDSGMH_SHARECODES: $store.get('JDSGMHV2P', 'string')
-  47 8,22 * * * RUNJDTASK_V2P.js -env JDTASK=jd_sgmh.js, tag=闪购盲盒
+  47 8,22 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_sgmh.js, tag=闪购盲盒
 
   🌟#东东农场 FRUITSHARECODES: $store.get('JDFruitV2P', 'string')
-  15 6-18/6 * * * RUNJDTASK_V2P.js -env JDTASK=jd_fruit.js, tag=东东农场
+  15 6-18/6 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_fruit.js, tag=东东农场
 
   🌟#东东萌宠 PETSHARECODES: $store.get('JdPetV2P', 'string')
-  35 6-18/6 * * * RUNJDTASK_V2P.js -env JDTASK=jd_pet.js, tag=东东萌宠
+  35 6-18/6 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_pet.js, tag=东东萌宠
 
   Aaron-lv#签到领现金 CASH_EXCHANGE: true,JD_CASH_SHARECODES: $store.get('JDCashV2P', 'string')
-  10 */4 * * * RUNJDTASK_V2P.js -env JDTASK=jd_cash.js, tag=签到领现金
+  10 */4 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_cash.js, tag=签到领现金
 
   Aaron-lv#宠汪汪邀请助力 JOY_RUN_HELP_MYSELF:true
-  10 13-20/1 * * * RUNJDTASK_V2P.js -env JDTASK=jd_joy_run.js, tag=宠汪汪邀请助力
+  10 13-20/1 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_joy_run.js, tag=宠汪汪邀请助力
 
   Cenbomin#东东健康社区兑换20豆 HEALTH_EXCHANGE: 20
-  10 11,20 * * * RUNJDTASK_V2P.js -env JDTASK=jd_health_exchange.js, tag=东东健康社区兑换20豆
+  10 11,20 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_health_exchange.js, tag=东东健康社区兑换20豆
 
   Aaron-lv#送豆得豆
-  24 0 * * * RUNJDTASK_V2P.js -env JDTASK=jd_sendBeans.js, tag=送豆得豆
+  24 0 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_sendBeans.js, tag=送豆得豆
 
   Aaron-lv#京喜财富岛提现
-  59 11,12,23 * * * RUNJDTASK_V2P.js -env JDTASK=jd_cfdtx.js, tag=京喜财富岛提现
+  59 11,12,23 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_cfdtx.js, tag=京喜财富岛提现
 
   Aaron-lv#京东验证签到
-  7 0,17 * * * RUNJDTASK_V2P.js -env JDTASK=jd_bean_sign.js, tag=京东验证签到
+  7 0,17 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_bean_sign.js, tag=京东验证签到
 
   Aaron-lv#摇京豆
-  6 0,23 * * * RUNJDTASK_V2P.js -env JDTASK=jd_club_lottery.js, tag=摇京豆
+  6 0,23 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_club_lottery.js, tag=摇京豆
 
   Aaron-lv#口袋书店
-  38 8,12,18 * * * RUNJDTASK_V2P.js -env JDTASK=jd_bookshop.js, tag=口袋书店
+  38 8,12,18 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_bookshop.js, tag=口袋书店
 
   ❌STOP_TASK #京喜农场jd_jxnc.js（只有一个种子）
 
   Aaron-lv京东极速版签到+赚现金任务
-  21 1,6 * * * RUNJDTASK_V2P.js -env JDTASK=jd_speed_sign.js, tag=京东极速版签到+赚现金任务
+  21 1,6 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_speed_sign.js, tag=京东极速版签到+赚现金任务
 
   ❌STOP_TASK #京东家庭号jd_family.js
 
   Aaron-lv#金榜创造营 活动时间：2021-05-21至2021-12-31
-  0 1,22 * * * RUNJDTASK_V2P.js -env JDTASK=jd_gold_creator.js, tag=金榜创造营
+  0 1,22 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_gold_creator.js, tag=金榜创造营
 
   Aaron-lv#摇钱树
-  23 */2 * * * RUNJDTASK_V2P.js -env JDTASK=jd_moneyTree.js, tag=摇钱树
+  23 */2 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_moneyTree.js, tag=摇钱树
 
   Cenbomin#Py脚本cookie转换
-  26 * * * * RUNJDTASK_V2P.js -env JDTASK=JDTaskV2P.pycookie.js, tag=Py脚本cookie转换
+  26 * * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.pycookie.js, tag=Py脚本cookie转换
 
   Aaron-lv#东东电竞经理
-  30 3,12,22 * * * RUNJDTASK_V2P.js -env JDTASK=jd_esManager.js, tag=东东电竞经理
+  30 3,12,22 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_esManager.js, tag=东东电竞经理
 
   Aaron-lv#跳跳乐瓜分京豆
-  15 0,12,22 * * * RUNJDTASK_V2P.js -env JDTASK=jd_jump.js, tag=跳跳乐瓜分京豆
+  15 0,12,22 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_jump.js, tag=跳跳乐瓜分京豆
 
   Aaron-lv#点点券
-  10 0,1,20 * * * RUNJDTASK_V2P.js -env JDTASK=jd_necklace.js, tag=点点券
+  10 0,1,20 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_necklace.js, tag=点点券
 
   Aaron-lv#东东小窝
-  46 6,23 * * * RUNJDTASK_V2P.js -env JDTASK=jd_small_home.js, tag=东东小窝
+  46 6,23 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_small_home.js, tag=东东小窝
 
   Aaron-lv#每日抽奖(活动时间：2021-05-01至2021-05-31)
-  13 1,22,23 * * * RUNJDTASK_V2P.js -env JDTASK=jd_daily_lottery.js, tag=每日抽奖
+  13 1,22,23 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_daily_lottery.js, tag=每日抽奖
 
   Aaron-lv#京东直播（又回来了）
-  30-50/5 12,23 * * * RUNJDTASK_V2P.js -env JDTASK=jd_live.js, tag=京东直播
+  30-50/5 12,23 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_live.js, tag=京东直播
 
   Aaron-lv#5G超级盲盒(活动时间：2021-06-2到2021-07-31)
-  0 0-23/4 * * * RUNJDTASK_V2P.js -env JDTASK=jd_mohe.js, tag=5G超级盲盒
+  0 0-23/4 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_mohe.js, tag=5G超级盲盒
 
   Aaron-lv#女装盲盒 活动时间：2021-05-24到2021-06-22
-  35 1,22 * * * RUNJDTASK_V2P.js -env JDTASK=jd_nzmh.js, tag=女装盲盒
+  35 1,22 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_nzmh.js, tag=女装盲盒
 
   Aaron-lv#京小鸽
-  30 2,20 * * * RUNJDTASK_V2P.js -env JDTASK=jd_jxg.js, tag=京小鸽
+  30 2,20 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_jxg.js, tag=京小鸽
 
   Aaron-lv#京东全民开红包
-  12 0-23/4 * * * RUNJDTASK_V2P.js -env JDTASK=jd_redPacket.js, tag=京东全民开红包
+  12 0-23/4 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_redPacket.js, tag=京东全民开红包
 
   Aaron-lv#进店领豆
-  6 0 * * * RUNJDTASK_V2P.js -env JDTASK=jd_shop.js, tag=进店领豆
+  6 0 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_shop.js, tag=进店领豆
 
   Aaron-lv#取关京东店铺商品
-  45 23 * * * RUNJDTASK_V2P.js -env JDTASK=jd_unsubscribe.js, tag=取关京东店铺商品
+  45 23 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_unsubscribe.js, tag=取关京东店铺商品
 
   Aaron-lv#京东汽车(签到满500赛点可兑换500京豆)
-  0 0 * * * RUNJDTASK_V2P.js -env JDTASK=jd_car.js, tag=京东汽车
+  0 0 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_car.js, tag=京东汽车
 
   Aaron-lv#京东秒秒币
-  10 6,21 * * * RUNJDTASK_V2P.js -env JDTASK=jd_ms.js, tag=京东秒秒币
+  10 6,21 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_ms.js, tag=京东秒秒币
 
   Aaron-lv#天天提鹅
-  28 * * * * RUNJDTASK_V2P.js -env JDTASK=jd_daily_egg.js, tag=天天提鹅
+  28 * * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_daily_egg.js, tag=天天提鹅
 
   Aaron-lv#京喜牧场
-  15 0-23/3 * * * RUNJDTASK_V2P.js -env JDTASK=jd_jxmc.js, tag=京喜牧场
+  15 0-23/3 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_jxmc.js, tag=京喜牧场
 
   Aaron-lv#东东超市
-  31 0,1-23/2 * * * RUNJDTASK_V2P.js -env JDTASK=jd_superMarket.js, tag=东东超市
+  31 0,1-23/2 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_superMarket.js, tag=东东超市
 
   Aaron#赚京豆(微信小程序)
-  12 * * * * RUNJDTASK_V2P.js -env JDTASK=jd_syj.js, tag=赚京豆
+  12 * * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_syj.js, tag=赚京豆
 
   Aaron#京豆变动通知
-  20 10 * * * RUNJDTASK_V2P.js -env JDTASK=jd_bean_change.js, tag=京豆变动通知
+  20 10 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_bean_change.js, tag=京豆变动通知
 
   Aaron#领京豆额外奖励(每日可获得3京豆)
-  23 1,12,22 * * * RUNJDTASK_V2P.js -env JDTASK=jd_bean_home.js, tag=领京豆额外奖励
+  23 1,12,22 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_bean_home.js, tag=领京豆额外奖励
 
   Aaron-lv#京东保价
-  41 0,23 * * * RUNJDTASK_V2P.js -env JDTASK=jd_price.js, tag=京东保价
+  41 0,23 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_price.js, tag=京东保价
 
   Aaron-lv#金融养猪
-  32 0-23/6 * * * RUNJDTASK_V2P.js -env JDTASK=jd_pigPet.js, tag=金融养猪
+  32 0-23/6 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_pigPet.js, tag=金融养猪
 
   Aaron-lv#京东快递签到
-  47 1 * * * RUNJDTASK_V2P.js -env JDTASK=jd_kd.js, tag=京东快递签到
+  47 1 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_kd.js, tag=京东快递签到
 
   Aaron-lv#微信小程序京东赚赚
-  6 0-5/1,11 * * * RUNJDTASK_V2P.js -env JDTASK=jd_jdzz.js, tag=京东赚赚
+  6 0-5/1,11 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_jdzz.js, tag=京东赚赚
 
   Aaron-lv#京东极速版红包(活动时间：2021-6-1至2021-6-30)
-  45 0,23 * * * RUNJDTASK_V2P.js -env JDTASK=jd_speed_redpocke.js, tag=京东极速版红包
+  45 0,23 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_speed_redpocke.js, tag=京东极速版红包
 
   Aaron-lv#领金贴领金贴
-  5 0 * * * RUNJDTASK_V2P.js -env JDTASK=jd_jin_tie.js, tag=领金贴
+  5 0 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_jin_tie.js, tag=领金贴
 
   Cenbomin#宠旺旺换豆验证jd_joy_reward_auth.js
-  0 58 7,15,23 * * * RUNJDTASK_V2P.js -env JDTASK=jd_market_lottery.js, tag=宠旺旺换豆验证
+  0 58 7,15,23 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_joy_reward_auth.js, tag=宠旺旺换豆验证
 
   Aaron-lv#幸运大转盘
-  10 10,23 * * * RUNJDTASK_V2P.js -env JDTASK=jd_market_lottery.js, tag=幸运大转盘
+  10 10,23 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_market_lottery.js, tag=幸运大转盘
 
   Aaron-lv#京喜财富岛
-  30 * * * * RUNJDTASK_V2P.js -env JDTASK=jd_cfd.js, tag=京喜财富岛
+  30 * * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_cfd.js, tag=京喜财富岛
 
   Aaron-lv#省钱大赢家翻翻乐(7.15-8.15)
-  20 * * * * RUNJDTASK_V2P.js -env JDTASK=jd_big_winner.js, tag=省钱大赢家翻翻乐
+  20 * * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_big_winner.js, tag=省钱大赢家翻翻乐
 
   🌀Aaron-lv&Cenbomin#店铺签到jd_shop_sign.js
-  10 16,22 * * * RUNJDTASK_V2P.js -env JDTASK=jd_shop_sign.js, tag=店铺签到
+  10 16,22 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_shop_sign.js, tag=店铺签到
 
   🌀smiek2221#点点券jd_necklace.js
-  10 0,1,20 * * * RUNJDTASK_V2P.js -env JDTASK=jd_necklace.js, tag=smiek2221#点点券
+  10 0,1,20 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/smiek2221/scripts/master/jd_necklace.js, tag=smiek2221#点点券
 
   🌀smiek2221#财富大陆gua_wealth_island.js(新版财富岛)
-  15 * * * * RUNJDTASK_V2P.js -env JDTASK=gua_wealth_island.js, tag=smiek2221#财富大陆
+  15 * * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/smiek2221/scripts/master/gua_wealth_island.js, tag=smiek2221#财富大陆
 
   🌀smiek2221#燃动夏季 summer_movement_ShHelpFlag:1,summer_movement_HelpHelpHelpFlag:true
-  7 0,6-23/2 * * * RUNJDTASK_V2P.js -env JDTASK=jd_summer_movement.js, tag=smiek2221#燃动夏季
+  7 0,6-23/2 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/smiek2221/scripts/master/jd_summer_movement.js, tag=smiek2221#燃动夏季
 
   🌀smiek2221#宠汪汪偷好友积分与喂食 JOY_HELP_FEED:true,jdJoyStealCoin:true
-  10 0-21/3 * * * RUNJDTASK_V2P.js -env JDTASK=jd_joy_steal.js, tag=宠汪汪偷好友积分与喂食
+  10 0-21/3 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/smiek2221/scripts/master/jd_joy_steal.js, tag=宠汪汪偷好友积分与喂食
 
   🌀smiek2221#MM领京豆jd_MMdou.js
-  21 9 * * * RUNJDTASK_V2P.js -env JDTASK=gua_MMdou.js, tag=smiek2221#MM领京豆
+  21 9 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/smiek2221/scripts/master/gua_MMdou.js, tag=smiek2221#MM领京豆
 
   🌀star261#特务Zxjd_productZ4Brand.js
-  23 2,9,13,17 * * * RUNJDTASK_V2P.js -env JDTASK=Zxjd_productZ4Brand.js, tag=star261#特务Zx
+  23 2,9,13,17 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/star261/jd/main/scripts/Zxjd_productZ4Brand.js, tag=star261#特务Zx
 
   🌀faker2#全民摸冰jd_mb.js
-  6 9,12 * * * RUNJDTASK_V2P.js -env JDTASK=jd_mb.js, tag=faker2#全民摸冰
+  6 9,12 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_mb.js, tag=faker2#全民摸冰
 
   🌀faker2#美丽研究院jd_beauty.js
-  1 7,12,19 * * * RUNJDTASK_V2P.js -env JDTASK=jd_beauty.js, tag=faker2#美丽研究院
+  1 7,12,19 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_beauty.js, tag=faker2#美丽研究院
 
   🌀faker2#东东乐园大风车jd_ddnc_farmpark.js lsjdh: "jdAward3"
-  30 7 * * * RUNJDTASK_V2P.js -env JDTASK=jd_ddnc_farmpark.js, tag=faker2#东东乐园大风车
+  30 7 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_ddnc_farmpark.js, tag=faker2#东东乐园大风车
 
   🌀faker2#早起福利jd_goodMorning.js
-  30 6 * * * RUNJDTASK_V2P.js -env JDTASK=jd_goodMorning.js, tag=faker2#早起福利
+  30 6 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_goodMorning.js, tag=faker2#早起福利
 
   🌀faker2#京东零食街jd_lsj.js lsjdh: "jdAward3"
-  0 11 * * * RUNJDTASK_V2P.js -env JDTASK=jd_lsj.js, tag=faker2#京东零食街
+  0 11 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_lsj.js, tag=faker2#京东零食街
 
   🌀faker2#旺旺乐园jd_joy-park.js
-  15 * * * * RUNJDTASK_V2P.js -env JDTASK=jd_joy-park.js, tag=faker2#旺旺乐园
+  15 * * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_joy-park.js, tag=faker2#旺旺乐园
 
   Aaron-lv#天天加速
-  30 12 * * * RUNJDTASK_V2P.js -env JDTASK=jd_speed.js, tag=天天加速
+  30 12 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_speed.js, tag=天天加速
 
   Aaron-lv#京东排行榜
-  21 9 * * * RUNJDTASK_V2P.js -env JDTASK=jd_rankingList.js, tag=京东排行榜
+  21 9 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_rankingList.js, tag=京东排行榜
 
   Aaron-lv京东抽奖机
-  0 0,12,23 * * * RUNJDTASK_V2P.js -env JDTASK=jd_lotteryMachine.js, tag=京东抽奖机
+  0 0,12,23 * * * task=RUNJDTASK_V2P.js -env JDTASK=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_lotteryMachine.js, tag=京东抽奖机
 
   🌀py开卡入会脚本
   10 5 8,15 * * * https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/TaskBaks/task12.js
