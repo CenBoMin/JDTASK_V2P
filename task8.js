@@ -68,8 +68,8 @@ $exec('node jd_price.js', {
 })
 // @grant nodejs
 //#领京豆额外奖励
-$exec('node jd_bean_home.js', {
-  cwd: 'script/JSFile/jd_scripts', timeout: 0,
+$exec('node https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_bean_home.js', {
+  cwd: 'script/JSFile/sync', timeout: 0,
   env: {
     ...process.env,
     V2P_NOTIFY: `${__home}/logs/${__name.replace(/\//,"-")}.log`,
