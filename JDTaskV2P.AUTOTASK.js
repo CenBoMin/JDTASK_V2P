@@ -44,7 +44,7 @@ let tz = "";
       for (let i = 0; i < nowUpdateTaskArr.length; i++) {
         V2PtaskName = nowUpdateTaskArr[i].split("tag=")[1].split(",")[0];
         V2PtaskCron = nowUpdateTaskArr[i].split("https")[0];
-        V2PtaskUrl = nowUpdateTaskArr[i].split(":")[1].split(", tag=")[0].replace(/\/\//,"RUNJDTASKV2P.js -env JDTASK=https://");
+        V2PtaskUrl = nowUpdateTaskArr[i].split(":")[1].split(", tag=")[0].replace(/\/\//,"RunJDTaskV2P.js -env JDTASK=https://");
         downloadUrl = nowUpdateTaskArr[i].split(":")[1].split(", tag=")[0].replace(/\/\//,"https://ghproxy.com/https://");
         await pushtask();
       }
