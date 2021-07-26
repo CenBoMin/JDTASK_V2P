@@ -36,7 +36,7 @@
 
 ![](https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/PNGFile/inti.png)
 
-###STEP1:添加订阅任务
+### STEP1:添加订阅任务
 - → 添加订阅任务  
 - → 添加订阅JDTASK_V2P:
 ```
@@ -46,19 +46,19 @@ https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.autotask.js
 - → 全部添加 (会自动执行JDTASK_V2P初始化和JDTASKV2P模块的安装）
 - → 保存当前任务列表
 
-###STEP2:初始化安装环境
+### STEP2:初始化安装环境
 - → 🌟 JDTASK安装 - 执行倒计时任务等待系统重启提示,在进行下一步
 
-###STEP3:添加执行需要的Cookie
+### STEP3:添加执行需要的Cookie
 - → 【JS 文件管理】→【store/cookie 常量储存管理】:添加以下cookie值（数据类型TYPE string）
 - → 👉 v2purl：主页地址  
 - → 👉 v2token：WEBHOOK TOKEN
 > 上面两个值,可以在【设置】页面找到，如果cookie已经有值,本步可以忽略...
 
-###STEP4:更新脚本列表
+### STEP4:更新脚本列表
 - → 🌟 手动更新任务列表 - 执行完毕刷新页面,确定任务已添加成功
 
-###STEP5:通知sendNotify.js
+### STEP5:通知sendNotify.js
 - → 【JS 文件管理】→【加载 JS 文件至服务器】→ 开始推送
 ```
 https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/sendNotify.js
@@ -67,8 +67,8 @@ https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/sendNoti
 - 在JSMANAGE → 当前服务器 JS 文件 框内输入 → sendNotify.js
 - 保存至服务器 ctrl+s
 
-恭喜你配置完成🎉,后期任务会根据订阅自动更新,任务详情请见：
-https://github.com/CenBoMin/JDTASK_V2P/blob/main/JDtaskList.yaml
+### 恭喜你配置完成🎉,后期任务会根据订阅自动更新,任务详情请见：https://github.com/CenBoMin/JDTASK_V2P/blob/main/JDtaskList.yaml
+
 
 
 
