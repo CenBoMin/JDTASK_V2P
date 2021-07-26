@@ -37,7 +37,7 @@
     {
       "name": "JDTASK更新",
       "type": "cron",
-      "time": "10 */8 * * * *",
+      "time": "10 */8 * * *",
       "job": {
         "type": "runjs",
         "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.AUTOTASK.js"
