@@ -40,7 +40,7 @@
       "time": "10 */8 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.AUTOTASK.js"
+        "target": "https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.AUTOTASK.js"
       }
     },
     {
