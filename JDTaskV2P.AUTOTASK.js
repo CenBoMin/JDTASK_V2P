@@ -37,7 +37,7 @@ let tz = "";
   //++++++++++++++++++++++++++++++++++++++++
 
     let nowUpdateTaskArr = allinoneList
-    console.log(`→预备上传定时任务个数为:${nowUpdateTaskArr.length}个`);
+    console.log(`→预备更新定时任务个数为:${nowUpdateTaskArr.length}个`);
 
     //++++++++++++++++++++++++++++++++++++++++
       console.log(`\n🤖[${$.name}]:💲开始上传定时任务 🙆‍♀️`)
@@ -47,6 +47,11 @@ let tz = "";
         V2PtaskUrl = nowUpdateTaskArr[i].split(":")[1].split(", tag=")[0].replace(/\/\//,"RUNJDTASK_V2P.js -env JDTASK=https://");
         await pushtask();
       }
+
+      console.log(`\n🤖[${$.name}]:💲✅ 保存任务列表`)
+      await tasksave();
+
+
       // $.msg($.name, `💡已更新JDTASK任务列表`);
   // }
 
@@ -60,58 +65,116 @@ let tz = "";
 })
 //++++++++++++++++++++++++++++++++++++++++
 async function JDJSmodule() {
-  downloadJS("RunJDTaskV2P","https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/RunJDTaskV2P.js")
+  await downloadJS("RunJDTaskV2P","https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/RunJDTaskV2P.js","./script/JSFile")
 
-  downloadJS("JDCOOKIE","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdCookie.js")
+  await downloadJS("JDCOOKIE","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdCookie.js","./script/JSFile")
 
-  downloadJS("USER_AGENTS-1","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/JS_USER_AGENTS.js")
+  await downloadJS("USER_AGENTS-1","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/JS_USER_AGENTS.js","./script/JSFile")
 
-  downloadJS("USER_AGENTS-2","https://raw.githubusercontent.com/shufflewzc/faker2/main/JS1_USER_AGENTS.js")
+  await downloadJS("USER_AGENTS-2","https://raw.githubusercontent.com/shufflewzc/faker2/main/JS1_USER_AGENTS.js","./script/JSFile")
 
-  downloadJS("USER_AGENTS-3","https://raw.githubusercontent.com/shufflewzc/faker2/main/USER_AGENTS.js")
+  await downloadJS("USER_AGENTS-3","https://raw.githubusercontent.com/shufflewzc/faker2/main/USER_AGENTS.js","./script/JSFile")
 
-  downloadJS("jdDreamFactoryShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdDreamFactoryShareCodes.js")
+  await downloadJS("jdDreamFactoryShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdDreamFactoryShareCodes.js","./script/JSFile")
 
-  downloadJS("jdFactoryShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdFactoryShareCodes.js")
+  await downloadJS("jdFactoryShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdFactoryShareCodes.js","./script/JSFile")
 
-  downloadJS("jdFruitShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdFruitShareCodes.js")
+  await downloadJS("jdFruitShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdFruitShareCodes.js","./script/JSFile")
 
-  downloadJS("jdJxncShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdJxncShareCodes.js")
+  await downloadJS("jdJxncShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdJxncShareCodes.js","./script/JSFile")
 
-  downloadJS("jdPetShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdPetShareCodes.js")
+  await downloadJS("jdPetShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdPetShareCodes.js","./script/JSFile")
 
-  downloadJS("jdPlantBeanShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdPlantBeanShareCodes.js")
+  await downloadJS("jdPlantBeanShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdPlantBeanShareCodes.js","./script/JSFile")
 
-  downloadJS("JD_DailyBonus","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JD_DailyBonus.js")
+  await downloadJS("JD_DailyBonus","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JD_DailyBonus.js","./script/JSFile/utils")
 
-  downloadJS("JDJRValidator_Pure","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JDJRValidator_Pure.js")
+  await downloadJS("JDJRValidator_Pure","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JDJRValidator_Pure.js","./script/JSFile")
 
-  downloadJS("JDJRValidator_Pure","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JDJRValidator_Pure.js")
+  await downloadJS("JDJRValidator_Pure","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JDJRValidator_Pure.js","./script/JSFile/utils")
 
-  downloadJS("MoveMentFaker","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/MoveMentFaker.js")
+  await downloadJS("MoveMentFaker","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/MoveMentFaker.js","./script/JSFile")
 
-  downloadJS("JDSignValidator","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JDSignValidator.js")
+  await downloadJS("MoveMentFaker","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/MoveMentFaker.js","./script/JSFile/utils")
 
-  downloadJS("ZooFaker_Necklace","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/ZooFaker_Necklace.js")
+  await downloadJS("JDSignValidator","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JDSignValidator.js","./script/JSFile")
 
-  downloadJS("sign_graphics_validate","https://raw.githubusercontent.com/smiek2221/scripts/master/sign_graphics_validate.js")
-  
-  downloadJS("jd_sign_graphics","https://raw.githubusercontent.com/smiek2221/scripts/master/jd_sign_graphics.js")
+  await downloadJS("JDSignValidator","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JDSignValidator.js","./script/JSFile/utils")
+
+  await downloadJS("ZooFaker_Necklace","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/ZooFaker_Necklace.js","./script/JSFile")
+
+  await downloadJS("ZooFaker_Necklace","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/ZooFaker_Necklace.js","./script/JSFile")
+
+  await downloadJS("sign_graphics_validate","https://raw.githubusercontent.com/smiek2221/scripts/master/sign_graphics_validate.js","./script/JSFile")
+
+  await downloadJS("jd_sign_graphics","https://raw.githubusercontent.com/smiek2221/scripts/master/jd_sign_graphics.js","./script/JSFile")
 }
 async function showmsg1() {
   $.msg(`${$.name}任务执行通知🔔`, tz);
 }
-async function downloadJS(str,url) {
-  console.log(`〽️ ${str}`);
+async function downloadJS(str,jsurl,dest) {
+  $download(`${jsurl}`, {
+  folder: dest,
+}).then(d=>console.log(`〽️ ${str}`)).catch(e=>console.error(e))
+}
+
+// async function downloadJS(str,jsurl,dest) {
+//   console.log(`〽️ ${str}`);
+//   return new Promise((resolve) => {
+//     let url = {
+//       url: `${v2purl}/webhook`,
+//       body: JSON.stringify({
+//         token: `${v2ptoken}`,
+//         type: 'download',
+//         op: 'put',
+//         url: jsurl,
+//         dest: dest
+//       }),
+//       folder: './script/JSFile',
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       method: 'put'
+//     };
+//     $.post(url, async (err, resp, data) => {
+//       try {
+//         if (err) {
+//           console.log("⛔️API查询请求失败❌ ‼️‼️");
+//           console.log(JSON.stringify(err));
+//           $.logErr(err);
+//         } else {
+//           data = JSON.parse(data);
+//           const code = data.rescode
+//           switch (code) {
+//             case -1:
+//               console.log(`\n❌ 下载脚本失败`);
+//               // $.msg($.name, `💡上传定时任务:${data.taskinfo.name}`);
+//               break;
+//             case 0:
+//               console.log(`\n📥 成功下载脚本`);
+//               // $.msg($.name, `💡上传定时任务:${data.taskinfo.name}`);
+//               break;
+//             default:
+//               $.log(`\n‼️${resp.statusCode}[pushtask调试log]:${resp.body}`);
+//
+//           }
+//         }
+//       } catch (e) {
+//         $.logErr(e, resp);
+//       } finally {
+//         resolve();
+//       }
+//     });
+//   });
+// }
+async function tasksave() {
   return new Promise((resolve) => {
     let url = {
       url: `${v2purl}/webhook`,
       body: JSON.stringify({
         token: `${v2ptoken}`,
-        type: 'download',
+        type: 'tasksave',
         op: 'put',
-        url: url,
-        dest: "./script/JSFile"
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -125,21 +188,9 @@ async function downloadJS(str,url) {
           console.log(JSON.stringify(err));
           $.logErr(err);
         } else {
+          console.log(data);
           data = JSON.parse(data);
           const code = data.rescode
-          switch (code) {
-            case -1:
-              console.log(`\n❌ 下载脚本失败`);
-              // $.msg($.name, `💡上传定时任务:${data.taskinfo.name}`);
-              break;
-            case 0:
-              console.log(`\n📥 成功下载脚本`);
-              // $.msg($.name, `💡上传定时任务:${data.taskinfo.name}`);
-              break;
-            default:
-              $.log(`\n‼️${resp.statusCode}[pushtask调试log]:${resp.body}`);
-
-          }
         }
       } catch (e) {
         $.logErr(e, resp);

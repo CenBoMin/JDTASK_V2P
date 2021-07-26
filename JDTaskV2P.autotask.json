@@ -5,6 +5,45 @@
   "date": "2021-07-23 23:11:16",
   "list": [
     {
+      "name": "🌟自动更新任务",
+      "type": "cron",
+      "time": "10 */30 * * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.AUTOTASK.js"
+      }
+    },
+    {
+      "name": "🌟手动拉库更新修复",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.gitsync.js -local"
+      },
+      "running": false
+    },
+    {
+      "name": "🌟JDCookie扫码服务",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/getJDCookie.elecV2P.js -local"
+      },
+      "running": false
+    },
+    {
+      "name": "一键安装与测试运行",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.test.js -local"
+      },
+      "running": false
+    }
+    {
       "name": "JDTask更新",
       "type": "cron",
       "time": "0 30 0-23/1 * * *",
@@ -101,7 +140,8 @@
       "job": {
         "type": "exec",
         "target": "cash_zlzh=改助力pin的值不要; python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_cashHelp.py -local"
-      }
+      },
+      "running": false
     },
     {
       "name": "Aaron半点京豆雨",
@@ -149,15 +189,6 @@
       }
     },
     {
-      "name": "🌟自动更新任务",
-      "type": "cron",
-      "time": "10 */30 * * * *",
-      "job": {
-        "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.AUTOTASK.js"
-      }
-    },
-    {
       "name": "TG机器人签到py",
       "type": "cron",
       "time": "30 0 8 * * *",
@@ -182,36 +213,6 @@
       "job": {
         "type": "exec",
         "target": "python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/getFollowGifts/jd_getFollowGift.py -local"
-      },
-      "running": false
-    },
-    {
-      "name": "手动拉库更新修复",
-      "type": "schedule",
-      "time": "0",
-      "job": {
-        "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.gitsync.js -local"
-      },
-      "running": false
-    },
-    {
-      "name": "JDCookie扫码服务",
-      "type": "schedule",
-      "time": "0",
-      "job": {
-        "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/getJDCookie.elecV2P.js -local"
-      },
-      "running": false
-    },
-    {
-      "name": "一键安装与测试运行",
-      "type": "schedule",
-      "time": "0",
-      "job": {
-        "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.test.js -local"
       },
       "running": false
     }
