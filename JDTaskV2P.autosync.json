@@ -60,7 +60,7 @@
     "7 0,6-23/2 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_summer_movement.js, tag=燃动夏季",
     "10 0-21/3 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/jd_joy_steal.js, tag=宠汪汪偷好友积分与喂食",
     "21 9 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_MMdou.js, tag=smiek2221#MM领京豆",
-    "23 2,9,13,17 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/Zxjd_productZ4Brand.js, tag=star261#特务Zx",
+    "23 2,9,13,17 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_productZ4Brand.js, tag=star261#特务Zx",
     "6 9,12 * * * https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_mb.js, tag=faker2#全民摸冰",
     "1 7,12,19 * * * https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_beauty.js, tag=faker2#美丽研究院",
     "30 7 * * * https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_ddnc_farmpark.js, tag=faker2#东东乐园大风车",

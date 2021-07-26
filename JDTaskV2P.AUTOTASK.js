@@ -45,6 +45,7 @@ let tz = "";
         V2PtaskName = nowUpdateTaskArr[i].split("tag=")[1].split(",")[0];
         V2PtaskCron = nowUpdateTaskArr[i].split("https")[0];
         V2PtaskUrl = nowUpdateTaskArr[i].split(":")[1].split(", tag=")[0].replace(/\/\//,"RUNJDTASK_V2P.js -env JDTASK=https://");
+        downloadUrl = nowUpdateTaskArr[i].split(":")[1].split(", tag=")[0].replace(/\/\//,"https://ghproxy.com/https://");
         await pushtask();
       }
 
@@ -123,7 +124,11 @@ async function downloadJS(str,jsurl,dest) {
   folder: dest,
 }).then(d=>console.log(`〽️ ${str}`)).catch(e=>console.error(e))
 }
-
+async function downloadJD(downloadName) {
+  $download(`${downloadUrl}`, {
+  folder: `./script/JSFile`,
+}).then(d=>console.log(`📥 下载${downloadName}脚本成功`)).catch(e=>console.error(`📥 下载${downloadName}脚本：失败❌ `))
+}
 async function tasksave() {
   return new Promise((resolve) => {
     let url = {
@@ -200,6 +205,8 @@ async function pushtask() {
               break;
             case 0:
               console.log(`\n💡 成功更新定时任务:${data.taskinfo.name}`);
+              let downloadName = data.taskinfo.name
+              await downloadJD(downloadName);
               // $.msg($.name, `💡上传定时任务:${data.taskinfo.name}`);
               break;
             default:
