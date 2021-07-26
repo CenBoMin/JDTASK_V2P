@@ -1,18 +1,19 @@
 // @grant require
 // @grant nodejs
 //============================
-$message.success("【 JDTASKV2P安装检查 】\n👉 点击打开运行日志 ",{ secd: 0, url: `${__home}/logs/${__name.replace(/\//,"-")}.log` })
+$message.loading("🔄 正在安装JDTASKV2P ",15)
 //============================
-const $ = new Env("JDTASKV2P安装检查");
+const $ = new Env("JDTASKV2P安装");
 let s_token, cookies, guid, lsid, lstoken, okl_token, token
 let evuid = 'jdcookie'
 !(async () => {
-  await delTestLog();
+  // await delTestLog();
   await intiCheck();
   await moduleCheck(['got', 'tough-cookie', 'qrcode-npm', 'png-js', 'qrcode-npm', 'tunnel', 'crypto-js', 'download', 'tough-cookie', 'request', 'ws', 'qrcode-terminal','http-server'])
   // await loginEntrance()
   // await generateQrcode()
   // await getCookie()
+  await reboot();
 
 })()
   .catch((e) => {
@@ -354,31 +355,58 @@ function moduleTask() {
   }
 }
 function intiTask() {
-  console.log("🌟 初始化JDTASK数据资料");
-  $exec('rm -rf inti.sh && rm -rf JDTASK_V2P && rm -rf jd_scripts && rm -rf faker2 && rm -rf sync && rm -rf scripts', {
+  $exec('rm -rf inti.sh', {
     cwd: 'script/JSFile',
     cb(data, error) {
       error ? console.error(error) : console.log(data)
     }
   })
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 8; i++) {
     (function(i) {
       setTimeout(function() {
         if (i == 0) {
+          $exec('wget https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/deldata.sh', {
+            cwd: 'script/JSFile',
+            timeout: 0,
+            cb(data, error) {
+              error ? console.error(error) : console.log(data)
+            }
+          })
+        } else if (i == 1) {
+          $exec('chmod +x deldata.sh', {
+            cwd: 'script/JSFile',
+            cb(data, error) {
+              error ? console.error(error) : console.log(data)
+            }
+          })
+        } else if (i == 2) {
+          $exec('./deldata.sh', {
+            cwd: 'script/JSFile',
+            timeout: 0,
+            cb(data, error) {
+              error ? console.error(error) : console.log(data)
+            }
+          })
+        } else if (i == 7) {
           // 开始安装 python
           console.log("🌟 开始...安装python");
-        } else if (i == 1) {
           $exec('apk add python3 py3-pip', {
             call: true, timeout: 0,
             cwd: 'script/Shell',
             cb(data, error, finish){
               if (!error && finish) {
                 // 安装一些 python 库，根据需要自行选择更改
-                $exec('pip3 install you-get requests', { cb(data, error){error ? console.error(error) : console.log(data)} })
+                $exec('pip3 install you-get youtube-dl requests', { cb(data, error){error ? console.error(error) : console.log(data)} })
 
                 // python 和库安装完成后可直接在系统或其他脚本中调用，不需要再次安装
                 // 下面这段代码可在新的脚本中单独运行
                 console.log("🌟 开始...测试Py脚本运行,显示当前python版本号");
+                $exec('python3 -u test.py', {
+                  cwd: 'script/Shell',    // test.py 所在目录（其他文件可通过 EFSS 文件管理界面进行上传
+                  cb(data, error){
+                    error ? console.error(error) : console.log(data)
+                  }
+                })
               } else {
                 error ? console.error(error) : console.log(data)
               }
@@ -419,7 +447,7 @@ function delTestLog() {
 })
 }
 function reboot() {
-  $message.loading("🔄 正在重启elecv2p ",7)
+  $message.loading("🔄 安装完成！正在重启elecv2p ",7)
   $message.success("🆗 重启elecv2p成功 ",0)
   $exec('pm2 restart elecV2P', {
     cb(data, error){
