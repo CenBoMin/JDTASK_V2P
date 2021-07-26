@@ -5,13 +5,14 @@
   "date": "2021-07-23 23:11:16",
   "list": [
     {
-      "name": "🌟自动更新任务",
-      "type": "cron",
-      "time": "10 */30 * * * *",
+      "name": "🌟手动更新任务列表",
+      "type": "schedule",
+      "time": "0",
       "job": {
         "type": "runjs",
         "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.AUTOTASK.js"
-      }
+      },
+      "running": false
     },
     {
       "name": "🌟手动拉库更新修复",
@@ -42,14 +43,14 @@
         "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.test.js -local"
       },
       "running": false
-    }
+    },
     {
-      "name": "JDTask更新",
+      "name": "JDTASK更新",
       "type": "cron",
-      "time": "0 30 0-23/1 * * *",
+      "time": "10 */8 * * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.gitPull.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.AUTOTASK.js"
       }
     },
     {
