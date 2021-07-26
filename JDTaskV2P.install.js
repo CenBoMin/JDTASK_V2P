@@ -8,12 +8,12 @@ let s_token, cookies, guid, lsid, lstoken, okl_token, token
 let evuid = 'jdcookie'
 !(async () => {
   // await delTestLog();
-  await intiCheck();
   await moduleCheck(['got', 'tough-cookie', 'qrcode-npm', 'png-js', 'qrcode-npm', 'tunnel', 'crypto-js', 'download', 'tough-cookie', 'request', 'ws', 'qrcode-terminal','http-server'])
+
+  await intiCheck();
   // await loginEntrance()
   // await generateQrcode()
   // await getCookie()
-  await reboot();
 
 })()
   .catch((e) => {
@@ -355,7 +355,7 @@ function moduleTask() {
   }
 }
 function intiTask() {
-  $exec('rm -rf inti.sh', {
+  $exec('rm -rf deldata.sh', {
     cwd: 'script/JSFile',
     cb(data, error) {
       error ? console.error(error) : console.log(data)
@@ -365,21 +365,21 @@ function intiTask() {
     (function(i) {
       setTimeout(function() {
         if (i == 0) {
-          $exec('wget https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/deldata.sh', {
+          $exec('wget https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/deldata.sh', {
             cwd: 'script/JSFile',
             timeout: 0,
             cb(data, error) {
               error ? console.error(error) : console.log(data)
             }
           })
-        } else if (i == 1) {
+        } else if (i == 3) {
           $exec('chmod +x deldata.sh', {
             cwd: 'script/JSFile',
             cb(data, error) {
               error ? console.error(error) : console.log(data)
             }
           })
-        } else if (i == 2) {
+        } else if (i == 4) {
           $exec('./deldata.sh', {
             cwd: 'script/JSFile',
             timeout: 0,
@@ -396,7 +396,7 @@ function intiTask() {
             cb(data, error, finish){
               if (!error && finish) {
                 // 安装一些 python 库，根据需要自行选择更改
-                $exec('pip3 install you-get youtube-dl requests', { cb(data, error){error ? console.error(error) : console.log(data)} })
+                $exec('pip3 install you-get youtube-dl requests', { cb(data, error){error ? console.error(error) : reboot()} })
 
                 // python 和库安装完成后可直接在系统或其他脚本中调用，不需要再次安装
                 // 下面这段代码可在新的脚本中单独运行
