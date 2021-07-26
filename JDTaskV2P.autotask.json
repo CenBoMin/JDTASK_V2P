@@ -10,7 +10,7 @@
       "time": "0",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.install.js"
+        "target": "https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.install.js"
       },
       "running": false
     },
@@ -20,7 +20,7 @@
       "time": "0",
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.AUTOTASK.js"
+        "target": "https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.AUTOTASK.js"
       },
       "running": false
     },
@@ -30,7 +30,7 @@
       "time": "0",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/getJDCookie.elecV2P.js"
+        "target": "https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/getJDCookie.elecV2P.js"
       },
       "running": false
     },
@@ -40,7 +40,7 @@
       "time": "10 */8 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.AUTOTASK.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.AUTOTASK.js"
       }
     },
     {
@@ -49,7 +49,7 @@
       "time": "30 30 0-23/8 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.module.js"
+        "target": "https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.module.js"
       }
     },
     {
@@ -58,7 +58,7 @@
       "time": "30 30 0-23/1 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.cookie.js"
+        "target": "https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.cookie.js"
       }
     },
     {
@@ -67,7 +67,7 @@
       "time": "0 30 0-23/6 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.sharecode.js"
+        "target": "https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.sharecode.js"
       }
     },
     {
@@ -76,7 +76,7 @@
       "time": "53-56 59 7,15,23 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_joy_reward2.js -local"
+        "target": "https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_joy_reward2.js -local"
       }
     },
     {
@@ -85,7 +85,7 @@
       "time": "53 59 23 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_blueCoinFixed.js -local"
+        "target": "https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_blueCoinFixed.js -local"
       }
     },
     {
@@ -94,7 +94,7 @@
       "time": "53 59 23 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jdcar500bean.js -local"
+        "target": "https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jdcar500bean.js -local"
       }
     },
     {
@@ -103,7 +103,7 @@
       "time": "0 0 5 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_try.js"
+        "target": "https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_try.js"
       }
     },
     {
@@ -112,7 +112,7 @@
       "time": "0 0 0 * * *",
       "job": {
         "type": "exec",
-        "target": "python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_jxgc_tuan.py"
+        "target": "python3 -timeout=0 https://raw.githubusercontents.com/curtinlv/JD-Script/main/jd_jxgc_tuan.py"
       }
     },
     {
@@ -121,7 +121,7 @@
       "time": "0 0 0 * * *",
       "job": {
         "type": "exec",
-        "target": "cash_zlzh=改助力pin的值不要; python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_cashHelp.py"
+        "target": "cash_zlzh=改助力pin的值不要; python3 -timeout=0 https://raw.githubusercontents.com/curtinlv/JD-Script/main/jd_cashHelp.py"
       },
       "running": false
     },
@@ -131,7 +131,7 @@
       "time": "30 16-23/1 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/Aaron-lv/JavaScript/master/Task/jd_half_redrain.js"
+        "target": "https://raw.githubusercontents.com/Aaron-lv/JavaScript/master/Task/jd_half_redrain.js"
       }
     },
     {
@@ -140,7 +140,7 @@
       "time": "1-3 18-20 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/Aaron-lv/JavaScript/master/Task/jd_super_mh.js"
+        "target": "https://raw.githubusercontents.com/Aaron-lv/JavaScript/master/Task/jd_super_mh.js"
       }
     },
     {
@@ -149,7 +149,7 @@
       "time": "0 0-23/1 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/Aaron-lv/JavaScript/master/Task/jd_super_redrain.js"
+        "target": "https://raw.githubusercontents.com/Aaron-lv/JavaScript/master/Task/jd_super_redrain.js"
       }
     },
     {
@@ -158,7 +158,7 @@
       "time": "0,30 0-23/1 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_live_redrain.js"
+        "target": "https://raw.githubusercontents.com/Aaron-lv/sync/jd_scripts/jd_live_redrain.js"
       }
     },
     {
@@ -167,7 +167,7 @@
       "time": "10 5 8,15 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/TaskBaks/task12.js"
+        "target": "https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/TaskBaks/task12.js"
       }
     },
     {
@@ -194,7 +194,7 @@
       "time": "0",
       "job": {
         "type": "exec",
-        "target": "python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/getFollowGifts/jd_getFollowGift.py"
+        "target": "python3 -timeout=0 https://raw.githubusercontents.com/curtinlv/JD-Script/main/getFollowGifts/jd_getFollowGift.py"
       },
       "running": false
     }
