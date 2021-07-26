@@ -15,6 +15,7 @@ $exec(`node ${jstask}`, {
     CASH_EXCHANGE: true,JD_CASH_SHARECODES: $store.get('JDCashV2P', 'string'),
     JOY_RUN_HELP_MYSELF:true,
     HEALTH_EXCHANGE: 20,
+    JOY_FEED_COUNT:80,
     summer_movement_ShHelpFlag:1,summer_movement_HelpHelpHelpFlag:true,
     JOY_HELP_FEED:true,jdJoyStealCoin:true,
     lsjdh: "jdAward3"
