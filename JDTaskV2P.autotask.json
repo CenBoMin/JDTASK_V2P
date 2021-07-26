@@ -107,12 +107,12 @@
       }
     },
     {
-      "name": "京喜工厂开团py",
+      "name": "京喜工厂开团",
       "type": "cron",
       "time": "0 0 0 * * *",
       "job": {
-        "type": "exec",
-        "target": "python3 -timeout=0 https://raw.githubusercontents.com/curtinlv/JD-Script/main/jd_jxgc_tuan.py"
+        "type": "runjs",
+        "target": "RunJDTaskV2P.js -env OPEN_DREAMFACTORY_TUAN=1 JDTASK=https://raw.githubusercontents.com/star261/jd/main/scripts/star_dreamFactory_tuan.js -local"
       }
     },
     {
