@@ -5,6 +5,16 @@
   "date": "2021-07-23 23:11:16",
   "list": [
     {
+      "name": "🌟 JDTASK安装",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.test.js -local"
+      },
+      "running": false
+    },
+    {
       "name": "🌟手动更新任务列表",
       "type": "schedule",
       "time": "0",
@@ -15,32 +25,12 @@
       "running": false
     },
     {
-      "name": "🌟手动拉库更新修复",
-      "type": "schedule",
-      "time": "0",
-      "job": {
-        "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.gitsync.js -local"
-      },
-      "running": false
-    },
-    {
       "name": "🌟JDCookie扫码服务",
       "type": "schedule",
       "time": "0",
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/getJDCookie.elecV2P.js -local"
-      },
-      "running": false
-    },
-    {
-      "name": "一键安装与测试运行",
-      "type": "schedule",
-      "time": "0",
-      "job": {
-        "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.test.js -local"
       },
       "running": false
     },

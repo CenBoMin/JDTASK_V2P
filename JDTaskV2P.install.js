@@ -10,9 +10,9 @@ let evuid = 'jdcookie'
   await delTestLog();
   await intiCheck();
   await moduleCheck(['got', 'tough-cookie', 'qrcode-npm', 'png-js', 'qrcode-npm', 'tunnel', 'crypto-js', 'download', 'tough-cookie', 'request', 'ws', 'qrcode-terminal','http-server'])
-  await loginEntrance()
-  await generateQrcode()
-  await getCookie()
+  // await loginEntrance()
+  // await generateQrcode()
+  // await getCookie()
 
 })()
   .catch((e) => {
@@ -83,9 +83,6 @@ async function moduleCheck(name, install = true) {
   return false
 }
 async function intiCheck() {
-  // 在 Docker 下安装 git
-  // checkCmd('git --version').then(data=>console.log('-[ok] git已安装')).catch(e=>{
-    // $message.loading("🤖 检测有尚未初始化-开始执行[初始化程序]", 21)
     $message.loading("🤖 使用国内镜像下载Alpine Linux包管理工具apk", 3)
     $exec("sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories", {
       cwd: 'script/JSFile',
@@ -94,32 +91,6 @@ async function intiCheck() {
       }
     })
     intiTask();
-  // })
-  // 在 Docker 下安装 python
-  checkCmd('python3 -V').then(data=>console.log('-[ok] python已安装')).catch(e=>{
-    // 开始安装 python
-    $exec('apk add python3 py3-pip', {
-      call: true, timeout: 0,
-      cwd: '/script/Shell',
-      cb(data, error, finish){
-        if (!error && finish) {
-          // 安装一些 python 库，根据需要自行选择更改
-          $exec('pip3 install you-get youtube-dl requests', { cb(data, error){error ? console.error(error) : console.log(data)} })
-
-          // python 和库安装完成后可直接在系统或其他脚本中调用，不需要再次安装
-          // 下面这段代码可在新的脚本中单独运行
-          // $exec('python3 -u test.py', {
-          //   cwd: './script/Shell',    // test.py 所在目录（其他文件可通过 EFSS 文件管理界面进行上传
-          //   cb(data, error){
-          //     error ? console.error(error) : console.log(data)
-          //   }
-          // })
-        } else {
-          error ? console.error(error) : console.log(data)
-        }
-      }
-    })
-  })
 }
 function loginEntrance() {
   return new Promise((resolve) => {
@@ -389,42 +360,31 @@ function intiTask() {
       error ? console.error(error) : console.log(data)
     }
   })
-
-  for (let i = 0; i < 8; i++) {
-    (function (i) {
-      setTimeout(function () {
+  for (let i = 0; i < 3; i++) {
+    (function(i) {
+      setTimeout(function() {
         if (i == 0) {
-          $message.loading("⏳ 下载初始化文件:inti.sh", 2)
-          $exec('wget https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/inti.sh', {
-            cwd: 'script/JSFile',timeout: 0,
-            cb(data, error) {
-              error ? console.error(error) : $message.success("✅  inti.sh已下载script/JSFile")
+          // 开始安装 python
+          console.log("🌟 开始...安装python");
+        } else if (i == 1) {
+          $exec('apk add python3 py3-pip', {
+            call: true, timeout: 0,
+            cwd: 'script/Shell',
+            cb(data, error, finish){
+              if (!error && finish) {
+                // 安装一些 python 库，根据需要自行选择更改
+                $exec('pip3 install you-get requests', { cb(data, error){error ? console.error(error) : console.log(data)} })
+
+                // python 和库安装完成后可直接在系统或其他脚本中调用，不需要再次安装
+                // 下面这段代码可在新的脚本中单独运行
+                console.log("🌟 开始...测试Py脚本运行,显示当前python版本号");
+              } else {
+                error ? console.error(error) : console.log(data)
+              }
             }
           })
-          // $download('wget https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/inti.sh', {
-          //   folder: './script/JSFile',
-          //   name: 'inti.sh'
-          // }).then(d=> $message.success("✅  inti.sh已下载script/JSFile", 5)).catch(e=>console.error(e))
-        }else if (i == 1) {
-          $message.loading("⏳ 初始化任务准备安装中...", 5)
-          $exec('chmod +x ./inti.sh', {
-            cwd: 'script/JSFile',
-            cb(data, error) {
-              error ? console.error(error) : console.log(data)
-            }
-          })
-        }else if (i == 2) {
-          $message.loading("⏳ 开始安装...请稍等片刻", 5)
-          $exec('./inti.sh', {
-            cwd: 'script/JSFile',timeout: 0,
-            cb(data, error) {
-              error ? console.error(error) : console.log(data)
-            }
-          })
-        }else if (i == 7) {
-          $message.success("JDTASKV2P初始化完成 🎉 ",3)
         }
-      },(i + 1) * 4000);
+      }, (i + 1) * 4000);
     })(i);
   }
 }
