@@ -1,8 +1,8 @@
 // @grant nodejs
 const fs = require('fs')
 let CookiesJDV2P = '';
-if (process.env.CookiesJDV2P) {
-  CookiesJDV2P = process.env.CookiesJDV2P;
+if (process.env.JD_COOKIE) {
+  CookiesJDV2P = process.env.JD_COOKIE;
 }
 const content = CookiesJDV2P.split("&").join("\n");
 
