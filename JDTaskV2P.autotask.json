@@ -10,7 +10,7 @@
       "time": "0",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.test.js -local"
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.test.js"
       },
       "running": false
     },
@@ -30,7 +30,7 @@
       "time": "0",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/getJDCookie.elecV2P.js -local"
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/getJDCookie.elecV2P.js"
       },
       "running": false
     },
@@ -71,15 +71,6 @@
       }
     },
     {
-      "name": "宠旺旺换500豆",
-      "type": "cron",
-      "time": "54-59,0-3 0,59 7,8,15,16,23,0 * * *",
-      "job": {
-        "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_joy_reward.js -local"
-      }
-    },
-    {
       "name": "宠旺旺换500豆-延时版",
       "type": "cron",
       "time": "53-56 59 7,15,23 * * *",
@@ -112,7 +103,7 @@
       "time": "0 0 5 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_try.js -local"
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_try.js"
       }
     },
     {
@@ -121,7 +112,7 @@
       "time": "0 0 0 * * *",
       "job": {
         "type": "exec",
-        "target": "python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_jxgc_tuan.py -local"
+        "target": "python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_jxgc_tuan.py"
       }
     },
     {
@@ -130,7 +121,7 @@
       "time": "0 0 0 * * *",
       "job": {
         "type": "exec",
-        "target": "cash_zlzh=改助力pin的值不要; python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_cashHelp.py -local"
+        "target": "cash_zlzh=改助力pin的值不要; python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_cashHelp.py"
       },
       "running": false
     },
@@ -176,7 +167,7 @@
       "time": "10 5 8,15 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/TaskBaks/task12.js -local"
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/TaskBaks/task12.js"
       }
     },
     {
@@ -203,7 +194,7 @@
       "time": "0",
       "job": {
         "type": "exec",
-        "target": "python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/getFollowGifts/jd_getFollowGift.py -local"
+        "target": "python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/getFollowGifts/jd_getFollowGift.py"
       },
       "running": false
     }

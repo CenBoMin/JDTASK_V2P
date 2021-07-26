@@ -108,6 +108,12 @@ async function JDJSmodule() {
   await downloadJS("sign_graphics_validate","https://raw.githubusercontent.com/smiek2221/scripts/master/sign_graphics_validate.js","./script/JSFile")
 
   await downloadJS("jd_sign_graphics","https://raw.githubusercontent.com/smiek2221/scripts/master/jd_sign_graphics.js","./script/JSFile")
+
+  await downloadJS("宠旺旺换500豆","https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_joy_reward2.js","./script/JSFile")
+
+  await downloadJS("超市换1000豆","https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_blueCoinFixed.js","./script/JSFile")
+
+  await downloadJS("汽车换500豆","https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jdcar500bean.js","./script/JSFile")
 }
 async function showmsg1() {
   $.msg(`${$.name}任务执行通知🔔`, tz);
