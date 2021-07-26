@@ -149,6 +149,15 @@
       }
     },
     {
+      "name": "🌟自动更新任务",
+      "type": "cron",
+      "time": "10 */30 * * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.AUTOTASK.js"
+      }
+    },
+    {
       "name": "TG机器人签到py",
       "type": "cron",
       "time": "30 0 8 * * *",
@@ -167,22 +176,22 @@
       }
     },
     {
-      "name": "手动拉库更新修复",
-      "type": "schedule",
-      "time": "0",
-      "job": {
-        "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.gitsync.js -local"
-      },
-      "running": false
-    },
-    {
       "name": "关注有礼py",
       "type": "schedule",
       "time": "0",
       "job": {
         "type": "exec",
         "target": "python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/getFollowGifts/jd_getFollowGift.py -local"
+      },
+      "running": false
+    },
+    {
+      "name": "手动拉库更新修复",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.gitsync.js -local"
       },
       "running": false
     },

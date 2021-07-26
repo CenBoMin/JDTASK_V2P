@@ -68,6 +68,6 @@
     "15 * * * * https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_joy-park.js, tag=faker2#旺旺乐园",
     "30 12 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_speed.js, tag=天天加速",
     "21 9 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_rankingList.js, tag=京东排行榜",
-    "0 0,12,23 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_lotteryMachine.js, tag=京东抽奖机",
+    "0 0,12,23 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_lotteryMachine.js, tag=京东抽奖机"
     ]
 }

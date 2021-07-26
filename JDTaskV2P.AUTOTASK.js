@@ -31,6 +31,9 @@ let tz = "";
   await getKeyList();
   console.log(`→JDTASK任务订阅`)
   await getCronList();
+  console.log(`→下载必要的依赖JS`)
+  await JDJSmodule();
+
   //++++++++++++++++++++++++++++++++++++++++
 
     let nowUpdateTaskArr = allinoneList
@@ -43,9 +46,6 @@ let tz = "";
         V2PtaskCron = nowUpdateTaskArr[i].split("https")[0];
         V2PtaskUrl = nowUpdateTaskArr[i].split(":")[1].split(", tag=")[0].replace(/\/\//,"RUNJDTASK_V2P.js -env JDTASK=https://");
         await pushtask();
-        //RUNJDTASK_V2P.js -env JDTASK=
-        // await $.wait(1000)
-        // await downloadJS();
       }
       // $.msg($.name, `💡已更新JDTASK任务列表`);
   // }
@@ -59,10 +59,50 @@ let tz = "";
   $.done();
 })
 //++++++++++++++++++++++++++++++++++++++++
+async function JDJSmodule() {
+  downloadJS("RunJDTaskV2P","https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/RunJDTaskV2P.js")
+
+  downloadJS("JDCOOKIE","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdCookie.js")
+
+  downloadJS("USER_AGENTS-1","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/JS_USER_AGENTS.js")
+
+  downloadJS("USER_AGENTS-2","https://raw.githubusercontent.com/shufflewzc/faker2/main/JS1_USER_AGENTS.js")
+
+  downloadJS("USER_AGENTS-3","https://raw.githubusercontent.com/shufflewzc/faker2/main/USER_AGENTS.js")
+
+  downloadJS("jdDreamFactoryShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdDreamFactoryShareCodes.js")
+
+  downloadJS("jdFactoryShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdFactoryShareCodes.js")
+
+  downloadJS("jdFruitShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdFruitShareCodes.js")
+
+  downloadJS("jdJxncShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdJxncShareCodes.js")
+
+  downloadJS("jdPetShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdPetShareCodes.js")
+
+  downloadJS("jdPlantBeanShareCodes","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdPlantBeanShareCodes.js")
+
+  downloadJS("JD_DailyBonus","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JD_DailyBonus.js")
+
+  downloadJS("JDJRValidator_Pure","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JDJRValidator_Pure.js")
+
+  downloadJS("JDJRValidator_Pure","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JDJRValidator_Pure.js")
+
+  downloadJS("MoveMentFaker","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/MoveMentFaker.js")
+
+  downloadJS("JDSignValidator","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JDSignValidator.js")
+
+  downloadJS("ZooFaker_Necklace","https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/ZooFaker_Necklace.js")
+
+  downloadJS("sign_graphics_validate","https://raw.githubusercontent.com/smiek2221/scripts/master/sign_graphics_validate.js")
+  
+  downloadJS("jd_sign_graphics","https://raw.githubusercontent.com/smiek2221/scripts/master/jd_sign_graphics.js")
+}
 async function showmsg1() {
   $.msg(`${$.name}任务执行通知🔔`, tz);
 }
-async function downloadJS() {
+async function downloadJS(str,url) {
+  console.log(`〽️ ${str}`);
   return new Promise((resolve) => {
     let url = {
       url: `${v2purl}/webhook`,
@@ -70,7 +110,7 @@ async function downloadJS() {
         token: `${v2ptoken}`,
         type: 'download',
         op: 'put',
-        url: $.V2PtaskUrl,
+        url: url,
         dest: "./script/JSFile"
       }),
       headers: {
