@@ -354,7 +354,8 @@ function moduleTask() {
   }
 }
 function intiTask() {
-  $exec('rm -rf inti.sh', {
+  console.log("🌟 初始化JDTASK数据资料");
+  $exec('rm -rf inti.sh && rm -rf JDTASK_V2P && rm -rf jd_scripts && rm -rf faker2 && rm -rf sync && rm -rf scripts', {
     cwd: 'script/JSFile',
     cb(data, error) {
       error ? console.error(error) : console.log(data)
