@@ -23,7 +23,6 @@
 - [x] 使用原V2P内的JDCookie:CookieJD/CookieJD2/CookiesJD
 - [x] 支持py脚本运行
 - [x] 账号内自动提取互助码互助
-- [x] 变动通知通知,包含五天内变动曲线图
 - [ ] TGBOT交互(开发中...)
 - [ ] 其他功能（到时候看看）
 
@@ -109,8 +108,7 @@ https://raw.githubusercontent.com/CenBoMin/GithubSync/main/ELECV2PJS/PushBoxjsCo
 
 
 # 任务
-- 有时间就同步更新关注库的Task
-- 拉取仓库更新JS-JDTaskV2P.gitPull.js每1小时同步拉新一次,相关信息查看log
+- 有时间就同步更新关注库的Task订阅:https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.autotask.json
 - 任务cron和执行脚本对照：https://github.com/CenBoMin/JDTASK_V2P/blob/main/JDtaskList.yaml
 
 
