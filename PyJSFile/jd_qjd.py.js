@@ -4,7 +4,7 @@ $exec('python3 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_qjd.
   cwd: 'script/Shell', timeout: 0,
   env: {
     JD_COOKIE: $store.get('CookiesJDV2P', 'string'),
-    qjd_zlzh: ['13507558350_p','jd_62d956f606288']
+    qjd_zlzh: $store.get('PtPinJDV2P_PY', 'array')
   },
   cb(data, error){
     error ? console.error(error) : console.log(data)
