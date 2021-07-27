@@ -90,21 +90,21 @@ async function JDJSmodule() {
 
   await downloadJS("JD_DailyBonus","https://ghproxy.com/https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JD_DailyBonus.js","./script/JSFile/utils")
 
-  await downloadJS("JDJRValidator_Pure","https://ghproxy.com/https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JDJRValidator_Pure.js","./script/JSFile")
-
   await downloadJS("JDJRValidator_Pure","https://ghproxy.com/https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JDJRValidator_Pure.js","./script/JSFile/utils")
-
-  await downloadJS("MoveMentFaker","https://ghproxy.com/https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/MoveMentFaker.js","./script/JSFile")
 
   await downloadJS("MoveMentFaker","https://ghproxy.com/https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/MoveMentFaker.js","./script/JSFile/utils")
 
-  await downloadJS("JDSignValidator","https://ghproxy.com/https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JDSignValidator.js","./script/JSFile")
-
   await downloadJS("JDSignValidator","https://ghproxy.com/https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JDSignValidator.js","./script/JSFile/utils")
 
-  await downloadJS("ZooFaker_Necklace","https://ghproxy.com/https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/ZooFaker_Necklace.js","./script/JSFile")
+  await downloadJS("ZooFaker_Necklace","https://ghproxy.com/https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/ZooFaker_Necklace.js","./script/JSFile/utils")
 
-  await downloadJS("ZooFaker_Necklace","https://ghproxy.com/https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/ZooFaker_Necklace.js","./script/JSFile")
+  await downloadJS("JDJRValidator_Pure","https://ghproxy.com/https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_JDJRValidator_Pure.js","./script/JSFile/")
+
+  await downloadJS("MoveMentFaker","https://ghproxy.com/https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_MovementFaker.js","./script/JSFile/")
+
+  await downloadJS("JDSignValidator","https://ghproxy.com/https://raw.githubusercontent.com/shufflewzc/faker2/main/JDJRValidator_Pure.js","./script/JSFile/")
+
+  await downloadJS("ZooFaker_Necklace","https://raw.githubusercontent.com/shufflewzc/faker2/main/ZooFaker_Necklace.js","./script/JSFile/")
 
   await downloadJS("sign_graphics_validate","https://ghproxy.com/https://raw.githubusercontent.com/smiek2221/scripts/master/sign_graphics_validate.js","./script/JSFile")
 
