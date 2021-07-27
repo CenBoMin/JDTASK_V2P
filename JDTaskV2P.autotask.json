@@ -122,8 +122,7 @@
       "job": {
         "type": "runjs",
         "target": "RunJDTaskV2P.js -env OPEN_DREAMFACTORY_TUAN=1 JDTASK=https://raw.githubusercontents.com/star261/jd/main/scripts/star_dreamFactory_tuan.js -local"
-      },
-      "running": false
+      }
     },
     {
       "name": "Aaron半点京豆雨",
@@ -168,8 +167,7 @@
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/PyJSFile/jd_OpenCard.py.js"
-      },
-      "running": false
+      }
     },
     {
       "name": "TG机器人签到py",
