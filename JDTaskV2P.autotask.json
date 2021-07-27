@@ -122,25 +122,6 @@
       "job": {
         "type": "runjs",
         "target": "RunJDTaskV2P.js -env OPEN_DREAMFACTORY_TUAN=1 JDTASK=https://raw.githubusercontents.com/star261/jd/main/scripts/star_dreamFactory_tuan.js -local"
-      }
-    },
-    {
-      "name": "签到领现金助力py",
-      "type": "cron",
-      "time": "0 0 0 * * *",
-      "job": {
-        "type": "exec",
-        "target": "cash_zlzh=改助力pin的值不要; python3 -timeout=0 https://raw.githubusercontents.com/curtinlv/JD-Script/main/jd_cashHelp.py"
-      },
-      "running": false
-    },
-    {
-      "name": "全民抢京豆（7.22-7.31)py",
-      "type": "cron",
-      "time": "0 0 0 * * *",
-      "job": {
-        "type": "exec",
-        "target": "qjd_zlzh=改助力pin的值不要; python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_qjd.py"
       },
       "running": false
     },
@@ -181,13 +162,14 @@
       }
     },
     {
-      "name": "开卡入会py",
+      "name": "JD入会领豆",
       "type": "cron",
       "time": "10 5 8,15 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/TaskBaks/task12.js"
-      }
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/PyJSFile/jd_OpenCard.py.js"
+      },
+      "running": false
     },
     {
       "name": "TG机器人签到py",
@@ -208,14 +190,35 @@
       }
     },
     {
+      "name": "(选填)签到领现金助力",
+      "type": "cron",
+      "time": "0 0 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/PyJSFile/jd_cashHelp.py.js"
+      },
+      "running": false
+    },
+    {
+      "name": "(选填)全民抢京豆（7.22-7.31)",
+      "type": "cron",
+      "time": "0 0 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/PyJSFile/jd_qjd.py.js"
+      },
+      "running": false
+    },
+    {
       "name": "关注有礼py",
       "type": "schedule",
       "time": "0",
       "job": {
-        "type": "exec",
-        "target": "python3 -timeout=0 https://raw.githubusercontents.com/curtinlv/JD-Script/main/getFollowGifts/jd_getFollowGift.py"
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/PyJSFile/jd_getFollowGift.py.js"
       },
       "running": false
-    }
+    },
+
   ]
 }
