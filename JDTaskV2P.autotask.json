@@ -55,7 +55,7 @@
     {
       "name": "JDCookie转换",
       "type": "cron",
-      "time": "30 30 0-23/1 * * *",
+      "time": "30 */15 * * * *",
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.cookie.js"

@@ -23,7 +23,7 @@
     "21 1,6 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_speed_sign.js, tag=京东极速版签到+赚现金任务",
     "0 1,22 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_gold_creator.js, tag=金榜创造营",
     "23 */2 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_moneyTree.js, tag=摇钱树",
-    "26 * * * * https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.pycookie.js, tag=Py脚本cookie转换",
+    "30 */15 * * * * https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.pycookie.js, tag=Py脚本cookie转换",
     "30 3,12,22 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_esManager.js, tag=东东电竞经理",
     "15 0,12,22 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_jump.js, tag=跳跳乐瓜分京豆",
     "10 0,1,20 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_necklace.js, tag=点点券",
