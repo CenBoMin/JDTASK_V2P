@@ -98,6 +98,15 @@
       }
     },
     {
+      "name": "京豆变动通知",
+      "type": "cron",
+      "time": "20 10,23 * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/TestJSFile/JDTaskV2P.JDdou.js"
+      }
+    },
+    {
       "name": "京东试用",
       "type": "cron",
       "time": "0 0 5 * * *",

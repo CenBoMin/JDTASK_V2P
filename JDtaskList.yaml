@@ -124,9 +124,6 @@
   Aaron#赚京豆(微信小程序)
   12 * * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_syj.js, tag=赚京豆
 
-  👧 CenBomin#京豆变动通知
-  20 10 * * * https://raw.githubusercontents.com/Aaron-lv/sync/jd_scripts/jd_bean_change.js, tag=京豆变动通知
-
   Aaron#领京豆额外奖励(每日可获得3京豆)
   23 1,12,22 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_bean_home.js, tag=领京豆额外奖励
 

@@ -42,7 +42,6 @@
     "15 0-23/3 * * * https://raw.githubusercontents.com/Aaron-lv/sync/jd_scripts/jd_jxmc.js, tag=京喜牧场",
     "31 0,1-23/2 * * * https://raw.githubusercontents.com/Aaron-lv/sync/jd_scripts/jd_superMarket.js, tag=东东超市",
     "12 * * * * https://raw.githubusercontents.com/Aaron-lv/sync/jd_scripts/jd_syj.js, tag=赚京豆",
-    "20 10,23 * * * https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/TestJSFile/JDTaskV2P.JDdou.js, tag=京豆变动通知",
     "23 1,12,22 * * * https://raw.githubusercontents.com/Aaron-lv/sync/jd_scripts/jd_bean_home.js, tag=领京豆额外奖励",
     "41 0,23 * * * https://raw.githubusercontents.com/Aaron-lv/sync/jd_scripts/jd_price.js, tag=京东保价",
     "32 0-23/6 * * * https://raw.githubusercontents.com/Aaron-lv/sync/jd_scripts/jd_pigPet.js, tag=金融养猪",

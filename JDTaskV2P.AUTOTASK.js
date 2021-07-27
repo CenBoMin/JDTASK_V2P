@@ -71,6 +71,10 @@ async function JDJSmodule() {
 
   await downloadJS("RunJDTaskV2P","https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/RunJDTaskV2P.js","./script/JSFile")
 
+  await downloadJS("JDTaskV2P.AUTOTASK","https://ghproxy.com/https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.AUTOTASK.js","./script/JSFile")
+
+  await downloadJS("JDTaskV2P.AUTOTASK","https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.AUTOTASK.js","./script/JSFile")
+
   await downloadJS("JDCOOKIE","https://ghproxy.com/https://raw.githubusercontents.com/JDHelloWorld/jd_scripts/main/jdCookie.js","./script/JSFile")
 ////////////////////////////   USER_AGENTS  //////////////////////////////////////
   await downloadJS("USER_AGENTS-1","https://ghproxy.com/https://raw.githubusercontents.com/JDHelloWorld/jd_scripts/main/JS_USER_AGENTS.js","./script/JSFile")
