@@ -18,16 +18,16 @@ if (CookiesJD) {
   CookiesJDList.unshift(CookieJD2);
   CookiesJDList.unshift(CookieJD);
   const cookieV2P1 = CookiesJDList.join("&");
-  $store.put(cookieV2P1, 'CookiesJDV2P', 'string') ? console.log("🌟 CookiesJDV2P转换成功！🎉") : console.log("CookiesJDV2P转换失败！❌");
+  $store.put(cookieV2P1, 'CookiesJDV2P', 'string') ? console.log("🌟 CookiesJDV2P转换成功！请到store/cookie 常量储存管理查看") : console.log("CookiesJDV2P转换失败！❌");
 } else {
   if (CookieJD2) {
     const CookiesJDList = new Array();
     CookiesJDList.unshift(CookieJD2);
     CookiesJDList.unshift(CookieJD);
     const cookieV2P2 = CookiesJDList.join("&");
-    $store.put(cookieV2P2, 'CookiesJDV2P', 'string') ? console.log("🌟 CookiesJDV2P转换成功！🎉") : console.log("CookiesJDV2P转换失败！❌");
+    $store.put(cookieV2P2, 'CookiesJDV2P', 'string') ? console.log("🌟 CookiesJDV2P转换成功！请到store/cookie 常量储存管理查看") : console.log("CookiesJDV2P转换失败！❌");
   } else {
-    $store.put(CookieJD, 'CookiesJDV2P', 'string') ? console.log("🌟 CookiesJDV2P转换成功！🎉") : console.log("CookiesJDV2P转换失败！❌");
+    $store.put(CookieJD, 'CookiesJDV2P', 'string') ? console.log("🌟 CookiesJDV2P转换成功！请到store/cookie 常量储存管理查看") : console.log("CookiesJDV2P转换失败！❌");
   }
 }
 
@@ -39,7 +39,15 @@ fs.writeFile('/usr/local/app/script/Shell/JDCookies.txt', content, err => {
     console.error(err)
     return
   }else {
-    console.log("🌟 CookiesJDV2P值成功保存→script/Shell/JDCookies.txt");
+    console.log("🌟 CookiesJDV2P值成功！已保存到script/Shell/JDCookies.txt");
   }
   //文件写入成功。
 })
+
+const ptpinList = new Array();
+const CookiesJDV2PList =  CookiesJDV2P.split("&");
+for (let i = 0; i < CookiesJDV2PList.length; i++) {
+  ptpinList.push(CookiesJDV2PList[i].split(";")[1].replace(/pt_pin=/,""))
+}
+const ptpinsValue = ptpinList.join("&");
+$store.put(ptpinsValue, 'PtPinJDV2P', 'string') ? console.log("🌟 PtPinJDV2P转换成功！请到store/cookie 常量储存管理查看") : console.log("PtPinJDV2P转换失败！❌");
