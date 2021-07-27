@@ -59,15 +59,19 @@
     "10 0-21/3 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/jd_joy_steal.js, tag=宠汪汪偷好友积分与喂食",
     "21 9 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_MMdou.js, tag=smiek2221#MM领京豆",
     "23 2,9,13,17 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_productZ4Brand.js, tag=star261#特务Zx",
-    "6 9,12 * * * https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_mb.js, tag=faker2#全民摸冰",
     "1 7,12,19 * * * https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_beauty.js, tag=faker2#美丽研究院",
     "30 7 * * * https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_ddnc_farmpark.js, tag=faker2#东东乐园大风车",
-    "30 6 * * * https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_goodMorning.js, tag=faker2#早起福利",
-    "0 11 * * * https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_lsj.js, tag=faker2#京东零食街",
+    "30 6 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_goodMorning.js, tag=早起福利",
     "15 * * * * https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_joy-park.js, tag=faker2#旺旺乐园",
     "30 12 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_speed.js, tag=天天加速",
     "21 9 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_rankingList.js, tag=京东排行榜",
     "4 2,10 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_jxlhb.js, tag=京喜领88元红包",
-    "30 1,6,12,21 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_lotteryMachine.js, tag=京东抽奖机"
+    "30 1,6,12,21 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_lotteryMachine.js, tag=京东抽奖机",
+    "0 0 0 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_angryBean.js, tag=真·抢京豆",
+    "0 0 0 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_angryCash.js, tag=愤怒的现金",
+    "0 0 0 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_angryBean.js, tag=愤怒的锦鲤",
+    "0 0 10 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_cash_exchange.js, tag=签到领现金兑换10红包",
+    "3 1,6 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_earn30.js, tag=我的-赚30",
+    "0 0 0 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_dyj_help.js, tag=发财大赢家助力"
     ]
 }

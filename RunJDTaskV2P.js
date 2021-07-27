@@ -33,8 +33,7 @@ $exec(`node ${jstask}`, {
     summer_movement_ShHelpFlag:1,summer_movement_HelpHelpHelpFlag:true,
     //下面的忘记了...
     JOY_HELP_FEED:true,
-    jdJoyStealCoin:true,
-    lsjdh: "jdAward3"
+    jdJoyStealCoin:true
   },
   cb(data, error){
     error ? console.error(error) : console.log(data)
