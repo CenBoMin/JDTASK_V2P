@@ -45,7 +45,7 @@ let tz = "";
         V2PtaskName = nowUpdateTaskArr[i].split("tag=")[1].split(",")[0];
         V2PtaskCron = nowUpdateTaskArr[i].split("https")[0];
         V2PtaskUrl = nowUpdateTaskArr[i].split(":")[1].split(", tag=")[0].replace(/\/\//,"RunJDTaskV2P.js -env JDTASK=https://");
-        downloadUrl = nowUpdateTaskArr[i].split(":")[1].split(", tag=")[0].replace(/\/\//,"https://");
+        downloadUrl = nowUpdateTaskArr[i].split(":")[1].split(", tag=")[0].replace(/\/\//,"https://ghproxy.com/https://");
         await pushtask();
       }
 
@@ -66,16 +66,17 @@ let tz = "";
 })
 //++++++++++++++++++++++++++++++++++++++++
 async function JDJSmodule() {
+  //////////////////////////////  基础脚本  /////////////////////////////
   await downloadJS("RunJDTaskV2P","https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/RunJDTaskV2P.js","./script/JSFile")
 
   await downloadJS("JDCOOKIE","https://ghproxy.com/https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdCookie.js","./script/JSFile")
-
+////////////////////////////   USER_AGENTS  //////////////////////////////////////
   await downloadJS("USER_AGENTS-1","https://ghproxy.com/https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/JS_USER_AGENTS.js","./script/JSFile")
 
   await downloadJS("USER_AGENTS-2","https://ghproxy.com/https://raw.githubusercontent.com/shufflewzc/faker2/main/JS1_USER_AGENTS.js","./script/JSFile")
 
   await downloadJS("USER_AGENTS-3","https://ghproxy.com/https://raw.githubusercontent.com/shufflewzc/faker2/main/USER_AGENTS.js","./script/JSFile")
-
+////////////////////////     互助码脚本    //////////////////////////
   await downloadJS("jdDreamFactoryShareCodes","https://ghproxy.com/https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdDreamFactoryShareCodes.js","./script/JSFile")
 
   await downloadJS("jdFactoryShareCodes","https://ghproxy.com/https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdFactoryShareCodes.js","./script/JSFile")
@@ -87,7 +88,7 @@ async function JDJSmodule() {
   await downloadJS("jdPetShareCodes","https://ghproxy.com/https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdPetShareCodes.js","./script/JSFile")
 
   await downloadJS("jdPlantBeanShareCodes","https://ghproxy.com/https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdPlantBeanShareCodes.js","./script/JSFile")
-
+///////////////////////    Aaron-lv验证脚本utils    ///////////////////////////
   await downloadJS("JD_DailyBonus","https://ghproxy.com/https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JD_DailyBonus.js","./script/JSFile/utils")
 
   await downloadJS("JDJRValidator_Pure","https://ghproxy.com/https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/JDJRValidator_Pure.js","./script/JSFile/utils")
@@ -98,18 +99,18 @@ async function JDJSmodule() {
 
   await downloadJS("ZooFaker_Necklace","https://ghproxy.com/https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/utils/ZooFaker_Necklace.js","./script/JSFile/utils")
 
+///////////////////////    smiek2221验证脚本    ///////////////////////////
   await downloadJS("JDJRValidator_Pure","https://ghproxy.com/https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_JDJRValidator_Pure.js","./script/JSFile/")
 
   await downloadJS("MoveMentFaker","https://ghproxy.com/https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_MovementFaker.js","./script/JSFile/")
 
-  await downloadJS("JDSignValidator","https://ghproxy.com/https://raw.githubusercontent.com/shufflewzc/faker2/main/JDJRValidator_Pure.js","./script/JSFile/")
+  await downloadJS("JDSignValidator","https://ghproxy.com/https://raw.githubusercontent.com/smiek2221/scripts/master/JDJRValidator_Pure.js","./script/JSFile/")
 
-  await downloadJS("ZooFaker_Necklace","https://raw.githubusercontent.com/shufflewzc/faker2/main/ZooFaker_Necklace.js","./script/JSFile/")
+  await downloadJS("ZooFaker_Necklace","https://ghproxy.com/https://raw.githubusercontent.com/smiek2221/scripts/master/ZooFaker_Necklace.js","./script/JSFile/")
 
   await downloadJS("sign_graphics_validate","https://ghproxy.com/https://raw.githubusercontent.com/smiek2221/scripts/master/sign_graphics_validate.js","./script/JSFile")
 
-  await downloadJS("jd_sign_graphics","https://ghproxy.com/https://raw.githubusercontent.com/smiek2221/scripts/master/jd_sign_graphics.js","./script/JSFile")
-
+///////////////////////    需要执行本地的脚本    ///////////////////////////
   await downloadJS("宠旺旺换500豆","https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_joy_reward2.js","./script/JSFile")
 
   await downloadJS("超市换1000豆","https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_blueCoinFixed.js","./script/JSFile")
