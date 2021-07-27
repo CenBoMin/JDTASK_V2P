@@ -135,6 +135,16 @@
       "running": false
     },
     {
+      "name": "全民抢京豆（7.22-7.31)py",
+      "type": "cron",
+      "time": "0 0 0 * * *",
+      "job": {
+        "type": "exec",
+        "target": "qjd_zlzh=改助力pin的值不要; python3 -timeout=0 https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_qjd.py"
+      },
+      "running": false
+    },
+    {
       "name": "Aaron半点京豆雨",
       "type": "cron",
       "time": "30 16-23/1 * * *",
