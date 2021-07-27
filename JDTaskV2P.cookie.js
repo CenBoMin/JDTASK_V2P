@@ -50,4 +50,7 @@ for (let i = 0; i < CookiesJDV2PList.length; i++) {
   ptpinList.push(CookiesJDV2PList[i].split(";")[1].replace(/pt_pin=/,""))
 }
 const ptpinsValue = ptpinList.join("&");
+
 $store.put(ptpinsValue, 'PtPinJDV2P', 'string') ? console.log("🌟 PtPinJDV2P转换成功！请到store/cookie 常量储存管理查看") : console.log("PtPinJDV2P转换失败！❌");
+
+$store.put(ptpinList, 'PtPinJDV2P_PY', 'string') ? console.log("🌟 PtPinJDV2P_PY转换成功！请到store/cookie 常量储存管理查看") : console.log("PtPinJDV2P_PY转换失败！❌");
