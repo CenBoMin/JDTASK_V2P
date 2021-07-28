@@ -13,12 +13,17 @@ let CookieJD = $store.get('CookieJD', 'string')
 let CookieJD2 = $store.get('CookieJD2', 'string')
 let CookiesJDV2P = $store.get('CookiesJDV2P', 'string')
 
-if (CookiesJD) {
+if (CookiesJD && CookieJD && CookieJD2) {
   const CookiesJDList = CookiesJD.map(item => item.cookie)
   CookiesJDList.unshift(CookieJD2);
   CookiesJDList.unshift(CookieJD);
   const cookieV2P1 = CookiesJDList.join("&");
   $store.put(cookieV2P1, 'CookiesJDV2P', 'string') ? console.log("🌟 CookiesJDV2P转换成功！请到store/cookie 常量储存管理查看") : console.log("CookiesJDV2P转换失败！❌");
+}else if (CookiesJD) {
+  const CookiesJDList = CookiesJD.map(item => item.cookie)
+  const cookieV2P1 = CookiesJDList.join("&");
+  $store.put(cookieV2P1, 'CookiesJDV2P', 'string') ? console.log("🌟 CookiesJDV2P转换成功！请到store/cookie 常量储存管理查看") : console.log("CookiesJDV2P转换失败！❌");
+
 } else {
   if (CookieJD2) {
     const CookiesJDList = new Array();
@@ -31,26 +36,28 @@ if (CookiesJD) {
   }
 }
 
+if (CookiesJDV2P) {
+  const content = CookiesJDV2P.split("&").join("\n");
 
-const content = CookiesJDV2P.split("&").join("\n");
+  fs.writeFile('/usr/local/app/script/Shell/JDCookies.txt', content, err => {
+    if (err) {
+      console.error(err)
+      return
+    }else {
+      console.log("🌟 CookiesJDV2P值成功！已保存到script/Shell/JDCookies.txt");
+    }
+    //文件写入成功。
+  })
 
-fs.writeFile('/usr/local/app/script/Shell/JDCookies.txt', content, err => {
-  if (err) {
-    console.error(err)
-    return
-  }else {
-    console.log("🌟 CookiesJDV2P值成功！已保存到script/Shell/JDCookies.txt");
+  const ptpinList = new Array();
+  const CookiesJDV2PList =  CookiesJDV2P.split("&");
+  for (let i = 0; i < CookiesJDV2PList.length; i++) {
+    ptpinList.push(CookiesJDV2PList[i].split(";")[1].replace(/pt_pin=/,""))
   }
-  //文件写入成功。
-})
+  const ptpinsValue = ptpinList.join("&");
 
-const ptpinList = new Array();
-const CookiesJDV2PList =  CookiesJDV2P.split("&");
-for (let i = 0; i < CookiesJDV2PList.length; i++) {
-  ptpinList.push(CookiesJDV2PList[i].split(";")[1].replace(/pt_pin=/,""))
+  $store.put(ptpinsValue, 'PtPinJDV2P', 'string') ? console.log("🌟 PtPinJDV2P转换成功！请到store/cookie 常量储存管理查看") : console.log("PtPinJDV2P转换失败！❌");
+
+  $store.put(ptpinList, 'PtPinJDV2P_PY', 'string') ? console.log("🌟 PtPinJDV2P_PY转换成功！请到store/cookie 常量储存管理查看") : console.log("PtPinJDV2P_PY转换失败！❌");
+
 }
-const ptpinsValue = ptpinList.join("&");
-
-$store.put(ptpinsValue, 'PtPinJDV2P', 'string') ? console.log("🌟 PtPinJDV2P转换成功！请到store/cookie 常量储存管理查看") : console.log("PtPinJDV2P转换失败！❌");
-
-$store.put(ptpinList, 'PtPinJDV2P_PY', 'string') ? console.log("🌟 PtPinJDV2P_PY转换成功！请到store/cookie 常量储存管理查看") : console.log("PtPinJDV2P_PY转换失败！❌");
