@@ -30,7 +30,7 @@
       "time": "0",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontents.com/CenBoMin/JDTASK_V2P/main/getJDCookie.elecV2P.js"
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/TestJSFile/JDTaskV2P.getJDcookie.js"
       },
       "running": false
     },
