@@ -48,7 +48,7 @@ function taskUrl() {
       'Accept': 'application/json, text/plain, */*',
       'Accept-Language': 'zh-cn',
       'Referer': `https://plogin.m.jd.com/login/login?appid=300&returnurl=https://wq.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport`,
-      'User-Agent': 'jdapp;android;10.0.5;11;0393465333165363-5333430323261366;network/wifi;model/M2102K1C;osVer/30;appBuild/88681;partner/lc001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; M2102K1C Build/RKQ1.201112.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045534 Mobile Safari/537.36',
+      'User-Agent': 'jdapp;android;10.0.2;10;network/wifi;Mozilla/5.0 (Linux; Android 10; ONEPLUS A5010 Build/QKQ1.191014.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36',
       'Host': 'plogin.m.jd.com'
     }
   }
@@ -64,7 +64,7 @@ function taskPostUrl() {
       'Accept': 'application/json, text/plain, */*',
       'Accept-Language': 'zh-cn',
       'Referer': `https://plogin.m.jd.com/login/login?appid=300&returnurl=https://wq.jd.com/passport/LoginRedirect?state=${Date.now()}&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport`,
-      'User-Agent': 'jdapp;android;10.0.5;11;0393465333165363-5333430323261366;network/wifi;model/M2102K1C;osVer/30;appBuild/88681;partner/lc001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; M2102K1C Build/RKQ1.201112.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045534 Mobile Safari/537.36',
+      'User-Agent': 'jdapp;android;10.0.2;10;network/wifi;Mozilla/5.0 (Linux; Android 10; ONEPLUS A5010 Build/QKQ1.191014.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36',
       'Host': 'plogin.m.jd.com'
     }
   }
@@ -312,7 +312,7 @@ function checkLogin() {
         'Connection': 'Keep-Alive',
         'Content-Type': 'application/x-www-form-urlencoded; Charset=UTF-8',
         'Accept': 'application/json, text/plain, */*',
-        'User-Agent': 'jdapp;android;10.0.5;11;0393465333165363-5333430323261366;network/wifi;model/M2102K1C;osVer/30;appBuild/88681;partner/lc001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; M2102K1C Build/RKQ1.201112.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045534 Mobile Safari/537.36',
+        'User-Agent': 'jdapp;android;10.0.2;10;network/wifi;Mozilla/5.0 (Linux; Android 10; ONEPLUS A5010 Build/QKQ1.191014.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36',
       }
     }
     $.post(options, (err, resp, data) => {
@@ -406,9 +406,7 @@ function Env(name, opts) {
     }
 
     send(opts, method = 'GET') {
-      opts = typeof opts === 'string' ? {
-        url: opts
-      } : opts
+      opts = typeof opts === 'string' ? { url: opts } : opts
       let sender = this.get
       if (method === 'POST') {
         sender = this.post
@@ -430,7 +428,7 @@ function Env(name, opts) {
     }
   }
 
-  return new(class {
+  return new (class {
     constructor(name, opts) {
       this.name = name
       this.http = new Http(this)
@@ -502,9 +500,7 @@ function Env(name, opts) {
 
     getScript(url) {
       return new Promise((resolve) => {
-        this.get({
-          url
-        }, (err, resp, body) => resolve(body))
+        this.get({ url }, (err, resp, body) => resolve(body))
       })
     }
 
@@ -518,15 +514,8 @@ function Env(name, opts) {
         const [key, addr] = httpapi.split('@')
         const opts = {
           url: `http://${addr}/v1/scripting/evaluate`,
-          body: {
-            script_text: script,
-            mock_type: 'cron',
-            timeout: httpapi_timeout
-          },
-          headers: {
-            'X-Key': key,
-            'Accept': '*/*'
-          }
+          body: { script_text: script, mock_type: 'cron', timeout: httpapi_timeout },
+          headers: { 'X-Key': key, 'Accept': '*/*' }
         }
         this.post(opts, (err, resp, body) => resolve(body))
       }).catch((e) => this.logErr(e))
@@ -588,8 +577,8 @@ function Env(name, opts) {
       path
         .slice(0, -1)
         .reduce((a, c, i) => (Object(a[c]) === a[c] ? a[c] : (a[c] = Math.abs(path[i + 1]) >> 0 === +path[i + 1] ? [] : {})), obj)[
-          path[path.length - 1]
-        ] = value
+        path[path.length - 1]
+      ] = value
       return obj
     }
 
@@ -680,9 +669,7 @@ function Env(name, opts) {
       if (this.isSurge() || this.isLoon()) {
         if (this.isSurge() && this.isNeedRewrite) {
           opts.headers = opts.headers || {}
-          Object.assign(opts.headers, {
-            'X-Surge-Skip-Scripting': false
-          })
+          Object.assign(opts.headers, { 'X-Surge-Skip-Scripting': false })
         }
         $httpClient.get(opts, (err, resp, body) => {
           if (!err && resp) {
@@ -694,24 +681,12 @@ function Env(name, opts) {
       } else if (this.isQuanX()) {
         if (this.isNeedRewrite) {
           opts.opts = opts.opts || {}
-          Object.assign(opts.opts, {
-            hints: false
-          })
+          Object.assign(opts.opts, { hints: false })
         }
         $task.fetch(opts).then(
           (resp) => {
-            const {
-              statusCode: status,
-              statusCode,
-              headers,
-              body
-            } = resp
-            callback(null, {
-              status,
-              statusCode,
-              headers,
-              body
-            }, body)
+            const { statusCode: status, statusCode, headers, body } = resp
+            callback(null, { status, statusCode, headers, body }, body)
           },
           (err) => callback(err)
         )
@@ -734,24 +709,11 @@ function Env(name, opts) {
           })
           .then(
             (resp) => {
-              const {
-                statusCode: status,
-                statusCode,
-                headers,
-                body
-              } = resp
-              callback(null, {
-                status,
-                statusCode,
-                headers,
-                body
-              }, body)
+              const { statusCode: status, statusCode, headers, body } = resp
+              callback(null, { status, statusCode, headers, body }, body)
             },
             (err) => {
-              const {
-                message: error,
-                response: resp
-              } = err
+              const { message: error, response: resp } = err
               callback(error, resp, resp && resp.body)
             }
           )
@@ -767,9 +729,7 @@ function Env(name, opts) {
       if (this.isSurge() || this.isLoon()) {
         if (this.isSurge() && this.isNeedRewrite) {
           opts.headers = opts.headers || {}
-          Object.assign(opts.headers, {
-            'X-Surge-Skip-Scripting': false
-          })
+          Object.assign(opts.headers, { 'X-Surge-Skip-Scripting': false })
         }
         $httpClient.post(opts, (err, resp, body) => {
           if (!err && resp) {
@@ -782,53 +742,25 @@ function Env(name, opts) {
         opts.method = 'POST'
         if (this.isNeedRewrite) {
           opts.opts = opts.opts || {}
-          Object.assign(opts.opts, {
-            hints: false
-          })
+          Object.assign(opts.opts, { hints: false })
         }
         $task.fetch(opts).then(
           (resp) => {
-            const {
-              statusCode: status,
-              statusCode,
-              headers,
-              body
-            } = resp
-            callback(null, {
-              status,
-              statusCode,
-              headers,
-              body
-            }, body)
+            const { statusCode: status, statusCode, headers, body } = resp
+            callback(null, { status, statusCode, headers, body }, body)
           },
           (err) => callback(err)
         )
       } else if (this.isNode()) {
         this.initGotEnv(opts)
-        const {
-          url,
-          ..._opts
-        } = opts
+        const { url, ..._opts } = opts
         this.got.post(url, _opts).then(
           (resp) => {
-            const {
-              statusCode: status,
-              statusCode,
-              headers,
-              body
-            } = resp
-            callback(null, {
-              status,
-              statusCode,
-              headers,
-              body
-            }, body)
+            const { statusCode: status, statusCode, headers, body } = resp
+            callback(null, { status, statusCode, headers, body }, body)
           },
           (err) => {
-            const {
-              message: error,
-              response: resp
-            } = err
+            const { message: error, response: resp } = err
             callback(error, resp, resp && resp.body)
           }
         )
@@ -881,33 +813,21 @@ function Env(name, opts) {
         if (!rawopts) return rawopts
         if (typeof rawopts === 'string') {
           if (this.isLoon()) return rawopts
-          else if (this.isQuanX()) return {
-            'open-url': rawopts
-          }
-          else if (this.isSurge()) return {
-            url: rawopts
-          }
+          else if (this.isQuanX()) return { 'open-url': rawopts }
+          else if (this.isSurge()) return { url: rawopts }
           else return undefined
         } else if (typeof rawopts === 'object') {
           if (this.isLoon()) {
             let openUrl = rawopts.openUrl || rawopts.url || rawopts['open-url']
             let mediaUrl = rawopts.mediaUrl || rawopts['media-url']
-            return {
-              openUrl,
-              mediaUrl
-            }
+            return { openUrl, mediaUrl }
           } else if (this.isQuanX()) {
             let openUrl = rawopts['open-url'] || rawopts.url || rawopts.openUrl
             let mediaUrl = rawopts['media-url'] || rawopts.mediaUrl
-            return {
-              'open-url': openUrl,
-              'media-url': mediaUrl
-            }
+            return { 'open-url': openUrl, 'media-url': mediaUrl }
           } else if (this.isSurge()) {
             let openUrl = rawopts.url || rawopts.openUrl || rawopts['open-url']
-            return {
-              url: openUrl
-            }
+            return { url: openUrl }
           }
         } else {
           return undefined
