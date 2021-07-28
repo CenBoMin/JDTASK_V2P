@@ -1,4 +1,4 @@
-const $ = new Env('JSTask_AUTOSYNC_JS')
+const $ = new Env('JSTask_Beautify_JS')
 const v2purl = $.getval('v2purl');
 const v2ptoken = $.getval('v2token');
 let tz = "";
