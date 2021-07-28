@@ -242,7 +242,12 @@ function GetJDCookie(cookies) {
       const CookieJD2 = $store.get('CookieJD2', 'string')
       const ckArr = [CookieJD1,CookieJD2];
       const oldCks = $store.get('CookiesJD', 'array');
-      oldCks.forEach(item => ckArr.push(item.cookie));
+      if (oldCks) {
+        oldCks.forEach(item => ckArr.push(item.cookie));
+      }else{
+        console.log("🙅‍♂️ CookiesJD不存在");
+      }
+
       let [status, seatNo] = chooseSeatNo(acObj.cookie, ckArr, /pt_pin=(.+?);/);
       if (status) {
         if (status > 0) {
@@ -374,11 +379,12 @@ function formatCookie(headers) {
     pt_key = pt_key.substring(pt_key.indexOf("=") + 1, pt_key.indexOf(";"))
     let pt_pin = headers['set-cookie'][2]
     pt_pin = pt_pin.substring(pt_pin.indexOf("=") + 1, pt_pin.indexOf(";"))
-    const cookie1 = "pt_key=" + pt_key + ";pt_pin=" + pt_pin + ";";
+    let cookie1 = "pt_key=" + pt_key + ";pt_pin=" + pt_pin + ";";
 
     $.UserName = decodeURIComponent(cookie1.match(/pt_pin=(.+?);/) && cookie1.match(/pt_pin=(.+?);/)[1])
     $.log(`京东用户名：${$.UserName} 登录成功，此cookie(有效期为90天)如下：`);
     $.log(`\n${cookie1}\n`);
+    GetJDCookie(cookie1);
     // 发送关闭前端 evui 界面的指令
     $ws.send({
       type: 'evui',
@@ -387,7 +393,7 @@ function formatCookie(headers) {
         data: cookie1
       }
     })
-    GetJDCookie(cookie1)
+    GetJDCookie(cookie1);
     $ws.send({ type: 'evui', data: { id: evuid, type: 'close' }})
     resolve()
   })
