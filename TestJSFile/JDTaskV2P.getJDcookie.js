@@ -46,7 +46,16 @@ const USER_AGENTS = [
   "jdapp;android;10.0.2;10;network/wifi;Mozilla/5.0 (Linux; Android 10; MI 8 Build/QKQ1.190828.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045227 Mobile Safari/537.36",
   "jdapp;iPhone;10.0.2;14.1;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1",
 ]
-let JDUA = USER_AGENTS[randomNumber(0, USER_AGENTS.length)];
+// Array Remove - By John Resig (MIT Licensed)
+Array.prototype.remove = function(from, to) {
+  var rest = this.slice((to || from) + 1 || this.length);
+  this.length = from < 0 ? this.length + from : from;
+  return this.push.apply(this, rest);
+};
+USER_AGENTS.remove(8, 13, 18, 11);
+$.UANum = randomNumber(0, USER_AGENTS.length);
+$.UANumArr = $store.get('UANumJDV2P', 'array');
+const JDUA = USER_AGENTS[$.UANum];
 //////////////////////////////////////////
 !(async () => {
   await moduleCheck(['got', 'tough-cookie', 'qrcode-npm'])
@@ -199,6 +208,11 @@ function generateQrcode() {
           okl_token = setCookie.substring(setCookie.indexOf("=") + 1, setCookie.indexOf(";"))
           const url = 'https://plogin.m.jd.com/cgi-bin/m/tmauth?appid=300&client_type=m&token=' + token;
           console.debug('token', token, 'okl_token', okl_token, '二维码url', url)
+          const openJDApp = `openapp.jdmobile://virtual/ad?params={"category":"jump","des":"ThirdPartyLogin","action":"to","onekeylogin":"return","url":"${url}","authlogin_returnurl":"weixin://"}`
+          $message.success('👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇\n📱 点击跳转京东APP 登录更新或者替换cookie 📱\n👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆', {
+            secd: 0,
+            url: openJDApp
+          });
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>输出二维码
           qrcode.generate(url);
