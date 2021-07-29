@@ -151,11 +151,12 @@ class Widget {
       response = response.data
       const result = response.code === "0";
       console.log(`正在获取京豆收支明细，第${page}页：${result ? "请求成功" : "请求失败"}`);
+      // console.log(response);
       if (response.code === "3") {
         i = 1;
         console.log(response);
       }
-      if (response && result) {
+      if (response && result && response !== {}) {
         page++;
         let detailList = response.jingDetailList;
         if (detailList && detailList.length > 0) {
@@ -402,14 +403,17 @@ async function bean() {
         $.errorMsg = `数据异常`;
         $.msg($.name, ``, `账号${$.index}：${$.nickName}\n${$.errorMsg}`);
         t = 1;
+        break;
       }
     } else if (response && response.code === "3") {
       console.log(`cookie已过期，或者填写不规范，跳出`)
       t = 1;
+      break;
     } else {
       console.log(`未知情况：${JSON.stringify(response)}`);
       console.log(`未知情况，跳出`)
       t = 1;
+      break;
     }
   } while (t === 0);
   for (let item of yesterdayArr) {
