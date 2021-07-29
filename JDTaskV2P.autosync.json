@@ -65,13 +65,15 @@
     "15 * * * * https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_joy-park.js, tag=faker2#旺旺乐园",
     "30 12 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_speed.js, tag=天天加速",
     "21 9 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_rankingList.js, tag=京东排行榜",
-    "4 2,10 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_jxlhb.js, tag=京喜领88元红包",
+    "30 1,6,12,21 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_jxlhb.js, tag=京喜领88元红包",
     "30 1,6,12,21 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_lotteryMachine.js, tag=京东抽奖机",
     "0 0 0 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_angryBean.js, tag=真·抢京豆",
     "0 0 0 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_angryCash.js, tag=愤怒的现金",
     "0 0 0 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_angryBean.js, tag=愤怒的锦鲤",
     "0 0 10 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_cash_exchange.js, tag=签到领现金兑换10红包",
     "3 1,6 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_earn30.js, tag=我的-赚30",
-    "0 0 0 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_dyj_help.js, tag=发财大赢家助力"
+    "0 0 0 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_dyj_help.js, tag=发财大赢家助力",
+    "20 1 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jx_sign.js, tag=京喜签到",
+    "30 0,22 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_olympic_opencard.js, tag=奥运夺金牌开卡"
     ]
 }
