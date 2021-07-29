@@ -71,6 +71,10 @@ async function JDJSmodule() {
 
   await downloadJS("RunJDTaskV2P","https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/RunJDTaskV2P.js","./script/JSFile")
 
+  await downloadJS("RunJDCARV2P","https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/RunJDCARV2P.js","./script/JSFile")
+
+  await downloadJS("RunJDCARV2P","https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/RunJDCARV2P.js","./script/JSFile")
+
   await downloadJS("JDTaskV2P.AUTOTASK","https://ghproxy.com/https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.AUTOTASK.js","./script/JSFile")
 
   await downloadJS("JDTaskV2P.AUTOTASK","https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.AUTOTASK.js","./script/JSFile")
