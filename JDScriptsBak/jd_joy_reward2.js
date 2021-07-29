@@ -78,7 +78,7 @@ Date.prototype.Format = function (fmt) { //author: meizz
       $.msg('【京东账号一】宠汪汪积分兑换奖品失败', '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     }
     let allAc = []
-    for (let i = 0; i < cookiesArr.length; i++) {
+    for (let i = 0; i < 13; i++) {
       if (cookiesArr[i]) {
         cookie = cookiesArr[i];
         let ac = {

@@ -450,7 +450,7 @@ $.post = injectToRequest($.post.bind($))
 !(async () => {
   await requireConfig();
   let allAc = []
-  for (let i = 0; i < cookiesArr.length; i++) {
+  for (let i = 0; i < 13; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
       let ac = {
