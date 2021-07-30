@@ -28,7 +28,7 @@ function moduleTask() {
             }
           })
         }else if (i == 6) {
-          console.log("❗️请观察任务运行日志:JDTASKV2P模块安装完成");
+          console.log("请观察任务运行日志:JDTASKV2P模块安装完成");
         }
       },(i + 1) * 4000);
     })(i);

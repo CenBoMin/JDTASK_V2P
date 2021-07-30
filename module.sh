@@ -14,6 +14,11 @@ npm install crypto-js
 npm install download
 npm install tough-cookie
 npm install date-fns
+npm install http
+npm install stream
+npm install zlib
+npm install vm
+npm install fs
 echo "✅ [Node-Module]安装完成";
 
 echo "🤖 开始更新[NPM]";
