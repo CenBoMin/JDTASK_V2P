@@ -25,22 +25,22 @@
       "running": false
     },
     {
-      "name": "🚌JDCAR_Cookie手动转换",
-      "type": "schedule",
-      "time": "0",
-      "job": {
-        "type": "runjs",
-        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.jdcarcookie.js"
-      },
-      "running": false
-    },
-    {
       "name": "🌟JDCookie扫码服务",
       "type": "schedule",
       "time": "0",
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/TestJSFile/JDTaskV2P.getJDcookie.js"
+      },
+      "running": false
+    },
+    {
+      "name": "👩Top.2→👸Top.1",
+      "type": "cron",
+      "time": "30 */15 * * * *",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.jdcarcookie.js"
       },
       "running": false
     },
