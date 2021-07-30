@@ -156,6 +156,7 @@ class Widget {
         i = 1;
         console.log(response);
       }
+      //fix 无限循环
       if (response && result && response !== {}) {
         page++;
         let detailList = response.jingDetailList;
@@ -172,6 +173,10 @@ class Widget {
             }
           }
         }
+      }else {
+        page++;
+        i = 1;
+        break;
       }
     } while (i === 0);
   };
