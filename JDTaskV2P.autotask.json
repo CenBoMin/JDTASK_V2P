@@ -5,7 +5,7 @@
   "date": "2021-07-23 23:11:16",
   "list": [
     {
-      "name": "🌟 JDTASK安装",
+      "name": "🌟JDTASK安装",
       "type": "schedule",
       "time": "0",
       "job": {
@@ -21,6 +21,16 @@
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.AUTOTASK.js"
+      },
+      "running": false
+    },
+    {
+      "name": "🌟手动更新Cookie",
+      "type": "schedule",
+      "time": "0",
+      "job": {
+        "type": "runjs",
+        "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.cookie.js"
       },
       "running": false
     },
@@ -65,7 +75,7 @@
     {
       "name": "JDCookie转换",
       "type": "cron",
-      "time": "30 */15 * * * *",
+      "time": "50 23 * * * *",
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDTaskV2P.cookie.js"
