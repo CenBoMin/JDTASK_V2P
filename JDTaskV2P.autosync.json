@@ -48,7 +48,7 @@
     "6 0-5/1,11 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_jdzz.js, tag=京东赚赚",
     "45 0,23 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_speed_redpocke.js, tag=京东极速版红包",
     "5 0 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_jin_tie.js, tag=领金贴",
-    "0 58 7,15,23 * * * https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_joy_reward_auth.js, tag=宠旺旺换豆验证",
+    "30 57 7,15,23 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_joy_reward.js, tag=宠旺旺换豆验证",
     "10 10,23 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_market_lottery.js, tag=幸运大转盘",
     "30 * * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_cfd.js, tag=京喜财富岛",
     "20 * * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_big_winner.js, tag=省钱大赢家翻翻乐",
