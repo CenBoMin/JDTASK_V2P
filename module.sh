@@ -4,6 +4,8 @@ npm install request
 npm install ws
 npm install qrcode-terminal
 npm install http-server
+npm install axios
+npm install ts-node
 echo "✅ [inti-Module]安装完成";
 
 echo "🤖 开始安装[Node-Module]";

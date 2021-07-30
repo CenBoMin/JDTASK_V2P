@@ -63,7 +63,7 @@
     "1 7,12,19 * * * https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_beauty.js, tag=faker2#美丽研究院",
     "30 7 * * * https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_ddnc_farmpark.js, tag=faker2#东东乐园大风车",
     "30 6 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_goodMorning.js, tag=早起福利",
-    "15 * * * * https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_joy-park.js, tag=faker2#旺旺乐园",
+    "15 13 * * * https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_joy_park.ts, tag=旺旺乐园ts",
     "30 12 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_speed.js, tag=天天加速",
     "21 9 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_rankingList.js, tag=京东排行榜",
     "30 1,6,12,21 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_jxlhb.js, tag=京喜领88元红包",

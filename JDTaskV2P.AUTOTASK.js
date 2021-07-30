@@ -86,6 +86,11 @@ async function JDJSmodule() {
   await downloadJS("USER_AGENTS-2","https://ghproxy.com/https://raw.githubusercontent.com/shufflewzc/faker2/main/JS1_USER_AGENTS.js","./script/JSFile")
 
   await downloadJS("USER_AGENTS-3","https://ghproxy.com/https://raw.githubusercontent.com/shufflewzc/faker2/main/USER_AGENTS.js","./script/JSFile")
+
+  await downloadJS("USER_AGENTS-4","https://ghproxy.com/https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/TS_USER_AGENTS.ts","./script/JSFile")
+
+  await downloadJS("USER_AGENTS-4","https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/TS_USER_AGENTS.ts","./script/JSFile")
+
 ////////////////////////     互助码脚本    //////////////////////////
   await downloadJS("jdDreamFactoryShareCodes","https://ghproxy.com/https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jdDreamFactoryShareCodes.js","./script/JSFile")
 
