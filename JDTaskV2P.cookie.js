@@ -80,7 +80,7 @@ if (CookiesJDV2P) {
       console.error(err)
       return
     }else {
-      console.log("🌟 CookiesJDV2P值成功！已保存到script/Shell/JDCookies.txt");
+      console.log("🌟 Python脚本cookie值已经格式化！已保存到script/Shell/JDCookies.txt");
     }
     //文件写入成功。
   })
