@@ -3,6 +3,7 @@
     "description": "2021-07-25 23:11:16",
     "task": [
     "45 */2,23 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_joy.js, tag=宠汪汪",
+    "5 0 0 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_blueCoin.js, tag=东东超市兑换奖品",
     "15 0-23/1 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_joy_feedPets.js, tag=京东宠汪汪喂食",
     "13 1,6,22 * * * https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_health.js, tag=京东健康社区",
     "10 7-22/1 * * * https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_plantBean.js, tag=京东种豆得豆",

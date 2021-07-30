@@ -27,6 +27,8 @@ $exec(`node ${jstask}`, {
     JOY_RUN_HELP_MYSELF:true,
     //京东健康兑换20豆
     HEALTH_EXCHANGE: 20,
+    //超市兑换20豆
+    MARKET_COIN_TO_BEANS:20,
     //宠汪汪喂食80g
     JOY_FEED_COUNT:80,
     //燃动夏季助力
