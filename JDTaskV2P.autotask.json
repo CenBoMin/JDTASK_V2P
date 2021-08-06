@@ -93,7 +93,7 @@
     {
       "name": "宠旺旺换500豆-延时版",
       "type": "cron",
-      "time": "40-15 59 7,15,23 * * *",
+      "time": "40,41,42 59 7,15,23 * * *",
       "job": {
         "type": "runjs",
         "target": "https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_joy_reward2.js -local"
