@@ -2,7 +2,7 @@
     "name": "JDTASk脚本集合",
     "description": "2021-07-25 23:11:16",
     "task": [
-    "0 58 7,15,23 * * * https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_joy_reward_auth.js, tag=宠旺旺换豆验证",  
+    "0 58 7,15,23 * * * https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_joy_reward_auth.js, tag=宠旺旺换豆验证",
     "45 */2,23 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_joy.js, tag=宠汪汪",
     "5 0 0 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_blueCoin.js, tag=东东超市兑换奖品",
     "15 0-23/1 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_joy_feedPets.js, tag=京东宠汪汪喂食",
@@ -53,7 +53,7 @@
     "10 10,23 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_market_lottery.js, tag=幸运大转盘",
     "30 * * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_cfd.js, tag=京喜财富岛",
     "20 * * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_big_winner.js, tag=省钱大赢家翻翻乐",
-    "10 16,22 * * * https://raw.githubusercontent.com/CenBoMin/JDTASK_V2P/main/JDScriptsBak/jd_shop_sign.js, tag=店铺签到",
+    "10 16,22 * * * https://raw.githubusercontent.com/VectorZhao/Scripts/main/jd_shop_sign.js, tag=店铺签到",
     "10 0,1,20 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/jd_necklace.js, tag=smiek2221#点点券",
     "15 * * * * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_wealth_island.js, tag=smiek2221#财富大陆",
     "7 0,6-23/2 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_summer_movement.js, tag=燃动夏季",
