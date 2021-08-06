@@ -61,8 +61,8 @@ Date.prototype.Format = function (fmt) { //author: meizz
 }
 !(async () => {
   let timel = new Date().Format("ss")
-  let timea = 58;
-  if(timel < 58) {
+  let timea = 59;
+  if(timel < 59) {
     let timec = (timea - timel) * 1000;
     console.log(`等待时间 → ${timec / 1000}sec...`);
     await sleep(timec)
@@ -95,8 +95,15 @@ Date.prototype.Format = function (fmt) { //author: meizz
         }
         // console.log(`本地时间与京东服务器时间差(毫秒)：${await get_diff_time()}`);
         // console.log(`脚本开始请求时间 ${(new Date()).Format("yyyy-MM-dd hh:mm:ss | S")}`);
-        // await joyReward(ac);
         await getExchangeRewards(ac);
+        // await joyReward(ac);
+        // let count = 10;
+        // do {
+          // await $.wait(mscheck)
+
+        //   count--
+        // } while (count > 0)
+
         // $.log(`账号${ac.index} 数据准备完毕： ${$.time('yyyy-MM-dd HH:mm:ss.S')}`);
         allAc.push(ac);
       }
@@ -257,7 +264,7 @@ function getExchangeRewards(ac) {
       headers: {
         "Host": "jdjoy.jd.com",
         "Content-Type": "application/json",
-        "Cookie": cookie,
+        "Cookie": ac.cookie,
         "reqSource": "h5",
         "Connection": "keep-alive",
         "Accept": "*/*",
@@ -347,7 +354,7 @@ function TotalBean(ac) {
         "Accept-Encoding": "gzip, deflate, br",
         "Accept-Language": "zh-cn",
         "Connection": "keep-alive",
-        "Cookie": cookie,
+        "Cookie": ac.cookie,
         "Referer": "https://wqs.jd.com/my/jingdou/my.shtml?sceneval=2",
         "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
       }
