@@ -75,6 +75,6 @@
     "3 1,6 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_earn30.js, tag=我的-赚30",
     "0 0 0 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_dyj_help.js, tag=发财大赢家助力",
     "20 1 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jx_sign.js, tag=京喜签到",
-    "30 0,22 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_olympic_opencard.js, tag=奥运夺金牌开卡"
+    "36 0,10,21 4-15 8 * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_doge.js, tag=七夕情报局8.4-8.15"
     ]
 }
