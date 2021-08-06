@@ -1,7 +1,7 @@
 // @grant nodejs
 //#宠旺旺换豆验证
 $exec('node jd_joy_reward_auth.js', {
-  cwd: 'script/JSFile', timeout: 0,
+  cwd: 'script/JSFile/JDScriptsBak', timeout: 0,
   env: {
     ...process.env,
     JD_COOKIE: $store.get('CookiesJDV2P', 'string'),

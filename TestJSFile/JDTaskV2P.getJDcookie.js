@@ -9,6 +9,7 @@ $.isRewrite = 'undefined' !== typeof $request;
 $.isResponse = 'undefined' !== typeof $response;
 $.isTask = `undefined` === typeof $request;
 const USER_AGENTS = [
+  "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 SP-engine/2.14.0 main%2F1.0 baiduboxapp/11.18.0.16 (Baidu; P2 13.3.1) NABar/0.0",
   "jdapp;android;10.0.2;10;network/wifi;Mozilla/5.0 (Linux; Android 10; ONEPLUS A5010 Build/QKQ1.191014.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36",
   "jdapp;iPhone;10.0.2;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1",
   "jdapp;android;10.0.2;9;network/4g;Mozilla/5.0 (Linux; Android 9; Mi Note 3 Build/PKQ1.181007.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045131 Mobile Safari/537.36",
@@ -52,10 +53,10 @@ Array.prototype.remove = function(from, to) {
   this.length = from < 0 ? this.length + from : from;
   return this.push.apply(this, rest);
 };
-USER_AGENTS.remove(8, 13, 18, 11);
+USER_AGENTS.remove(1,3,4,5,6,7,8,9,10,11,12,13,14,15,20,21,22,23,24,26,28,29);
 $.UANum = randomNumber(0, USER_AGENTS.length);
 $.UANumArr = $store.get('UANumJDV2P', 'array');
-const JDUA = USER_AGENTS[$.UANum];
+const JDUA = USER_AGENTS[0];
 //////////////////////////////////////////
 !(async () => {
   await moduleCheck(['got', 'tough-cookie', 'qrcode-npm'])
