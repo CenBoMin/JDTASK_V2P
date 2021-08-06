@@ -348,9 +348,8 @@ class Widget {
     $.evdouImgUrl = evdou.imgurl
     await showMsg();
     await $.wait(2000)
+////////////////////////////////////////////////
   }
-
-
 })().catch(e=>console.log(e))
 
 function showChart(imgurl, userName, total, title) {
