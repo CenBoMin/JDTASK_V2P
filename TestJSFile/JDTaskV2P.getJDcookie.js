@@ -1,5 +1,5 @@
-// @grant require;
-// @grant nodejs;
+// @grant require
+// @grant nodejs
 const $ = new Env('🐶elecV2P京东扫码');
 let s_token, cookies, guid, lsid, lstoken, okl_token, token
 let evuid = 'jdcookie'

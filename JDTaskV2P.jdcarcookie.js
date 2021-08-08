@@ -1,5 +1,5 @@
-// @grant require;
-// @grant nodejs;
+// @grant require
+// @grant nodejs
 //
 ///////////////////////////////
 let CookiesJDTEST = $store.get('CookiesJD_TEST', 'array')
