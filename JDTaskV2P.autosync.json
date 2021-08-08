@@ -75,6 +75,7 @@
     "3 1,6 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_earn30.js, tag=我的-赚30",
     "0 0 0 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_dyj_help.js, tag=发财大赢家助力",
     "20 1 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jx_sign.js, tag=京喜签到",
-    "36 0,10,21 4-15 8 * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_doge.js, tag=七夕情报局8.4-8.15"
+    "36 0,10,21 4-15 8 * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_doge.js, tag=七夕情报局8.4-8.15",
+    "0 1 * * * https://raw.githubusercontent.com/Ariszy/Private-Script/master/JD/zy_ryhxj.js, tag= 荣耀焕新季"
     ]
 }
