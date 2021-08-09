@@ -76,6 +76,8 @@
     "0 0 0 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_dyj_help.js, tag=发财大赢家助力",
     "20 1 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jx_sign.js, tag=京喜签到",
     "36 0,10,21 4-15 8 * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_doge.js, tag=七夕情报局8.4-8.15",
-    "0 1 * * * https://raw.githubusercontent.com/Ariszy/Private-Script/master/JD/zy_ryhxj.js, tag= 荣耀焕新季"
+    "0 1 * * * https://raw.githubusercontent.com/Ariszy/Private-Script/master/JD/zy_ryhxj.js, tag=荣耀焕新季",
+    "10 1 * * * https://raw.githubusercontent.com/Ariszy/Private-Script/master/JD/zy_ryhxj.js, tag=来电好物季",
+    "0 0-18/6 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_carnivalcity.js, tag=京东手机狂欢城"
     ]
 }
