@@ -56,7 +56,6 @@
     "10 16,22 * * * https://raw.githubusercontent.com/VectorZhao/Scripts/main/jd_shop_sign.js, tag=店铺签到",
     "10 0,1,20 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/jd_necklace.js, tag=smiek2221#点点券",
     "15 * * * * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_wealth_island.js, tag=smiek2221#财富大陆",
-    "7 0,6-23/2 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_summer_movement.js, tag=燃动夏季",
     "10 0-21/3 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/jd_joy_steal.js, tag=宠汪汪偷好友积分与喂食",
     "21 9 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_MMdou.js, tag=smiek2221#MM领京豆",
     "23 2,9,13,17 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_productZ4Brand.js, tag=star261#特务Zx",
