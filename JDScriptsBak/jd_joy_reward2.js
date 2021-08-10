@@ -60,7 +60,7 @@ Date.prototype.Format = function (fmt) { //author: meizz
   return fmt;
 }
 !(async () => {
-  let timel = new Date().Format("ss")
+  let timel = new Date().Format("s.S")
   let timea = 59;
   if(timel < 59) {
     let timec = (timea - timel) * 1000;
@@ -188,23 +188,6 @@ async function joyReward(ac, giftSaleInfos) {
             let count = 5
             do {
               await exchange(ac, saleInfoId, 'pet');
-              let endDate = new Date()
-              // console.log(`账号${ac.index} 请求兑换API后时间 ${$.time('yyyy-MM-dd HH:mm:ss.S', endDate)}`);
-              if (ac.exchangeRes && ac.exchangeRes.success && ['buy_success', 'buy_limit', 'insufficient'].includes(ac.exchangeRes.errorCode + '')) {
-                // 兑换成功，跳出循环
-                break
-              } else if (startDate.getSeconds() == endDate.getSeconds()) {
-                // 未兑换到，等下一秒再尝试
-                if (endDate.getMilliseconds() < 550) {
-                  await $.wait(600 - endDate.getMilliseconds())
-                } else {
-                  await $.wait(1010 - endDate.getMilliseconds())
-                }
-                startDate = new Date()
-              } else {
-                await $.wait(10)
-                startDate = endDate
-              }
               count--
             } while (count > 0)
             if (ac.exchangeRes && ac.exchangeRes.success) {

@@ -5,8 +5,6 @@ const JD_API_HOST = "https://api.m.jd.com/client.action";
 let cookiesArr = [], cookie = '', message;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //+++++++++++++++++++++++++++++
-const JdFactoryCodeList = new Array();
-// V2PKey: JdFactoryV2P
 const JxFactoryCodeList = new Array();
 // V2PKey: JxFactoryV2P
 const JdPetCodeList = new Array();
