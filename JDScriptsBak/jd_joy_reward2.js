@@ -60,13 +60,13 @@ Date.prototype.Format = function (fmt) { //author: meizz
   return fmt;
 }
 !(async () => {
-  let timel = new Date().Format("s.S")
-  let timea = 59;
-  if(timel < 59) {
-    let timec = (timea - timel) * 1000;
-    console.log(`等待时间 → ${timec / 1000}sec...`);
-    await sleep(timec)
-  }
+  // let timel = new Date().Format("s.S")
+  // let timea = 59;
+  // if(timel < 59) {
+  //   let timec = (timea - timel) * 1000;
+  //   console.log(`等待时间 → ${timec / 1000}sec...`);
+  //   await sleep(timec)
+  // }
   if (typeof $request !== "undefined" && $request.url != 'http://www.apple.com/') {
     let invokeKey = ($request.url.match(/common\/gift\/getBeanConfigs\?.+?(&invokeKey=.+?)(&|$)/) || ['', ''])[1]
     if (invokeKey) {
