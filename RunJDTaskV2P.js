@@ -1,5 +1,5 @@
 // @grant nodejs
-let jstask = $JDTASK
+let jstask = $env.JDTASK
 let jsname = jstask.indexOf(".ts")
 if (jsname > -1) {
   $exec(`ts-node ${jstask}`, {
