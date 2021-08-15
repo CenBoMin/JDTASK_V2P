@@ -182,10 +182,10 @@ async function joyReward(ac, giftSaleInfos) {
       if (rewardNum) {
         //开始兑换
         if (salePrice) {
-          if (leftStock) {
+          // if (leftStock) {
             if (!saleInfoId) return
             let startDate = new Date()
-            let count = 5
+            let count = 6
             do {
               await exchange(ac, saleInfoId, 'pet');
               count--
@@ -212,10 +212,10 @@ async function joyReward(ac, giftSaleInfos) {
               // ac.result = `兑换京豆异常:${JSON.stringify(ac.exchangeRes)}`
               console.log(`\n${ac.result}\n`)
             }
-          } else {
-            ac.result = `按您设置的兑换${rewardNum}京豆失败，原因：京豆库存不足，已抢完，请下一场再兑换`
-            console.log(`\n${ac.result}\n`);
-          }
+          // } else {
+          //   ac.result = `按您设置的兑换${rewardNum}京豆失败，原因：京豆库存不足，已抢完，请下一场再兑换`
+          //   console.log(`\n${ac.result}\n`);
+          // }
         } else {
           // console.log(`兑换${rewardNum}京豆失败，原因：您目前只有${data.coin}积分，已不足兑换${giftValue}京豆所需的${salePrice}积分\n`)
           //$.msg($.name, `兑换${giftName}失败`, `【京东账号${$.index}】${$.nickName}\n目前只有${data.coin}积分\n已不足兑换${giftName}所需的${salePrice}积分\n`)
