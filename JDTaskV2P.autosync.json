@@ -81,6 +81,8 @@
     "18 9,19 13-25 8 * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_xiaolong.js, tag=骁龙品牌日8.13-8.25 ",
     "54 5 9-15 8 * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_appliances.js, tag=家电STAR",
     "5 6,8 12-24 8 *  https://raw.githubusercontent.com/star261/jd/main/scripts/jd_decompression.js, tag=热血心跳,狂解压",
-    "33 4,7 8-20 8 * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_golden_machine.js, tag=金机奖投票"
+    "33 4,7 8-20 8 * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_golden_machine.js, tag=金机奖投票",
+    "40 0,2 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_wish.js, tag=众筹许愿池",
+    "59 7,15,23 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_joy_reward.js, tag=宠汪汪积分兑换奖品"
     ]
 }

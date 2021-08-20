@@ -45,6 +45,8 @@ if (jsname > -1) {
       MARKET_COIN_TO_BEANS:20,
       //宠汪汪喂食80g
       JOY_FEED_COUNT:80,
+      //宠汪汪换豆
+      JD_JOY_REWARD_NAME:500,
       //燃动夏季助力
       summer_movement_ShHelpFlag:1,summer_movement_HelpHelpHelpFlag:true,
       //下面的忘记了...
